@@ -1,0 +1,523 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7FEE73761BA381C4004FE494 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE73751BA381C4004FE494 /* AppDelegate.swift */; };
+		7FEE73781BA381C4004FE494 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE73771BA381C4004FE494 /* ViewController.swift */; };
+		7FEE737B1BA381C4004FE494 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FEE73791BA381C4004FE494 /* Main.storyboard */; };
+		7FEE737E1BA381C4004FE494 /* Pivit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE737C1BA381C4004FE494 /* Pivit.xcdatamodeld */; };
+		7FEE73801BA381C4004FE494 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FEE737F1BA381C4004FE494 /* Assets.xcassets */; };
+		7FEE73831BA381C4004FE494 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FEE73811BA381C4004FE494 /* LaunchScreen.storyboard */; };
+		7FEE738E1BA381C4004FE494 /* PivitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE738D1BA381C4004FE494 /* PivitTests.swift */; };
+		7FEE73991BA381C4004FE494 /* PivitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE73981BA381C4004FE494 /* PivitUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7FEE738A1BA381C4004FE494 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7FEE736A1BA381C3004FE494 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7FEE73711BA381C4004FE494;
+			remoteInfo = Pivit;
+		};
+		7FEE73951BA381C4004FE494 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7FEE736A1BA381C3004FE494 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7FEE73711BA381C4004FE494;
+			remoteInfo = Pivit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7FEE73721BA381C4004FE494 /* Pivit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pivit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FEE73751BA381C4004FE494 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7FEE73771BA381C4004FE494 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7FEE737A1BA381C4004FE494 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7FEE737D1BA381C4004FE494 /* Pivit.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pivit.xcdatamodel; sourceTree = "<group>"; };
+		7FEE737F1BA381C4004FE494 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7FEE73821BA381C4004FE494 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7FEE73841BA381C4004FE494 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7FEE73891BA381C4004FE494 /* PivitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PivitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FEE738D1BA381C4004FE494 /* PivitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PivitTests.swift; sourceTree = "<group>"; };
+		7FEE738F1BA381C4004FE494 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7FEE73941BA381C4004FE494 /* PivitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PivitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FEE73981BA381C4004FE494 /* PivitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PivitUITests.swift; sourceTree = "<group>"; };
+		7FEE739A1BA381C4004FE494 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7FEE736F1BA381C4004FE494 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FEE73861BA381C4004FE494 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FEE73911BA381C4004FE494 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7FEE73691BA381C3004FE494 = {
+			isa = PBXGroup;
+			children = (
+				7FEE73741BA381C4004FE494 /* Pivit */,
+				7FEE738C1BA381C4004FE494 /* PivitTests */,
+				7FEE73971BA381C4004FE494 /* PivitUITests */,
+				7FEE73731BA381C4004FE494 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7FEE73731BA381C4004FE494 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7FEE73721BA381C4004FE494 /* Pivit.app */,
+				7FEE73891BA381C4004FE494 /* PivitTests.xctest */,
+				7FEE73941BA381C4004FE494 /* PivitUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7FEE73741BA381C4004FE494 /* Pivit */ = {
+			isa = PBXGroup;
+			children = (
+				7FEE73751BA381C4004FE494 /* AppDelegate.swift */,
+				7FEE73771BA381C4004FE494 /* ViewController.swift */,
+				7FEE73791BA381C4004FE494 /* Main.storyboard */,
+				7FEE737F1BA381C4004FE494 /* Assets.xcassets */,
+				7FEE73811BA381C4004FE494 /* LaunchScreen.storyboard */,
+				7FEE73841BA381C4004FE494 /* Info.plist */,
+				7FEE737C1BA381C4004FE494 /* Pivit.xcdatamodeld */,
+			);
+			path = Pivit;
+			sourceTree = "<group>";
+		};
+		7FEE738C1BA381C4004FE494 /* PivitTests */ = {
+			isa = PBXGroup;
+			children = (
+				7FEE738D1BA381C4004FE494 /* PivitTests.swift */,
+				7FEE738F1BA381C4004FE494 /* Info.plist */,
+			);
+			path = PivitTests;
+			sourceTree = "<group>";
+		};
+		7FEE73971BA381C4004FE494 /* PivitUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7FEE73981BA381C4004FE494 /* PivitUITests.swift */,
+				7FEE739A1BA381C4004FE494 /* Info.plist */,
+			);
+			path = PivitUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7FEE73711BA381C4004FE494 /* Pivit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7FEE739D1BA381C4004FE494 /* Build configuration list for PBXNativeTarget "Pivit" */;
+			buildPhases = (
+				7FEE736E1BA381C4004FE494 /* Sources */,
+				7FEE736F1BA381C4004FE494 /* Frameworks */,
+				7FEE73701BA381C4004FE494 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Pivit;
+			productName = Pivit;
+			productReference = 7FEE73721BA381C4004FE494 /* Pivit.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7FEE73881BA381C4004FE494 /* PivitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7FEE73A01BA381C4004FE494 /* Build configuration list for PBXNativeTarget "PivitTests" */;
+			buildPhases = (
+				7FEE73851BA381C4004FE494 /* Sources */,
+				7FEE73861BA381C4004FE494 /* Frameworks */,
+				7FEE73871BA381C4004FE494 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7FEE738B1BA381C4004FE494 /* PBXTargetDependency */,
+			);
+			name = PivitTests;
+			productName = PivitTests;
+			productReference = 7FEE73891BA381C4004FE494 /* PivitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7FEE73931BA381C4004FE494 /* PivitUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7FEE73A31BA381C4004FE494 /* Build configuration list for PBXNativeTarget "PivitUITests" */;
+			buildPhases = (
+				7FEE73901BA381C4004FE494 /* Sources */,
+				7FEE73911BA381C4004FE494 /* Frameworks */,
+				7FEE73921BA381C4004FE494 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7FEE73961BA381C4004FE494 /* PBXTargetDependency */,
+			);
+			name = PivitUITests;
+			productName = PivitUITests;
+			productReference = 7FEE73941BA381C4004FE494 /* PivitUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7FEE736A1BA381C3004FE494 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = Pivit;
+				TargetAttributes = {
+					7FEE73711BA381C4004FE494 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					7FEE73881BA381C4004FE494 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 7FEE73711BA381C4004FE494;
+					};
+					7FEE73931BA381C4004FE494 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 7FEE73711BA381C4004FE494;
+					};
+				};
+			};
+			buildConfigurationList = 7FEE736D1BA381C3004FE494 /* Build configuration list for PBXProject "Pivit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7FEE73691BA381C3004FE494;
+			productRefGroup = 7FEE73731BA381C4004FE494 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7FEE73711BA381C4004FE494 /* Pivit */,
+				7FEE73881BA381C4004FE494 /* PivitTests */,
+				7FEE73931BA381C4004FE494 /* PivitUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7FEE73701BA381C4004FE494 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FEE73831BA381C4004FE494 /* LaunchScreen.storyboard in Resources */,
+				7FEE73801BA381C4004FE494 /* Assets.xcassets in Resources */,
+				7FEE737B1BA381C4004FE494 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FEE73871BA381C4004FE494 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FEE73921BA381C4004FE494 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7FEE736E1BA381C4004FE494 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FEE73781BA381C4004FE494 /* ViewController.swift in Sources */,
+				7FEE73761BA381C4004FE494 /* AppDelegate.swift in Sources */,
+				7FEE737E1BA381C4004FE494 /* Pivit.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FEE73851BA381C4004FE494 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FEE738E1BA381C4004FE494 /* PivitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FEE73901BA381C4004FE494 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FEE73991BA381C4004FE494 /* PivitUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7FEE738B1BA381C4004FE494 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7FEE73711BA381C4004FE494 /* Pivit */;
+			targetProxy = 7FEE738A1BA381C4004FE494 /* PBXContainerItemProxy */;
+		};
+		7FEE73961BA381C4004FE494 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7FEE73711BA381C4004FE494 /* Pivit */;
+			targetProxy = 7FEE73951BA381C4004FE494 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7FEE73791BA381C4004FE494 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7FEE737A1BA381C4004FE494 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7FEE73811BA381C4004FE494 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7FEE73821BA381C4004FE494 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7FEE739B1BA381C4004FE494 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7FEE739C1BA381C4004FE494 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7FEE739E1BA381C4004FE494 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Pivit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Pivit.Pivit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7FEE739F1BA381C4004FE494 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Pivit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Pivit.Pivit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		7FEE73A11BA381C4004FE494 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PivitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Pivit.PivitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pivit.app/Pivit";
+			};
+			name = Debug;
+		};
+		7FEE73A21BA381C4004FE494 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PivitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Pivit.PivitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pivit.app/Pivit";
+			};
+			name = Release;
+		};
+		7FEE73A41BA381C4004FE494 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PivitUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Pivit.PivitUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Pivit;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		7FEE73A51BA381C4004FE494 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PivitUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Pivit.PivitUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Pivit;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7FEE736D1BA381C3004FE494 /* Build configuration list for PBXProject "Pivit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FEE739B1BA381C4004FE494 /* Debug */,
+				7FEE739C1BA381C4004FE494 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7FEE739D1BA381C4004FE494 /* Build configuration list for PBXNativeTarget "Pivit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FEE739E1BA381C4004FE494 /* Debug */,
+				7FEE739F1BA381C4004FE494 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7FEE73A01BA381C4004FE494 /* Build configuration list for PBXNativeTarget "PivitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FEE73A11BA381C4004FE494 /* Debug */,
+				7FEE73A21BA381C4004FE494 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7FEE73A31BA381C4004FE494 /* Build configuration list for PBXNativeTarget "PivitUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FEE73A41BA381C4004FE494 /* Debug */,
+				7FEE73A51BA381C4004FE494 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7FEE737C1BA381C4004FE494 /* Pivit.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7FEE737D1BA381C4004FE494 /* Pivit.xcdatamodel */,
+			);
+			currentVersion = 7FEE737D1BA381C4004FE494 /* Pivit.xcdatamodel */;
+			path = Pivit.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 7FEE736A1BA381C3004FE494 /* Project object */;
+}
