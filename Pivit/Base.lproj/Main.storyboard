@@ -359,13 +359,13 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="453.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skydiving: $550" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="KqW-HB-18E">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skydiving: $550" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KqW-HB-18E">
                                             <rect key="frame" x="8" y="8" width="261" height="35"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="35" id="3G7-b6-wB7"/>
                                                 <constraint firstAttribute="height" constant="28.5" id="v9V-Px-GPd"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="default">
@@ -452,7 +452,7 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="Q0V-r2-oV2" secondAttribute="trailing" id="iUb-f3-ze2"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="Q0V-r2-oV2" secondAttribute="leading" id="iuL-e9-seQ"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="HJf-QB-oTh" secondAttribute="leading" id="jGT-nn-C4m"/>
-                                        <constraint firstItem="Zf2-rR-X9r" firstAttribute="leading" secondItem="KqW-HB-18E" secondAttribute="trailing" constant="8" id="jgo-nB-uEq"/>
+                                        <constraint firstItem="Zf2-rR-X9r" firstAttribute="leading" secondItem="KqW-HB-18E" secondAttribute="trailing" constant="8" symbolic="YES" id="jgo-nB-uEq"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="KqW-HB-18E" secondAttribute="leading" id="ky5-AL-lmx"/>
                                         <constraint firstItem="Zf2-rR-X9r" firstAttribute="trailing" secondItem="Q0V-r2-oV2" secondAttribute="trailing" id="nfB-Uh-3b6"/>
                                         <constraint firstItem="Jn0-Kz-Pab" firstAttribute="leading" secondItem="rfC-s7-eSp" secondAttribute="trailing" constant="8" symbolic="YES" id="oSE-u1-HZC"/>
@@ -494,7 +494,11 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="goalImageView" destination="Q0V-r2-oV2" id="hGa-HP-jB8"/>
+                                    <outlet property="goalNameLabel" destination="KqW-HB-18E" id="sum-ew-Y8f"/>
+                                    <outlet property="progressLabel" destination="Jn0-Kz-Pab" id="zWn-zd-7wn"/>
                                     <outlet property="progressView" destination="8B3-3z-N3l" id="EXt-Dk-P0F"/>
+                                    <outlet property="timeLabel" destination="Zf2-rR-X9r" id="w1G-dJ-6hJ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -520,7 +524,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fsG-Z2-gVE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1888" y="628"/>
+            <point key="canvasLocation" x="1647" y="630"/>
         </scene>
         <!--Add Goal View Controller-->
         <scene sceneID="kWf-Wq-ZaO">
@@ -622,7 +626,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4xw-xL-y1b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2486.5" y="629.5"/>
+            <point key="canvasLocation" x="2093.5" y="629.5"/>
         </scene>
         <!--Item-->
         <scene sceneID="p75-HB-GSw">

@@ -21,6 +21,8 @@ class GoalTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    //MARK: - Outlet Properties
+    
     @IBOutlet weak var progressView: ASProgressPopUpView! {
         didSet {
             progressView.progress = Float(0.3)
@@ -28,6 +30,15 @@ class GoalTableViewCell: UITableViewCell {
             progressView.popUpView.cornerRadius = CGFloat(16.0)
             progressView.popUpViewColor = PivitColor()
         }
+        
     }
-
+    
+    @IBOutlet weak var goalNameLabel: UILabel!
+    
+    @IBOutlet weak var timeLabel: UILabel!
+    
+    @IBOutlet weak var goalImageView: UIImageView!
+    
+    @IBOutlet weak var progressLabel: UILabel!
+    
 }
