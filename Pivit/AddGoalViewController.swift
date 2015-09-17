@@ -27,12 +27,15 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     
     //MARK: - Model
     
-    var handler = GoalHandler()
+    private var handler = GoalHandler()
+    
+    private var imageHandler = ImageHandler()
     
     //MARK : - Outlet Properties
     
     @IBOutlet weak var goalImage: UIImageView! {
         didSet {
+            goalImage.image = imageHandler.generateClickToAddPhoto()
             let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("imageTapped:"))
             goalImage.addGestureRecognizer(tapGestureRecognizer)
         }
@@ -81,15 +84,10 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         
         print("save new goal")
         
-        var picture: UIImage?
         var goalName: String?
         var goalMoneyNecessary: Double?
         
-        if let image = goalImage.image {
-            picture = image
-        } else {
-            //fix
-        }
+        let picture = goalImage.image
         
         if let money = Double(goalAmountTextField.text!) {
             goalMoneyNecessary = money
