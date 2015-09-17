@@ -7,14 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F69831E1BAA6F0B006DFB81 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F69831D1BAA6F0B006DFB81 /* Habit.swift */; settings = {ASSET_TAGS = (); }; };
+		7F6983201BAB0FB1006DFB81 /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F69831F1BAB0FB1006DFB81 /* CoreDataHandler.swift */; settings = {ASSET_TAGS = (); }; };
+		7F6983221BAB184B006DFB81 /* GoalHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6983211BAB184B006DFB81 /* GoalHandler.swift */; settings = {ASSET_TAGS = (); }; };
+		7F6983261BAB5257006DFB81 /* ImageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6983251BAB5257006DFB81 /* ImageHandler.swift */; settings = {ASSET_TAGS = (); }; };
 		7FEE73761BA381C4004FE494 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE73751BA381C4004FE494 /* AppDelegate.swift */; };
-		7FEE73781BA381C4004FE494 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE73771BA381C4004FE494 /* ViewController.swift */; };
 		7FEE737B1BA381C4004FE494 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FEE73791BA381C4004FE494 /* Main.storyboard */; };
 		7FEE737E1BA381C4004FE494 /* Pivit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE737C1BA381C4004FE494 /* Pivit.xcdatamodeld */; };
 		7FEE73801BA381C4004FE494 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FEE737F1BA381C4004FE494 /* Assets.xcassets */; };
 		7FEE73831BA381C4004FE494 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FEE73811BA381C4004FE494 /* LaunchScreen.storyboard */; };
 		7FEE738E1BA381C4004FE494 /* PivitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE738D1BA381C4004FE494 /* PivitTests.swift */; };
 		7FEE73991BA381C4004FE494 /* PivitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE73981BA381C4004FE494 /* PivitUITests.swift */; };
+		7FEE73A81BA38239004FE494 /* FrontPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE73A71BA38239004FE494 /* FrontPageViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		7FEE73AA1BA382EB004FE494 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE73A91BA382EB004FE494 /* Goal.swift */; settings = {ASSET_TAGS = (); }; };
+		7FEE73B21BA3E33E004FE494 /* ASPopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE73AF1BA3E33E004FE494 /* ASPopUpView.m */; settings = {ASSET_TAGS = (); }; };
+		7FEE73B31BA3E33E004FE494 /* ASProgressPopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE73B11BA3E33E004FE494 /* ASProgressPopUpView.m */; settings = {ASSET_TAGS = (); }; };
+		7FEE73BB1BA52A1A004FE494 /* GoalsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE73BA1BA52A1A004FE494 /* GoalsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		7FEE73BF1BA52AF8004FE494 /* GoalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE73BE1BA52AF8004FE494 /* GoalTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		7FEE73C11BA737A9004FE494 /* globalFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE73C01BA737A9004FE494 /* globalFuncs.swift */; settings = {ASSET_TAGS = (); }; };
+		7FEE73CE1BAA27AF004FE494 /* AkiraTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE73C31BAA27AF004FE494 /* AkiraTextField.swift */; settings = {ASSET_TAGS = (); }; };
+		7FEE73CF1BAA27AF004FE494 /* HoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE73C41BAA27AF004FE494 /* HoshiTextField.swift */; settings = {ASSET_TAGS = (); }; };
+		7FEE73D01BAA27AF004FE494 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7FEE73C51BAA27AF004FE494 /* Info.plist */; settings = {ASSET_TAGS = (); }; };
+		7FEE73D11BAA27AF004FE494 /* IsaoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE73C61BAA27AF004FE494 /* IsaoTextField.swift */; settings = {ASSET_TAGS = (); }; };
+		7FEE73D21BAA27AF004FE494 /* JiroTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE73C71BAA27AF004FE494 /* JiroTextField.swift */; settings = {ASSET_TAGS = (); }; };
+		7FEE73D31BAA27AF004FE494 /* KaedeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE73C81BAA27AF004FE494 /* KaedeTextField.swift */; settings = {ASSET_TAGS = (); }; };
+		7FEE73D41BAA27AF004FE494 /* MadokaTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE73C91BAA27AF004FE494 /* MadokaTextField.swift */; settings = {ASSET_TAGS = (); }; };
+		7FEE73D51BAA27AF004FE494 /* MinoruTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE73CA1BAA27AF004FE494 /* MinoruTextField.swift */; settings = {ASSET_TAGS = (); }; };
+		7FEE73D61BAA27AF004FE494 /* TextFieldsEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE73CC1BAA27AF004FE494 /* TextFieldsEffects.swift */; settings = {ASSET_TAGS = (); }; };
+		7FEE73D71BAA27AF004FE494 /* YokoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE73CD1BAA27AF004FE494 /* YokoTextField.swift */; settings = {ASSET_TAGS = (); }; };
+		7FEE73D91BAA2DE7004FE494 /* AddGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE73D81BAA2DE7004FE494 /* AddGoalViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +56,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7F69831D1BAA6F0B006DFB81 /* Habit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
+		7F69831F1BAB0FB1006DFB81 /* CoreDataHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
+		7F6983211BAB184B006DFB81 /* GoalHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalHandler.swift; sourceTree = "<group>"; };
+		7F6983251BAB5257006DFB81 /* ImageHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHandler.swift; sourceTree = "<group>"; };
 		7FEE73721BA381C4004FE494 /* Pivit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pivit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FEE73751BA381C4004FE494 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7FEE73771BA381C4004FE494 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7FEE737A1BA381C4004FE494 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7FEE737D1BA381C4004FE494 /* Pivit.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pivit.xcdatamodel; sourceTree = "<group>"; };
 		7FEE737F1BA381C4004FE494 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +73,28 @@
 		7FEE73941BA381C4004FE494 /* PivitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PivitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FEE73981BA381C4004FE494 /* PivitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PivitUITests.swift; sourceTree = "<group>"; };
 		7FEE739A1BA381C4004FE494 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7FEE73A71BA38239004FE494 /* FrontPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontPageViewController.swift; sourceTree = "<group>"; };
+		7FEE73A91BA382EB004FE494 /* Goal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
+		7FEE73AE1BA3E33E004FE494 /* ASPopUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPopUpView.h; sourceTree = "<group>"; };
+		7FEE73AF1BA3E33E004FE494 /* ASPopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPopUpView.m; sourceTree = "<group>"; };
+		7FEE73B01BA3E33E004FE494 /* ASProgressPopUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASProgressPopUpView.h; sourceTree = "<group>"; };
+		7FEE73B11BA3E33E004FE494 /* ASProgressPopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASProgressPopUpView.m; sourceTree = "<group>"; };
+		7FEE73B51BA3EB89004FE494 /* <#Pivit#>-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "<#Pivit#>-Bridging-Header.h"; sourceTree = "<group>"; };
+		7FEE73BA1BA52A1A004FE494 /* GoalsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalsTableViewController.swift; sourceTree = "<group>"; };
+		7FEE73BE1BA52AF8004FE494 /* GoalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalTableViewCell.swift; sourceTree = "<group>"; };
+		7FEE73C01BA737A9004FE494 /* globalFuncs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = globalFuncs.swift; sourceTree = "<group>"; };
+		7FEE73C31BAA27AF004FE494 /* AkiraTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AkiraTextField.swift; sourceTree = "<group>"; };
+		7FEE73C41BAA27AF004FE494 /* HoshiTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoshiTextField.swift; sourceTree = "<group>"; };
+		7FEE73C51BAA27AF004FE494 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7FEE73C61BAA27AF004FE494 /* IsaoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsaoTextField.swift; sourceTree = "<group>"; };
+		7FEE73C71BAA27AF004FE494 /* JiroTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JiroTextField.swift; sourceTree = "<group>"; };
+		7FEE73C81BAA27AF004FE494 /* KaedeTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KaedeTextField.swift; sourceTree = "<group>"; };
+		7FEE73C91BAA27AF004FE494 /* MadokaTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MadokaTextField.swift; sourceTree = "<group>"; };
+		7FEE73CA1BAA27AF004FE494 /* MinoruTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinoruTextField.swift; sourceTree = "<group>"; };
+		7FEE73CB1BAA27AF004FE494 /* TextFieldEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldEffects.h; sourceTree = "<group>"; };
+		7FEE73CC1BAA27AF004FE494 /* TextFieldsEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldsEffects.swift; sourceTree = "<group>"; };
+		7FEE73CD1BAA27AF004FE494 /* YokoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YokoTextField.swift; sourceTree = "<group>"; };
+		7FEE73D81BAA2DE7004FE494 /* AddGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGoalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +145,18 @@
 		7FEE73741BA381C4004FE494 /* Pivit */ = {
 			isa = PBXGroup;
 			children = (
-				7FEE73751BA381C4004FE494 /* AppDelegate.swift */,
-				7FEE73771BA381C4004FE494 /* ViewController.swift */,
+				7F6983251BAB5257006DFB81 /* ImageHandler.swift */,
+				7F6983211BAB184B006DFB81 /* GoalHandler.swift */,
+				7F69831F1BAB0FB1006DFB81 /* CoreDataHandler.swift */,
+				7FEE73A71BA38239004FE494 /* FrontPageViewController.swift */,
 				7FEE73791BA381C4004FE494 /* Main.storyboard */,
-				7FEE737F1BA381C4004FE494 /* Assets.xcassets */,
-				7FEE73811BA381C4004FE494 /* LaunchScreen.storyboard */,
-				7FEE73841BA381C4004FE494 /* Info.plist */,
-				7FEE737C1BA381C4004FE494 /* Pivit.xcdatamodeld */,
+				7FEE73DA1BAA2DEE004FE494 /* Goals Tab */,
+				7FEE73A91BA382EB004FE494 /* Goal.swift */,
+				7F69831D1BAA6F0B006DFB81 /* Habit.swift */,
+				7FEE73C01BA737A9004FE494 /* globalFuncs.swift */,
+				7FEE73C21BAA27AF004FE494 /* TextFieldEffects */,
+				7FEE73B41BA3E435004FE494 /* Progress View Files */,
+				7FEE73A61BA381E9004FE494 /* Supporting Files */,
 			);
 			path = Pivit;
 			sourceTree = "<group>";
@@ -126,6 +177,58 @@
 				7FEE739A1BA381C4004FE494 /* Info.plist */,
 			);
 			path = PivitUITests;
+			sourceTree = "<group>";
+		};
+		7FEE73A61BA381E9004FE494 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7FEE737C1BA381C4004FE494 /* Pivit.xcdatamodeld */,
+				7FEE73751BA381C4004FE494 /* AppDelegate.swift */,
+				7FEE73841BA381C4004FE494 /* Info.plist */,
+				7FEE73811BA381C4004FE494 /* LaunchScreen.storyboard */,
+				7FEE737F1BA381C4004FE494 /* Assets.xcassets */,
+				7FEE73B51BA3EB89004FE494 /* <#Pivit#>-Bridging-Header.h */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7FEE73B41BA3E435004FE494 /* Progress View Files */ = {
+			isa = PBXGroup;
+			children = (
+				7FEE73B11BA3E33E004FE494 /* ASProgressPopUpView.m */,
+				7FEE73B01BA3E33E004FE494 /* ASProgressPopUpView.h */,
+				7FEE73AF1BA3E33E004FE494 /* ASPopUpView.m */,
+				7FEE73AE1BA3E33E004FE494 /* ASPopUpView.h */,
+			);
+			name = "Progress View Files";
+			sourceTree = "<group>";
+		};
+		7FEE73C21BAA27AF004FE494 /* TextFieldEffects */ = {
+			isa = PBXGroup;
+			children = (
+				7FEE73C31BAA27AF004FE494 /* AkiraTextField.swift */,
+				7FEE73C41BAA27AF004FE494 /* HoshiTextField.swift */,
+				7FEE73C51BAA27AF004FE494 /* Info.plist */,
+				7FEE73C61BAA27AF004FE494 /* IsaoTextField.swift */,
+				7FEE73C71BAA27AF004FE494 /* JiroTextField.swift */,
+				7FEE73C81BAA27AF004FE494 /* KaedeTextField.swift */,
+				7FEE73C91BAA27AF004FE494 /* MadokaTextField.swift */,
+				7FEE73CA1BAA27AF004FE494 /* MinoruTextField.swift */,
+				7FEE73CB1BAA27AF004FE494 /* TextFieldEffects.h */,
+				7FEE73CC1BAA27AF004FE494 /* TextFieldsEffects.swift */,
+				7FEE73CD1BAA27AF004FE494 /* YokoTextField.swift */,
+			);
+			path = TextFieldEffects;
+			sourceTree = "<group>";
+		};
+		7FEE73DA1BAA2DEE004FE494 /* Goals Tab */ = {
+			isa = PBXGroup;
+			children = (
+				7FEE73BE1BA52AF8004FE494 /* GoalTableViewCell.swift */,
+				7FEE73BA1BA52A1A004FE494 /* GoalsTableViewController.swift */,
+				7FEE73D81BAA2DE7004FE494 /* AddGoalViewController.swift */,
+			);
+			name = "Goals Tab";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +293,7 @@
 		7FEE736A1BA381C3004FE494 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Pivit;
 				TargetAttributes = {
@@ -231,6 +335,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FEE73D01BAA27AF004FE494 /* Info.plist in Resources */,
 				7FEE73831BA381C4004FE494 /* LaunchScreen.storyboard in Resources */,
 				7FEE73801BA381C4004FE494 /* Assets.xcassets in Resources */,
 				7FEE737B1BA381C4004FE494 /* Main.storyboard in Resources */,
@@ -258,9 +363,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FEE73781BA381C4004FE494 /* ViewController.swift in Sources */,
+				7FEE73B21BA3E33E004FE494 /* ASPopUpView.m in Sources */,
+				7FEE73D51BAA27AF004FE494 /* MinoruTextField.swift in Sources */,
+				7FEE73AA1BA382EB004FE494 /* Goal.swift in Sources */,
+				7FEE73CF1BAA27AF004FE494 /* HoshiTextField.swift in Sources */,
+				7FEE73C11BA737A9004FE494 /* globalFuncs.swift in Sources */,
+				7FEE73A81BA38239004FE494 /* FrontPageViewController.swift in Sources */,
+				7FEE73D41BAA27AF004FE494 /* MadokaTextField.swift in Sources */,
+				7F6983261BAB5257006DFB81 /* ImageHandler.swift in Sources */,
+				7FEE73D71BAA27AF004FE494 /* YokoTextField.swift in Sources */,
+				7FEE73D31BAA27AF004FE494 /* KaedeTextField.swift in Sources */,
+				7FEE73B31BA3E33E004FE494 /* ASProgressPopUpView.m in Sources */,
 				7FEE73761BA381C4004FE494 /* AppDelegate.swift in Sources */,
+				7F69831E1BAA6F0B006DFB81 /* Habit.swift in Sources */,
+				7F6983201BAB0FB1006DFB81 /* CoreDataHandler.swift in Sources */,
+				7FEE73D11BAA27AF004FE494 /* IsaoTextField.swift in Sources */,
+				7FEE73BB1BA52A1A004FE494 /* GoalsTableViewController.swift in Sources */,
+				7F6983221BAB184B006DFB81 /* GoalHandler.swift in Sources */,
 				7FEE737E1BA381C4004FE494 /* Pivit.xcdatamodeld in Sources */,
+				7FEE73BF1BA52AF8004FE494 /* GoalTableViewCell.swift in Sources */,
+				7FEE73CE1BAA27AF004FE494 /* AkiraTextField.swift in Sources */,
+				7FEE73D91BAA2DE7004FE494 /* AddGoalViewController.swift in Sources */,
+				7FEE73D61BAA27AF004FE494 /* TextFieldsEffects.swift in Sources */,
+				7FEE73D21BAA27AF004FE494 /* JiroTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,10 +527,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Pivit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Pivit.Pivit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Jared/Developer/Pivit/Pivit/<#Pivit#>-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -413,10 +544,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Pivit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Pivit.Pivit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Jared/Developer/Pivit/Pivit/<#Pivit#>-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -487,6 +623,7 @@
 				7FEE739F1BA381C4004FE494 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7FEE73A01BA381C4004FE494 /* Build configuration list for PBXNativeTarget "PivitTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +632,7 @@
 				7FEE73A21BA381C4004FE494 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7FEE73A31BA381C4004FE494 /* Build configuration list for PBXNativeTarget "PivitUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +641,7 @@
 				7FEE73A51BA381C4004FE494 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
