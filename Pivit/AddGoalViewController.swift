@@ -60,6 +60,7 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
             goalAmountTextField.placeholderColor = UIColor.lightGrayColor()
             goalAmountTextField.borderInactiveColor = UIColor.darkGrayColor()
             goalAmountTextField.borderActiveColor = PivitColor()
+            goalAmountTextField.addTarget(self, action: "onTextChanged:", forControlEvents: .EditingChanged)
         }
     }
     
@@ -78,11 +79,25 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         self.view.frame.origin.y += 180
     }
     
+    func onTextChanged(sender: UITextField) {
+        
+        var newString = ""
+        
+        let startIndex = sender.text!.startIndex
+        let endIndex = startIndex.advancedBy(1)
+        let range = Range<String.Index>(start: startIndex, end: endIndex)
+        let firstLetterString = sender.text!.substringWithRange(range)
+        
+        if firstLetterString == "$" {
+            
+        }
+        
+        
+    }
+    
     //MARK: - Outlet Funcs
 
     @IBAction func saveNewGoal(sender: UIBarButtonItem) {
-        
-        print("save new goal")
         
         var goalName: String?
         var goalMoneyNecessary: Double?
@@ -107,25 +122,13 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         photoActionSheet.addAction(UIAlertAction(title: "Take Photo", style: .Default)
             {[unowned self] (action: UIAlertAction) -> Void in
                 if UIImagePickerController.isSourceTypeAvailable(.Camera) {
-                    let picker = UIImagePickerController()
-                    picker.navigationBar.tintColor = UIColor.whiteColor()
-                    picker.sourceType = .Camera
-                    picker.mediaTypes = [String(kUTTypeImage)]
-                    picker.allowsEditing = true
-                    picker.delegate = self
-                    self.presentViewController(picker, animated: true, completion: nil)
+                    self.presentPickerController(.Camera)
                 }
             })
         photoActionSheet.addAction(UIAlertAction(title: "Choose Photo", style: .Default)
             {[unowned self](action: UIAlertAction) -> Void in
                 if UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary) {
-                    let picker = UIImagePickerController()
-                    picker.navigationBar.tintColor = UIColor.whiteColor()
-                    picker.sourceType = .PhotoLibrary
-                    picker.mediaTypes = [String(kUTTypeImage)]
-                    picker.allowsEditing = true
-                    picker.delegate = self
-                    self.presentViewController(picker, animated: true, completion: nil)
+                    self.presentPickerController(.PhotoLibrary)
                 }
             })
         photoActionSheet.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
@@ -140,6 +143,16 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         picker.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    private func presentPickerController(sourceType: UIImagePickerControllerSourceType) {
+        let picker = UIImagePickerController()
+        picker.navigationBar.tintColor = UIColor.whiteColor()
+        picker.sourceType = sourceType
+        picker.mediaTypes = [String(kUTTypeImage)]
+        picker.allowsEditing = true
+        picker.delegate = self
+        self.presentViewController(picker, animated: true, completion: nil)
     }
     
 }
