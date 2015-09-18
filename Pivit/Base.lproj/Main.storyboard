@@ -509,7 +509,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="Iag-aC-6vR">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" title="+" id="9Ok-1R-5Tl">
+                        <barButtonItem key="leftBarButtonItem" title="new" id="9Ok-1R-5Tl">
                             <connections>
                                 <segue destination="3x3-8D-1tL" kind="show" identifier="addNewGoal" id="XwB-qi-35s"/>
                             </connections>

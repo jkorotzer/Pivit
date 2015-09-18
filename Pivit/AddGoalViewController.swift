@@ -81,7 +81,7 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     
     func onTextChanged(sender: UITextField) {
         
-        var newString = ""
+        //var newString = ""
         
         let startIndex = sender.text!.startIndex
         let endIndex = startIndex.advancedBy(1)
