@@ -81,8 +81,6 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         self.view.frame.origin.y += 180
     }
     
-    
-    
     //MARK: - Outlet Funcs
 
     @IBAction func saveNewGoal(sender: UIBarButtonItem) {
@@ -144,3 +142,5 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     }
     
 }
+
+

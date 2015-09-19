@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F4C2B821BAE08780051F904 /* TSCurrencyTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4C2B811BAE08780051F904 /* TSCurrencyTextField.m */; settings = {ASSET_TAGS = (); }; };
 		7F69831E1BAA6F0B006DFB81 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F69831D1BAA6F0B006DFB81 /* Habit.swift */; settings = {ASSET_TAGS = (); }; };
 		7F6983201BAB0FB1006DFB81 /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F69831F1BAB0FB1006DFB81 /* CoreDataHandler.swift */; settings = {ASSET_TAGS = (); }; };
 		7F6983221BAB184B006DFB81 /* GoalHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6983211BAB184B006DFB81 /* GoalHandler.swift */; settings = {ASSET_TAGS = (); }; };
@@ -56,6 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7F4C2B801BAE08780051F904 /* TSCurrencyTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TSCurrencyTextField.h; path = TSCurrencyTextField/TSCurrencyTextField.h; sourceTree = "<group>"; };
+		7F4C2B811BAE08780051F904 /* TSCurrencyTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TSCurrencyTextField.m; path = TSCurrencyTextField/TSCurrencyTextField.m; sourceTree = "<group>"; };
 		7F69831D1BAA6F0B006DFB81 /* Habit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 		7F69831F1BAB0FB1006DFB81 /* CoreDataHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
 		7F6983211BAB184B006DFB81 /* GoalHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalHandler.swift; sourceTree = "<group>"; };
@@ -154,6 +157,8 @@
 				7FEE73791BA381C4004FE494 /* Main.storyboard */,
 				7FEE73DA1BAA2DEE004FE494 /* Goals Tab */,
 				7FEE73C01BA737A9004FE494 /* globalFuncs.swift */,
+				7F4C2B811BAE08780051F904 /* TSCurrencyTextField.m */,
+				7F4C2B801BAE08780051F904 /* TSCurrencyTextField.h */,
 				7FEE73C21BAA27AF004FE494 /* TextFieldEffects */,
 				7FEE73B41BA3E435004FE494 /* Progress View Files */,
 				7FEE73A61BA381E9004FE494 /* Supporting Files */,
@@ -374,6 +379,7 @@
 				7FEE73D71BAA27AF004FE494 /* YokoTextField.swift in Sources */,
 				7FEE73D31BAA27AF004FE494 /* KaedeTextField.swift in Sources */,
 				7FEE73B31BA3E33E004FE494 /* ASProgressPopUpView.m in Sources */,
+				7F4C2B821BAE08780051F904 /* TSCurrencyTextField.m in Sources */,
 				7FEE73761BA381C4004FE494 /* AppDelegate.swift in Sources */,
 				7F69831E1BAA6F0B006DFB81 /* Habit.swift in Sources */,
 				7F6983201BAB0FB1006DFB81 /* CoreDataHandler.swift in Sources */,
