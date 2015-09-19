@@ -60,7 +60,9 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
             goalAmountTextField.placeholderColor = UIColor.lightGrayColor()
             goalAmountTextField.borderInactiveColor = UIColor.darkGrayColor()
             goalAmountTextField.borderActiveColor = PivitColor()
-            goalAmountTextField.addTarget(self, action: "onTextChanged:", forControlEvents: .EditingChanged)
+            //goalAmountTextField.addTarget(self, action: "onTextChanged:", forControlEvents: .EditingChanged)
+            goalAmountTextField.keyboardType = UIKeyboardType.NumbersAndPunctuation
+            
         }
     }
     
@@ -79,21 +81,7 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         self.view.frame.origin.y += 180
     }
     
-    func onTextChanged(sender: UITextField) {
-        
-        //var newString = ""
-        
-        let startIndex = sender.text!.startIndex
-        let endIndex = startIndex.advancedBy(1)
-        let range = Range<String.Index>(start: startIndex, end: endIndex)
-        let firstLetterString = sender.text!.substringWithRange(range)
-        
-        if firstLetterString == "$" {
-            
-        }
-        
-        
-    }
+    
     
     //MARK: - Outlet Funcs
 
