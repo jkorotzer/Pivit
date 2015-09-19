@@ -13,6 +13,5 @@
 #import "ASProgressPopUpView.h"
 #import "ASPopUpView.m"
 #import "ASPopUpView.h"
-#import "TSCurrencyTextField.m"
 
 #endif

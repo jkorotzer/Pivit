@@ -89,6 +89,9 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
     
     private func updateUI() {
         
+        let numberFormatter = NSNumberFormatter()
+        numberFormatter.numberStyle = .CurrencyStyle
+        
         if let data = goalHandler.currentGoal?.picture {
             if let image = UIImage(data: data) {
                 goalImage.image = image
@@ -105,17 +108,19 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
         
         if let progress = goalHandler.currentGoal?.progress {
             progressBar.progress = Float(progress)
-            progressLabel.text = "progress: $\(progress)"
+            let progressNum = numberFormatter.stringFromNumber(progress)!
+            progressLabel.text = "progress: \(progressNum)"
         } else {
             progressBar.progress = Float(0)
-            progressLabel.text = "progress: $0"
+            progressLabel.text = "progress: $0.00"
         }
         progressBar.showPopUpViewAnimated(true)
         progressBar.popUpView.cornerRadius = CGFloat(16.0)
         progressBar.popUpViewColor = PivitColor()
         
         if let money = goalHandler.currentGoal?.totalMoneyNeeded {
-            totalAmountNeededLabel.text = "price: $\(money)"
+            let moneyNum = numberFormatter.stringFromNumber(money)!
+            totalAmountNeededLabel.text = "price: \(moneyNum)"
         } else {
             totalAmountNeededLabel.text = "$0.00"
         }
