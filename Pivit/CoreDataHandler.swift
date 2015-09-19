@@ -77,6 +77,13 @@ class CoreDataHandler {
             entity.setValuesForKeysWithDictionary(keysAndValues)
         }
         
+        do {
+            try context.save()
+            print("saved")
+        } catch {
+            print("error")
+        }
+        
     }
     
     //Saves new object to Core Data

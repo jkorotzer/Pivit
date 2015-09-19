@@ -42,8 +42,8 @@ class GoalHandler: CoreDataHandler {
         let image = UIImagePNGRepresentation(picture)!
         let id = NSUUID().UUIDString
         
-        let keys = ["id", "dateStarted", "isCurrentGoal", "progress", "title", "picture", "totalMoneyNeeded"] as [NSCopying]
-        let values = [id, NSDate(), true, 0.0, goalname, image, totalMoneyNeeded] as [AnyObject]
+        let keys = ["id", "dateStarted", "currentGoal", "progress", "title", "picture", "totalMoneyNeeded"] as [NSCopying]
+        let values = [id, NSDate(), NSNumber(bool: true), 0.0, goalname, image, totalMoneyNeeded] as [AnyObject]
         let attributesDictionary = NSDictionary(objects: values, forKeys: keys)
         
         saveNewObjectForEntity(entity: .Goal, attributesDictionary: attributesDictionary)
@@ -57,19 +57,17 @@ class GoalHandler: CoreDataHandler {
     //Use to set a different goal as the user's current goal.
     func setNewCurrentGoal(newCurrentGoal newCurrentGoal: Goal) {
         
-        let keys = ["id", "dateStarted", "isCurrentGoal", "progress", "title", "picture", "totalMoneyNeeded"] as [NSCopying]
+        let keys = ["id", "dateStarted", "currentGoal", "progress", "title", "picture", "totalMoneyNeeded"] as [NSCopying]
         
-        if Goals.count > 0 {
-            for goal in Goals {
-                if goal.id == newCurrentGoal.id {
-                    let values = [goal.id, goal.dateStarted, true, goal.progress, goal.title, goal.picture, goal.totalMoneyNeeded] as [AnyObject]
-                    let attributesDictionary = NSDictionary(objects: values, forKeys: keys)
-                    editExistingObjectForEntity(entity: .Goal, id: goal.id, attributesDictionary: attributesDictionary)
-                } else {
-                    let values = [goal.id, goal.dateStarted, false, goal.progress, goal.title, goal.picture, goal.totalMoneyNeeded] as [AnyObject]
-                    let attributesDictionary = NSDictionary(objects: values, forKeys: keys)
-                    editExistingObjectForEntity(entity: .Goal, id: goal.id, attributesDictionary: attributesDictionary)
-                }
+        for goal in Goals {
+            if goal.id == newCurrentGoal.id {
+                let values = [goal.id, goal.dateStarted, NSNumber(bool: true), goal.progress, goal.title, goal.picture, goal.totalMoneyNeeded] as [AnyObject]
+                let attributesDictionary = NSDictionary(objects: values, forKeys: keys)
+                editExistingObjectForEntity(entity: .Goal, id: goal.id, attributesDictionary: attributesDictionary)
+            } else {
+                let values = [goal.id, goal.dateStarted, NSNumber(bool: false), goal.progress, goal.title, goal.picture, goal.totalMoneyNeeded] as [AnyObject]
+                let attributesDictionary = NSDictionary(objects: values, forKeys: keys)
+                editExistingObjectForEntity(entity: .Goal, id: goal.id, attributesDictionary: attributesDictionary)
             }
         }
     }
@@ -79,7 +77,7 @@ class GoalHandler: CoreDataHandler {
         
         let id = goalToEdit.id
         let dateStarted = goalToEdit.dateStarted
-        let isCurrentGoal = goalToEdit.isCurrentGoal
+        let isCurrentGoal = goalToEdit.currentGoal
         let progress = goalToEdit.progress
         
         var title: String?
@@ -104,7 +102,7 @@ class GoalHandler: CoreDataHandler {
             totalMoneyNeeded = goalToEdit.totalMoneyNeeded
         }
         
-        let keys = ["id", "dateStarted", "isCurrentGoal", "progress", "title", "picture", "totalMoneyNeeded"] as [NSCopying]
+        let keys = ["id", "dateStarted", "currentGoal", "progress", "title", "picture", "totalMoneyNeeded"] as [NSCopying]
         let values = [id, dateStarted, isCurrentGoal, progress, title!, picture!, totalMoneyNeeded!] as [AnyObject]
         let attributesDict = NSDictionary(objects: values, forKeys: keys)
         
@@ -118,8 +116,8 @@ class GoalHandler: CoreDataHandler {
         var progress = goal.progress
         progress += moneyToPush
         
-        let keys = ["id", "dateStarted", "isCurrentGoal", "progress", "title", "picture", "totalMoneyNeeded"] as [NSCopying]
-        let values = [goal.id, goal.dateStarted, goal.isCurrentGoal, progress, goal.title, goal.picture, goal.totalMoneyNeeded] as [AnyObject]
+        let keys = ["id", "dateStarted", "currentGoal", "progress", "title", "picture", "totalMoneyNeeded"] as [NSCopying]
+        let values = [goal.id, goal.dateStarted, goal.currentGoal, progress, goal.title, goal.picture, goal.totalMoneyNeeded] as [AnyObject]
         let attributesDictionary = NSDictionary(objects: values, forKeys: keys)
         
         editExistingObjectForEntity(entity: .Goal, id: goal.id, attributesDictionary: attributesDictionary)
@@ -128,7 +126,6 @@ class GoalHandler: CoreDataHandler {
     //MARK: - Private funcs
     
     private func getSpecificGoalbyId(id id: String) -> Goal? {
-        print("getting goal")
         if Goals.count > 0 {
             for goal in Goals {
                 if goal.id == id {

@@ -16,6 +16,14 @@ class Goal: NSManagedObject {
     @NSManaged var totalMoneyNeeded: Double
     @NSManaged var progress: Double
     @NSManaged var id: String
-    @NSManaged var isCurrentGoal: Bool
+    @NSManaged var currentGoal: NSNumber
+    var isCurrentGoal: Bool {
+        get {
+            return Bool(currentGoal)
+        }
+        set {
+            currentGoal = NSNumber(bool: newValue)
+        }
+    }
     @NSManaged var dateStarted: NSDate
 }
