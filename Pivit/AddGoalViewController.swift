@@ -99,6 +99,8 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         }
         
         handler.saveNewGoal(goalName: goalName!, totalMoneyNeeded: goalMoneyNecessary!, picture: picture!)
+        
+        performSegueWithIdentifier("goalSubmitted", sender: self)
     }
     
     //MARK: - UIPickerController Handling

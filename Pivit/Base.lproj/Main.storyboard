@@ -353,7 +353,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GoalCell" rowHeight="454" id="uLf-cB-ddm" customClass="GoalTableViewCell" customModule="Pivit" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="320" height="454"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="454"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uLf-cB-ddm" id="Deg-vz-N1m">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="453.5"/>
@@ -622,6 +622,7 @@
                         <outlet property="goalAmountTextField" destination="jaw-TZ-v9m" id="LKD-Ij-4Qu"/>
                         <outlet property="goalImage" destination="787-8F-M03" id="e9p-wO-SL4"/>
                         <outlet property="goalNameTextField" destination="kKo-nb-h64" id="hcu-NQ-wVi"/>
+                        <segue destination="Zo7-41-yTx" kind="show" identifier="goalSubmitted" id="lux-jO-VBD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4xw-xL-y1b" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -648,4 +649,7 @@
             <point key="canvasLocation" x="1078" y="630"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="lux-jO-VBD"/>
+    </inferredMetricsTieBreakers>
 </document>
