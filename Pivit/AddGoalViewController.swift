@@ -60,9 +60,8 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
             goalAmountTextField.placeholderColor = UIColor.lightGrayColor()
             goalAmountTextField.borderInactiveColor = UIColor.darkGrayColor()
             goalAmountTextField.borderActiveColor = PivitColor()
-            //goalAmountTextField.addTarget(self, action: "onTextChanged:", forControlEvents: .EditingChanged)
             goalAmountTextField.keyboardType = UIKeyboardType.NumbersAndPunctuation
-            
+            goalAmountTextField.addTarget(self, action: "formatCurrency:", forControlEvents: .EditingChanged)
         }
     }
     
@@ -81,7 +80,16 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         self.view.frame.origin.y += 180
     }
     
-    
+    func formatCurrency(textField: UITextField) {
+        var currentString = textField.text!.stringByReplacingOccurrencesOfString("$", withString: "")
+        print("format \(textField)")
+        let formatter = NSNumberFormatter()
+        formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
+        formatter.locale = NSLocale(localeIdentifier: "en_US")
+        let numberFromField = (NSString(string: currentString).doubleValue)
+        currentString = formatter.stringFromNumber(numberFromField)!
+        textField.text = currentString
+    }
     
     //MARK: - Outlet Funcs
 
