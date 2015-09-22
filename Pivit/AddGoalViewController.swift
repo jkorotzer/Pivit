@@ -57,7 +57,6 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     
     @IBOutlet weak var goalAmountTextField: HoshiTextField!{
         didSet{
-            goalAmountTextField.tag = 100
             goalAmountTextField.delegate = self
             goalAmountTextField.tag = 200
             goalAmountTextField.borderStyle = .None
