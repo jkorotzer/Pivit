@@ -58,12 +58,13 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     @IBOutlet weak var goalAmountTextField: HoshiTextField!{
         didSet{
             goalAmountTextField.delegate = self
+            goalAmountTextField.tag = 200
             goalAmountTextField.borderStyle = .None
             goalAmountTextField.placeholder = "$0.00"
             goalAmountTextField.placeholderColor = UIColor.lightGrayColor()
             goalAmountTextField.borderInactiveColor = UIColor.darkGrayColor()
             goalAmountTextField.borderActiveColor = PivitColor()
-            goalAmountTextField.keyboardType = UIKeyboardType.NumbersAndPunctuation
+            goalAmountTextField.keyboardType = UIKeyboardType.NumberPad
         }
     }
     
@@ -83,25 +84,51 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     }
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        print("HI")
-        switch string {
-        case "0","1","2","3","4","5","6","7","8","9":
-            currentString += string
-            print(currentString)
-            formatCurrency(string: currentString)
-        default:
-            let array = Array(arrayLiteral: string)
-            var currentStringArray = Array(arrayLiteral: currentString)
-            if array.count == 0 && currentStringArray.count != 0 {
-                currentStringArray.removeLast()
-                currentString = ""
-                for character in currentStringArray {
-                    currentString += String(character)
+        if textField.tag == 200 {
+            switch string {
+            case "0","1","2","3","4","5","6","7","8","9":
+                if textField.text?.characters.count > 7 {
+                    return false
                 }
+                currentString += string
+                print(currentString)
                 formatCurrency(string: currentString)
+            default:
+                let array = Array(arrayLiteral: string)
+                var currentStringArray = Array(arrayLiteral: currentString)
+                if array.count == 0 && currentStringArray.count != 0 {
+                    currentStringArray.removeLast()
+                    currentString = ""
+                    for character in currentStringArray {
+                        currentString += String(character)
+                    }
+                    formatCurrency(string: currentString)
+                } else {
+                    if currentString.characters.count<=1 {
+                        currentString=""
+                        formatCurrency(string: currentString)
+                    } else {
+                        let endIndex = currentString.endIndex
+                        let lastCharacterIndex = endIndex.advancedBy(-1)
+                        currentString.removeAtIndex(lastCharacterIndex)
+                        formatCurrency(string: currentString)
+                    }
+                    
+                }
             }
+            return false
         }
-        return false
+        else{
+            let  char = string.cStringUsingEncoding(NSUTF8StringEncoding)!
+            var isBackSpace = strcmp(char, "\\b")
+            if !(isBackSpace == -92) &&  textField.text?.characters.count > 25{
+                return false
+            }
+            else{
+                return true
+            }
+            
+        }
     }
     
     func formatCurrency(string string: String) {
@@ -112,9 +139,10 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         let numberFromField = (NSString(string: currentString).doubleValue)/100
         goalAmountTextField.text = formatter.stringFromNumber(numberFromField)
     }
+
     
     //MARK: - Outlet Funcs
-
+    
     @IBAction func goBack(sender: UIBarButtonItem) {
         goalNameTextField.resignFirstResponder()
         goalAmountTextField.resignFirstResponder()
