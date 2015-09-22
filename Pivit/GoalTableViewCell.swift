@@ -16,13 +16,11 @@ class GoalTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
     }
     
     //MARK: - Model
@@ -33,6 +31,8 @@ class GoalTableViewCell: UITableViewCell {
         }
     }
     
+    weak var delegate: GoalTableViewCellTableView?
+        
     //MARK: - Outlet Properties
     
     @IBOutlet weak var progressView: ASProgressPopUpView! {
@@ -57,10 +57,10 @@ class GoalTableViewCell: UITableViewCell {
     private func updateUI() {
         
         let numberFormatter = NSNumberFormatter()
+        let date = NSDate()
         numberFormatter.numberStyle = .CurrencyStyle
         
         goalNameLabel.text = goal!.title
-        goalImageView.image = UIImage(data: goal!.picture)
         progressLabel.text = "\(numberFormatter.stringFromNumber(goal!.progress)!)"
         progressView.progress = Float(goal!.progress)
     }

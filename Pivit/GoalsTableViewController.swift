@@ -21,12 +21,68 @@ class GoalsTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        localGoalsIsSelected = true
         reloadTableView()
     }
 
+    //MARK: - Outlet Properties
+    
+    @IBOutlet weak var navigationView: UIView! {
+        didSet {
+            navigationView.backgroundColor = UIColor.clearColor()
+        }
+    }
+    
+    @IBOutlet weak var meButton: UIButton! {
+        didSet {
+            meButton.layer.borderColor = UIColor.whiteColor().CGColor
+            meButton.layer.cornerRadius = 5.0
+        }
+    }
+    
+    @IBOutlet weak var friendsButton: UIButton! {
+        didSet {
+            friendsButton.layer.borderColor = UIColor.whiteColor().CGColor
+            friendsButton.layer.cornerRadius = 5.0
+        }
+    }
+    
+    //MARK: - Outlet Funcs
+    
+    @IBAction func myGoalsSelected(sender: UIButton) {
+        localGoalsIsSelected = true
+        reloadTableView()
+    }
+    
+    @IBAction func friendsGoalsSelected(sender: AnyObject) {
+        localGoalsIsSelected = false
+        reloadTableView()
+    }
+    
+    
     //MARK: - Model
     
     private var goalHandler = GoalHandler()
+    
+    private var goals = [Goal]()
+    
+    private var goalImages = [UIImage]()
+    
+    private var localGoalsIsSelected = true {
+        didSet {
+            if localGoalsIsSelected {
+                meButton.setTitleColor(PivitColor(), forState: .Normal)
+                meButton.backgroundColor = UIColor.whiteColor()
+                friendsButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+                friendsButton.backgroundColor = UIColor.clearColor()
+            } else {
+                meButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+                meButton.backgroundColor = UIColor.clearColor()
+                friendsButton.setTitleColor(PivitColor(), forState: .Normal)
+                friendsButton.backgroundColor = UIColor.whiteColor()
+            }
+        }
+    }
     
     // MARK: - Table view data source
 
@@ -35,13 +91,19 @@ class GoalsTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return goalHandler.Goals.count
+        if localGoalsIsSelected {
+            return goals.count
+        } else {
+            return 0
+        }
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCellWithIdentifier(StoryboardKeys.GoalCell, forIndexPath: indexPath) as? GoalTableViewCell {
-            cell.goal = goalHandler.Goals[indexPath.row]
+            //cell.delegate = self
+            cell.goal = goals[indexPath.row]
+            cell.goalImageView.image = goalImages[indexPath.row]
             return cell
         }
         return UITableViewCell()
@@ -61,9 +123,18 @@ class GoalsTableViewController: UITableViewController {
     //MARK: - Private Funcs
     
     private func reloadTableView() {
+        setModel()
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
             self.tableView.reloadData()
         })
+    }
+    
+    private func setModel() {
+        goals = goalHandler.fetchGoals()
+        goalImages = [UIImage]()
+        for goal in goals {
+            goalImages.append(UIImage(data: goal.picture)!)
+        }
     }
     
     //MARK: - Constants

@@ -353,7 +353,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GoalCell" rowHeight="454" id="uLf-cB-ddm" customClass="GoalTableViewCell" customModule="Pivit" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="320" height="454"/>
+                                <rect key="frame" x="0.0" y="92" width="320" height="454"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uLf-cB-ddm" id="Deg-vz-N1m">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="453.5"/>
@@ -517,10 +517,54 @@
                         <view key="titleView" contentMode="scaleToFill" id="fAW-VN-UUx">
                             <rect key="frame" x="96" y="5.5" width="128" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Imq-J9-pZ2">
+                                    <rect key="frame" x="0.0" y="0.0" width="60" height="32"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <state key="normal" title="Me"/>
+                                    <connections>
+                                        <action selector="myGoalsSelected:" destination="Zo7-41-yTx" eventType="touchUpInside" id="6hy-07-VhL"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NaI-di-45I">
+                                    <rect key="frame" x="68" y="0.0" width="60" height="32"/>
+                                    <state key="normal" title="Friends"/>
+                                    <connections>
+                                        <action selector="friendsGoalsSelected:" destination="Zo7-41-yTx" eventType="touchUpInside" id="phg-Q2-1fB"/>
+                                    </connections>
+                                </button>
+                            </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="NaI-di-45I" secondAttribute="trailing" id="1h3-Ph-ua3"/>
+                                <constraint firstItem="Imq-J9-pZ2" firstAttribute="centerX" secondItem="fAW-VN-UUx" secondAttribute="centerX" id="1sY-od-2St"/>
+                                <constraint firstItem="Imq-J9-pZ2" firstAttribute="leading" secondItem="fAW-VN-UUx" secondAttribute="leading" id="1tb-Rw-qFs"/>
+                                <constraint firstItem="Imq-J9-pZ2" firstAttribute="leading" secondItem="fAW-VN-UUx" secondAttribute="leading" id="4CJ-G0-Qb1"/>
+                                <constraint firstItem="NaI-di-45I" firstAttribute="top" secondItem="fAW-VN-UUx" secondAttribute="top" id="8zh-3g-4aS"/>
+                                <constraint firstItem="Imq-J9-pZ2" firstAttribute="top" secondItem="fAW-VN-UUx" secondAttribute="top" id="HIH-iD-RAy"/>
+                                <constraint firstAttribute="trailing" secondItem="NaI-di-45I" secondAttribute="trailing" id="K3w-mj-biz"/>
+                                <constraint firstItem="NaI-di-45I" firstAttribute="leading" secondItem="Imq-J9-pZ2" secondAttribute="trailing" constant="8" symbolic="YES" id="Me4-aa-pzz"/>
+                                <constraint firstItem="Imq-J9-pZ2" firstAttribute="centerY" secondItem="NaI-di-45I" secondAttribute="centerY" id="RaB-PW-RA2"/>
+                                <constraint firstAttribute="trailing" secondItem="Imq-J9-pZ2" secondAttribute="trailing" constant="72" id="TJ3-Kn-InL"/>
+                                <constraint firstItem="NaI-di-45I" firstAttribute="centerY" secondItem="fAW-VN-UUx" secondAttribute="centerY" id="ar4-P5-A4M"/>
+                                <constraint firstItem="Imq-J9-pZ2" firstAttribute="width" secondItem="NaI-di-45I" secondAttribute="width" id="b8F-rz-ULV"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="1sY-od-2St"/>
+                                    <exclude reference="1tb-Rw-qFs"/>
+                                    <exclude reference="TJ3-Kn-InL"/>
+                                    <exclude reference="K3w-mj-biz"/>
+                                </mask>
+                            </variation>
                         </view>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="friendsButton" destination="NaI-di-45I" id="LqU-PK-25A"/>
+                        <outlet property="meButton" destination="Imq-J9-pZ2" id="CXw-5p-xUQ"/>
+                        <outlet property="navigationView" destination="fAW-VN-UUx" id="0pf-5q-hfd"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fsG-Z2-gVE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -538,14 +582,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="787-8F-M03">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="787-8F-M03">
                                 <rect key="frame" x="9.5" y="28" width="356" height="356.5"/>
                                 <color key="backgroundColor" red="1" green="0.46646868699999999" blue="0.82238801890000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="787-8F-M03" secondAttribute="height" multiplier="1:1" id="wCj-13-Pv4"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jaw-TZ-v9m" customClass="HoshiTextField" customModule="Pivit" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jaw-TZ-v9m" customClass="HoshiTextField" customModule="Pivit" customModuleProvider="target">
                                 <rect key="frame" x="9" y="508" width="356.5" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="eZq-5W-6VA"/>
@@ -553,15 +597,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rlc-U8-y1P">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rlc-U8-y1P">
                                 <rect key="frame" x="9" y="566" width="356.5" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lyM-Q4-Tpa">
-                                <rect key="frame" x="9" y="392.5" width="356.5" height="49.5"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lyM-Q4-Tpa">
+                                <rect key="frame" x="9" y="392" width="356.5" height="49.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kKo-nb-h64" customClass="HoshiTextField" customModule="Pivit" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kKo-nb-h64" customClass="HoshiTextField" customModule="Pivit" customModuleProvider="target">
                                 <rect key="frame" x="9" y="450" width="356.5" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="EIu-D1-LeC"/>
@@ -650,6 +694,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="lux-jO-VBD"/>
+        <segue reference="oPm-qd-VaE"/>
     </inferredMetricsTieBreakers>
 </document>
