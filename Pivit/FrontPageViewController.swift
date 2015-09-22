@@ -19,6 +19,7 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         let tapped = UITapGestureRecognizer(target: self, action: "closeKeyboard")
+        tapped.numberOfTapsRequired = 1
         self.view.addGestureRecognizer(tapped)
     }
 
@@ -84,8 +85,7 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
     
     //MARK : - UITextField Funcs
     func closeKeyboard(){
-        print("SHIT")
-        whatsItForAmountTextField.resignFirstResponder()
+        self.view.endEditing(true)
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {

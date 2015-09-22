@@ -17,6 +17,10 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         super.viewDidLoad()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
+        let tapped = UITapGestureRecognizer(target: self, action: "closeKeyboard")
+        tapped.numberOfTapsRequired = 1
+        self.view.addGestureRecognizer(tapped)
+
         
     }
 
@@ -69,6 +73,10 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     }
     
     //MARK : - TextField Funcs
+    
+    func closeKeyboard(){
+            self.view.endEditing(true)
+    }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
