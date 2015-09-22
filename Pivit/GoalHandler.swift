@@ -37,6 +37,21 @@ class GoalHandler: CoreDataHandler {
     //MARK: - Public Functions
     
     //Use to save a new goal to core data
+    
+    func fetchGoals() -> [Goal] {
+        var Goals = [Goal]()
+        let appDel : AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let context : NSManagedObjectContext = appDel.managedObjectContext
+        let request = NSFetchRequest(entityName: "Goal")
+        request.returnsObjectsAsFaults = false
+        do {
+            Goals = try context.executeFetchRequest(request) as! [Goal]
+        } catch {
+            print ("error")
+        }
+        return Goals
+    }
+    
     func saveNewGoal(goalName goalname: String, totalMoneyNeeded: Double, picture: UIImage) {
         
         let image = UIImagePNGRepresentation(picture)!

@@ -75,11 +75,11 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     }
     
     func keyboardWillShow(sender: NSNotification) {
-        self.view.frame.origin.y -= 180
+        self.view.frame.origin.y -= 200
     }
     
     func keyboardWillHide(sender: NSNotification) {
-        self.view.frame.origin.y += 180
+        self.view.frame.origin.y += 200
     }
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
@@ -115,8 +115,14 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     
     //MARK: - Outlet Funcs
 
-    @IBAction func saveNewGoal(sender: UIBarButtonItem) {
-        
+    @IBAction func goBack(sender: UIBarButtonItem) {
+        goalNameTextField.resignFirstResponder()
+        goalAmountTextField.resignFirstResponder()
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+
+    @IBAction func done(sender: UIBarButtonItem) {
         var goalName: String?
         var goalMoneyNecessary: Double?
         
@@ -132,8 +138,11 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         
         handler.saveNewGoal(goalName: goalName!, totalMoneyNeeded: goalMoneyNecessary!, picture: picture!)
         
-        performSegueWithIdentifier("goalSubmitted", sender: self)
+        goalNameTextField.resignFirstResponder()
+        goalAmountTextField.resignFirstResponder()
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
     
     //MARK: - UIPickerController Handling
     

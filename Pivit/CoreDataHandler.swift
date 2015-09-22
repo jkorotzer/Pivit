@@ -17,21 +17,6 @@ enum EntityToEdit {
 //This class is meant to be subclassed! Do not instantiate. Use GoalHandler or HabitHandler instead.
 class CoreDataHandler {
     
-    //Returns array of Goals from CoreData
-    func fetchGoals() -> [Goal] {
-        var Goals = [Goal]()
-        let appDel : AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        let context : NSManagedObjectContext = appDel.managedObjectContext
-        let request = NSFetchRequest(entityName: "Goal")
-        request.returnsObjectsAsFaults = false
-        do {
-            Goals = try context.executeFetchRequest(request) as! [Goal]
-        } catch {
-            print ("error")
-        }
-        return Goals
-    }
-    
     //Returns array of Habits from CoreData
     func fetchHabits() -> [Habit] {
         var Habits = [Habit]()

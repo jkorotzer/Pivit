@@ -137,10 +137,12 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
     
     private func updateUI() {
         
+        let currentGoal : Goal? = goalHandler.currentGoal
+        
         let numberFormatter = NSNumberFormatter()
         numberFormatter.numberStyle = .CurrencyStyle
         
-        if let data = goalHandler.currentGoal?.picture {
+        if let data = currentGoal?.picture {
             if let image = UIImage(data: data) {
                 goalImage.image = image
             }
@@ -148,13 +150,13 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
             goalImage.image = imageHandler.generateClickToAddPhoto()
         }
         
-        if let text = goalHandler.currentGoal?.title {
+        if let text = currentGoal?.title {
             currentGoalLabel.text = text
         } else {
             currentGoalLabel.text = "please set your goal!"
         }
         
-        if let progress = goalHandler.currentGoal?.progress {
+        if let progress = currentGoal?.progress {
             progressBar.progress = Float(progress)
             let progressNum = numberFormatter.stringFromNumber(progress)!
             progressLabel.text = "progress: \(progressNum)"
@@ -166,7 +168,7 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
         progressBar.popUpView.cornerRadius = CGFloat(16.0)
         progressBar.popUpViewColor = PivitColor()
         
-        if let money = goalHandler.currentGoal?.totalMoneyNeeded {
+        if let money = currentGoal?.totalMoneyNeeded {
             let moneyNum = numberFormatter.stringFromNumber(money)!
             totalAmountNeededLabel.text = "price: \(moneyNum)"
         } else {
