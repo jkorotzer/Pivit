@@ -511,7 +511,7 @@
                         <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" title="new" id="9Ok-1R-5Tl">
                             <connections>
-                                <segue destination="3x3-8D-1tL" kind="show" identifier="addNewGoal" id="XwB-qi-35s"/>
+                                <segue destination="EQz-re-7gw" kind="presentation" identifier="addNewGoal" id="XwB-qi-35s"/>
                             </connections>
                         </barButtonItem>
                         <view key="titleView" contentMode="scaleToFill" id="fAW-VN-UUx">
@@ -582,40 +582,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="787-8F-M03">
-                                <rect key="frame" x="9.5" y="28" width="356" height="356.5"/>
-                                <color key="backgroundColor" red="1" green="0.46646868699999999" blue="0.82238801890000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="787-8F-M03" secondAttribute="height" multiplier="1:1" id="wCj-13-Pv4"/>
-                                </constraints>
-                            </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jaw-TZ-v9m" customClass="HoshiTextField" customModule="Pivit" customModuleProvider="target">
-                                <rect key="frame" x="9" y="508" width="356.5" height="50"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jaw-TZ-v9m" customClass="HoshiTextField" customModule="Pivit" customModuleProvider="target">
+                                <rect key="frame" x="9" y="529" width="356.5" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="eZq-5W-6VA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rlc-U8-y1P">
-                                <rect key="frame" x="9" y="566" width="356.5" height="49"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rlc-U8-y1P">
+                                <rect key="frame" x="9" y="587" width="356.5" height="27.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lyM-Q4-Tpa">
-                                <rect key="frame" x="9" y="392" width="356.5" height="49.5"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lyM-Q4-Tpa">
+                                <rect key="frame" x="9" y="436" width="356.5" height="27.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kKo-nb-h64" customClass="HoshiTextField" customModule="Pivit" customModuleProvider="target">
-                                <rect key="frame" x="9" y="450" width="356.5" height="50"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kKo-nb-h64" customClass="HoshiTextField" customModule="Pivit" customModuleProvider="target">
+                                <rect key="frame" x="9" y="471" width="356.5" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="EIu-D1-LeC"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="787-8F-M03">
+                                <rect key="frame" x="9" y="72" width="356" height="356.5"/>
+                                <color key="backgroundColor" red="1" green="0.46646868699999999" blue="0.82238801890000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="787-8F-M03" secondAttribute="height" multiplier="1:1" id="wCj-13-Pv4"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="787-8F-M03" firstAttribute="top" secondItem="qWu-TY-uDH" secondAttribute="bottom" constant="8" symbolic="YES" id="01j-FL-ity"/>
                             <constraint firstItem="jaw-TZ-v9m" firstAttribute="leading" secondItem="787-8F-M03" secondAttribute="leading" id="1ze-TB-TYN"/>
                             <constraint firstItem="lyM-Q4-Tpa" firstAttribute="trailing" secondItem="787-8F-M03" secondAttribute="trailing" id="45b-ba-UVk"/>
                             <constraint firstItem="kKo-nb-h64" firstAttribute="leading" secondItem="787-8F-M03" secondAttribute="leading" id="5CZ-95-BIk"/>
@@ -630,6 +631,7 @@
                             <constraint firstItem="lyM-Q4-Tpa" firstAttribute="height" secondItem="Rlc-U8-y1P" secondAttribute="height" id="L50-dS-UGi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="787-8F-M03" secondAttribute="trailing" id="LwX-Q3-VKi"/>
                             <constraint firstItem="lyM-Q4-Tpa" firstAttribute="top" secondItem="787-8F-M03" secondAttribute="bottom" constant="8" symbolic="YES" id="Qmm-NV-Nk3"/>
+                            <constraint firstItem="787-8F-M03" firstAttribute="top" secondItem="qWu-TY-uDH" secondAttribute="bottom" constant="8" symbolic="YES" id="Uuj-P9-eU9"/>
                             <constraint firstItem="kKo-nb-h64" firstAttribute="top" secondItem="lyM-Q4-Tpa" secondAttribute="bottom" constant="8" symbolic="YES" id="aES-0n-QRw"/>
                             <constraint firstItem="jaw-TZ-v9m" firstAttribute="top" secondItem="kKo-nb-h64" secondAttribute="bottom" constant="8" symbolic="YES" id="bJh-JB-9Rd"/>
                             <constraint firstItem="lyM-Q4-Tpa" firstAttribute="leading" secondItem="787-8F-M03" secondAttribute="leading" id="exo-Ed-8Hs"/>
@@ -641,22 +643,29 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="01j-FL-ity"/>
                                 <exclude reference="LwX-Q3-VKi"/>
                                 <exclude reference="rlg-QQ-Rkf"/>
+                                <exclude reference="yoU-B8-xDf"/>
                             </mask>
                         </variation>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="GuW-z1-fjU">
+                    <navigationItem key="navigationItem" id="z0z-7L-agT">
                         <nil key="title"/>
-                        <view key="titleView" contentMode="scaleToFill" id="dEe-8D-p4c">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="23c-sv-v2g">
+                            <connections>
+                                <action selector="goBack:" destination="3x3-8D-1tL" id="8ar-Rd-yAc"/>
+                            </connections>
+                        </barButtonItem>
+                        <view key="titleView" contentMode="scaleToFill" id="wD2-lL-tme">
                             <rect key="frame" x="112.5" y="5.5" width="150" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="7Fo-dS-uvC">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="iA4-kp-vrr">
                             <connections>
-                                <action selector="saveNewGoal:" destination="3x3-8D-1tL" id="qdn-uo-cIQ"/>
+                                <action selector="done:" destination="3x3-8D-1tL" id="LMK-3i-r6G"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -666,12 +675,11 @@
                         <outlet property="goalAmountTextField" destination="jaw-TZ-v9m" id="LKD-Ij-4Qu"/>
                         <outlet property="goalImage" destination="787-8F-M03" id="e9p-wO-SL4"/>
                         <outlet property="goalNameTextField" destination="kKo-nb-h64" id="hcu-NQ-wVi"/>
-                        <segue destination="Zo7-41-yTx" kind="show" identifier="goalSubmitted" id="lux-jO-VBD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4xw-xL-y1b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2093.5" y="629.5"/>
+            <point key="canvasLocation" x="2625.5" y="629.5"/>
         </scene>
         <!--Item-->
         <scene sceneID="p75-HB-GSw">
@@ -692,8 +700,23 @@
             </objects>
             <point key="canvasLocation" x="1078" y="630"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jDF-aN-igi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EQz-re-7gw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ujv-LV-GdG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3x3-8D-1tL" kind="relationship" relationship="rootViewController" id="GoA-YJ-fep"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mNv-XU-vap" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2093" y="629"/>
+        </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="oPm-qd-VaE"/>
-    </inferredMetricsTieBreakers>
 </document>
