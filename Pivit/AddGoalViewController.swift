@@ -10,11 +10,14 @@ import UIKit
 import MobileCoreServices
 
 class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    
+    var currentString = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,8 +55,8 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         }
     }
     
-    @IBOutlet weak var goalAmountTextField: HoshiTextField! {
-        didSet {
+    @IBOutlet weak var goalAmountTextField: HoshiTextField!{
+        didSet{
             goalAmountTextField.delegate = self
             goalAmountTextField.borderStyle = .None
             goalAmountTextField.placeholder = "$0.00"
@@ -61,7 +64,6 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
             goalAmountTextField.borderInactiveColor = UIColor.darkGrayColor()
             goalAmountTextField.borderActiveColor = PivitColor()
             goalAmountTextField.keyboardType = UIKeyboardType.NumbersAndPunctuation
-            goalAmountTextField.addTarget(self, action: "formatCurrency:", forControlEvents: .EditingChanged)
         }
     }
     
@@ -80,15 +82,35 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         self.view.frame.origin.y += 180
     }
     
-    func formatCurrency(textField: UITextField) {
-        var currentString = textField.text!.stringByReplacingOccurrencesOfString("$", withString: "")
-        print("format \(textField)")
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        print("HI")
+        switch string {
+        case "0","1","2","3","4","5","6","7","8","9":
+            currentString += string
+            print(currentString)
+            formatCurrency(string: currentString)
+        default:
+            let array = Array(arrayLiteral: string)
+            var currentStringArray = Array(arrayLiteral: currentString)
+            if array.count == 0 && currentStringArray.count != 0 {
+                currentStringArray.removeLast()
+                currentString = ""
+                for character in currentStringArray {
+                    currentString += String(character)
+                }
+                formatCurrency(string: currentString)
+            }
+        }
+        return false
+    }
+    
+    func formatCurrency(string string: String) {
+        print("format \(string)")
         let formatter = NSNumberFormatter()
         formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
         formatter.locale = NSLocale(localeIdentifier: "en_US")
-        let numberFromField = (NSString(string: currentString).doubleValue)
-        currentString = formatter.stringFromNumber(numberFromField)!
-        textField.text = currentString
+        let numberFromField = (NSString(string: currentString).doubleValue)/100
+        goalAmountTextField.text = formatter.stringFromNumber(numberFromField)
     }
     
     //MARK: - Outlet Funcs

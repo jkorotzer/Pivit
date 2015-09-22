@@ -10,9 +10,10 @@ import UIKit
 import CoreData
 
 class FrontPageViewController: UIViewController, UITextFieldDelegate {
+    var currentString = ""
     
     //MARK: - Lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -42,6 +43,7 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var whatsItForAmountTextField: UITextField! {
         didSet {
+            whatsItForAmountTextField.tag=100
             whatsItForAmountTextField.delegate = self
         }
     }
@@ -73,6 +75,52 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        if textField.tag == 100 {
+        switch string {
+        case "0","1","2","3","4","5","6","7","8","9":
+            currentString += string
+            print(currentString)
+            formatCurrency(string: currentString)
+        case "delete":
+            print("NICE")
+        default:
+            let array = Array(arrayLiteral: string)
+            var currentStringArray = Array(arrayLiteral: currentString)
+            if array.count == 0 && currentStringArray.count != 0 {
+                currentStringArray.removeLast()
+                currentString = ""
+                for character in currentStringArray {
+                    currentString += String(character)
+                }
+                formatCurrency(string: currentString)
+            } else {
+                print("HI")
+                let letters = NSCharacterSet.letterCharacterSet()
+                for letter in string.unicodeScalars {
+                    if !letters.longCharacterIsMember(letter.value) {
+                        currentStringArray.removeLast()
+                        currentString = ""
+                        for character in currentStringArray {
+                            currentString += String(character)
+                        }
+                        formatCurrency(string: currentString)
+                    }
+                }
+            }
+            }
+        }
+        return false
+    }
+    
+    func formatCurrency(string string: String) {
+        print("format \(string)")
+        let formatter = NSNumberFormatter()
+        formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
+        formatter.locale = NSLocale(localeIdentifier: "en_US")
+        let numberFromField = (NSString(string: currentString).doubleValue)/100
+        whatsItForAmountTextField.text = formatter.stringFromNumber(numberFromField)
     }
     
     /*
