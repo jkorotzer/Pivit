@@ -129,7 +129,7 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
         }
         else{
             let  char = string.cStringUsingEncoding(NSUTF8StringEncoding)!
-            var isBackSpace = strcmp(char, "\\b")
+            let isBackSpace = strcmp(char, "\\b")
             if !(isBackSpace == -92) &&  textField.text?.characters.count > 25{
                 return false
             }
