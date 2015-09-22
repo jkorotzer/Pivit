@@ -57,6 +57,7 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     
     @IBOutlet weak var goalAmountTextField: HoshiTextField!{
         didSet{
+            goalAmountTextField.tag = 100
             goalAmountTextField.delegate = self
             goalAmountTextField.borderStyle = .None
             goalAmountTextField.placeholder = "$0.00"
@@ -83,7 +84,7 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     }
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        print("HI")
+        if textField.tag == 100 {
         switch string {
         case "0","1","2","3","4","5","6","7","8","9":
             currentString += string
@@ -101,11 +102,13 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
                 formatCurrency(string: currentString)
             }
         }
-        return false
+            return false
+        } else {
+            return true
+        }
     }
     
     func formatCurrency(string string: String) {
-        print("format \(string)")
         let formatter = NSNumberFormatter()
         formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
         formatter.locale = NSLocale(localeIdentifier: "en_US")
@@ -128,8 +131,11 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         
         let picture = goalImage.image
         
-        if let money = Double(goalAmountTextField.text!) {
-            goalMoneyNecessary = money
+        if let currentString = goalAmountTextField.text {
+            let moneyString = currentString.stringByReplacingOccurrencesOfString("$", withString: "")
+            if let money = Double(moneyString) {
+                goalMoneyNecessary = money
+            }
         }
         
         if let name = goalNameTextField.text {
