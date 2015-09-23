@@ -10,7 +10,6 @@ import UIKit
 import CoreData
 
 class FrontPageViewController: UIViewController, UITextFieldDelegate {
-    var currentString = ""
     
     //MARK: - Lifecycle
     
@@ -64,6 +63,8 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
     
     private var imageHandler = ImageHandler()
     
+    private var currentString = ""
+    
     //MARK: - Outlet Funcs
     
     @IBAction func submitCustomAmount(sender: UIButton) {
@@ -83,8 +84,6 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
             currentString += string
             print(currentString)
             formatCurrency(string: currentString)
-        case "delete":
-            print("NICE")
         default:
             let array = Array(arrayLiteral: string)
             var currentStringArray = Array(arrayLiteral: currentString)
