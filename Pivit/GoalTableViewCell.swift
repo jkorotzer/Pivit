@@ -62,7 +62,7 @@ class GoalTableViewCell: UITableViewCell {
         let date = NSDate()
         numberFormatter.numberStyle = .CurrencyStyle
         
-        //goalNameLabel.text = goal!.title
+        goalNameLabel.text = goal!.title
         //print(date.description)
         //goalTimeLabel.text = date.description
         

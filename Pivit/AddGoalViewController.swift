@@ -126,14 +126,12 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
                 }
             }
             return false
-        }
-        else{
+        } else {
             let  char = string.cStringUsingEncoding(NSUTF8StringEncoding)!
             let isBackSpace = strcmp(char, "\\b")
-            if !(isBackSpace == -92) &&  textField.text?.characters.count > 25{
+            if !(isBackSpace == -92) &&  textField.text?.characters.count > 25 {
                 return false
-            }
-            else{
+            } else {
                 return true
             }
             
@@ -165,9 +163,9 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         let picture = goalImage.image
         
         if let currentString = goalAmountTextField.text {
-            print(currentString)
             let moneyString = currentString.stringByReplacingOccurrencesOfString("$", withString: "")
-            if let money = Double(moneyString) {
+            let moneyWithoutComma = moneyString.stringByReplacingOccurrencesOfString(",", withString: "")
+            if let money = Double(moneyWithoutComma) {
                 goalMoneyNecessary = money
             }
         }
