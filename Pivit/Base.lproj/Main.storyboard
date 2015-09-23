@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QdY-QV-a89">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QdY-QV-a89">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -42,10 +42,10 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$0.00" textAlignment="natural" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="MoV-MX-Dsu">
-                                        <rect key="frame" x="231" y="340" width="65" height="30"/>
+                                        <rect key="frame" x="206" y="340" width="90" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="65" id="ebk-n4-FHQ"/>
-                                            <constraint firstAttribute="width" constant="65" id="zMx-QK-qYA"/>
+                                            <constraint firstAttribute="width" constant="90" id="zMx-QK-qYA"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -141,7 +141,7 @@
                                         </variation>
                                     </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="100" verticalHuggingPriority="100" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What's it for?" textAlignment="natural" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="tih-JA-0fg">
-                                        <rect key="frame" x="20" y="340" width="203" height="30"/>
+                                        <rect key="frame" x="20" y="340" width="178" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Uhc-n4-Jxi"/>
                                             <constraint firstAttribute="height" constant="35" id="Y0z-NO-AtN"/>
@@ -192,6 +192,7 @@
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="8zd-01-lCD" firstAttribute="height" secondItem="6C1-E3-AFW" secondAttribute="height" id="0xz-9T-p8d"/>
                                     <constraint firstItem="MoV-MX-Dsu" firstAttribute="bottom" secondItem="tih-JA-0fg" secondAttribute="bottom" id="0y0-2z-PuJ"/>
@@ -278,10 +279,10 @@
                                         <exclude reference="3wY-dv-HaF"/>
                                         <exclude reference="40G-fZ-jE9"/>
                                         <exclude reference="pvW-SH-ISA"/>
-                                        <exclude reference="7W1-Ud-qu7"/>
                                         <exclude reference="0y0-2z-PuJ"/>
                                         <exclude reference="XnC-mg-foF"/>
                                         <exclude reference="chM-Z8-eII"/>
+                                        <exclude reference="7W1-Ud-qu7"/>
                                         <exclude reference="8mq-tE-ItU"/>
                                         <exclude reference="A12-DK-ZOF"/>
                                         <exclude reference="6T5-y0-4SW"/>
@@ -662,6 +663,7 @@
                             <rect key="frame" x="112.5" y="5.5" width="150" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <gestureRecognizers/>
                         </view>
                         <barButtonItem key="rightBarButtonItem" title="Done" id="iA4-kp-vrr">
                             <connections>

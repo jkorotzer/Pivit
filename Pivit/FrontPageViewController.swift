@@ -15,6 +15,9 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tapped = UITapGestureRecognizer(target: self, action: "closeKeyboard")
+        tapped.numberOfTapsRequired = 1
+        self.view.addGestureRecognizer(tapped)
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,6 +29,11 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
         updateUI()
     }
     
+    /*override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        
+        print("HI")
+        super.touchesBegan(touches, withEvent: event)
+    }*/
     //MARK: - Outlet Properties
     
     @IBOutlet weak var currentGoalLabel: UILabel!
@@ -44,6 +52,7 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
         didSet {
             whatsItForAmountTextField.tag=100
             whatsItForAmountTextField.delegate = self
+            whatsItForAmountTextField.keyboardType=UIKeyboardType.NumberPad
         }
     }
     
@@ -67,11 +76,16 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: - Outlet Funcs
     
+    
+    
     @IBAction func submitCustomAmount(sender: UIButton) {
 
     }
     
     //MARK : - UITextField Funcs
+    func closeKeyboard(){
+        self.view.endEditing(true)
+    }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -93,25 +107,47 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
                 for character in currentStringArray {
                     currentString += String(character)
                 }
+                currentString += string
+                print(currentString)
                 formatCurrency(string: currentString)
-            } else {
-                print("HI")
-                let letters = NSCharacterSet.letterCharacterSet()
-                for letter in string.unicodeScalars {
-                    if !letters.longCharacterIsMember(letter.value) {
-                        currentStringArray.removeLast()
-                        currentString = ""
-                        for character in currentStringArray {
-                            currentString += String(character)
-                        }
+            default:
+                let array = Array(arrayLiteral: string)
+                var currentStringArray = Array(arrayLiteral: currentString)
+                if array.count == 0 && currentStringArray.count != 0 {
+                    currentStringArray.removeLast()
+                    currentString = ""
+                    for character in currentStringArray {
+                        currentString += String(character)
+                    }
+                    formatCurrency(string: currentString)
+                } else {
+                    if currentString.characters.count<=1 {
+                        currentString=""
+                        formatCurrency(string: currentString)
+                    } else {
+                        let endIndex = currentString.endIndex
+                        let lastCharacterIndex = endIndex.advancedBy(-1)
+                        currentString.removeAtIndex(lastCharacterIndex)
                         formatCurrency(string: currentString)
                     }
+                
                 }
             }
-            }
+            return false
         }
-        return false
+        else{
+            let  char = string.cStringUsingEncoding(NSUTF8StringEncoding)!
+            let isBackSpace = strcmp(char, "\\b")
+            if !(isBackSpace == -92) &&  textField.text?.characters.count > 25{
+                return false
+            }
+            else{
+                return true
+            }
+
+        }
     }
+    
     
     func formatCurrency(string string: String) {
         print("format \(string)")
