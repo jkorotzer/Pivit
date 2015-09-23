@@ -50,7 +50,7 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var whatsItForAmountTextField: UITextField! {
         didSet {
-            whatsItForAmountTextField.tag=100
+            whatsItForAmountTextField.tag = 100
             whatsItForAmountTextField.delegate = self
             whatsItForAmountTextField.keyboardType=UIKeyboardType.NumberPad
         }
@@ -135,13 +135,13 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
             }
             return false
         }
-        else{
+        else {
             let  char = string.cStringUsingEncoding(NSUTF8StringEncoding)!
             let isBackSpace = strcmp(char, "\\b")
             if !(isBackSpace == -92) &&  textField.text?.characters.count > 25{
                 return false
             }
-            else{
+            else {
                 return true
             }
 
