@@ -131,7 +131,7 @@ class GoalsTableViewController: UITableViewController {
     }
     
     private func setModel() {
-        goals = goalHandler.fetchGoals()
+        goals = goalHandler.Goals
         goalImages = [UIImage]()
         for goal in goals {
             goalImages.append(UIImage(data: goal.picture)!)
