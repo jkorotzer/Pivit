@@ -83,13 +83,17 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     }
     
     func keyboardWillShow(sender: NSNotification) {
+        if !keyBoard {
+            self.view.frame.origin.y -= 200
+        }
         keyBoard = true
-        self.view.frame.origin.y -= 200
     }
     
     func keyboardWillHide(sender: NSNotification) {
+        if keyBoard {
+            self.view.frame.origin.y += 200
+        }
         keyBoard = false
-        self.view.frame.origin.y += 200
     }
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {

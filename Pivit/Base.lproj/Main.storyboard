@@ -655,7 +655,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="z0z-7L-agT">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="23c-sv-v2g">
+                        <barButtonItem key="leftBarButtonItem" title="back" id="23c-sv-v2g">
                             <connections>
                                 <action selector="goBack:" destination="3x3-8D-1tL" id="8ar-Rd-yAc"/>
                             </connections>
@@ -666,7 +666,7 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <gestureRecognizers/>
                         </view>
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="iA4-kp-vrr">
+                        <barButtonItem key="rightBarButtonItem" title="done" id="iA4-kp-vrr">
                             <connections>
                                 <action selector="done:" destination="3x3-8D-1tL" id="LMK-3i-r6G"/>
                             </connections>
