@@ -62,8 +62,9 @@ class GoalTableViewCell: UITableViewCell {
         let date = NSDate()
         numberFormatter.numberStyle = .CurrencyStyle
         
-        goalNameLabel.text = goal!.title
-        goalTimeLabel.text = date.description
+        //goalNameLabel.text = goal!.title
+        //print(date.description)
+        //goalTimeLabel.text = date.description
         
         progressLabel.text = "\(numberFormatter.stringFromNumber(goal!.progress)!)"
         progressView.progress = Float(goal!.progress)
