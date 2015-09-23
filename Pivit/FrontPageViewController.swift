@@ -95,21 +95,11 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
         if textField.tag == 100 {
         switch string {
         case "0","1","2","3","4","5","6","7","8","9":
+            if textField.text?.characters.count > 7 {
+                return false
+            }
             currentString += string
-            print(currentString)
             formatCurrency(string: currentString)
-        default:
-            let array = Array(arrayLiteral: string)
-            var currentStringArray = Array(arrayLiteral: currentString)
-            if array.count == 0 && currentStringArray.count != 0 {
-                currentStringArray.removeLast()
-                currentString = ""
-                for character in currentStringArray {
-                    currentString += String(character)
-                }
-                currentString += string
-                print(currentString)
-                formatCurrency(string: currentString)
             default:
                 let array = Array(arrayLiteral: string)
                 var currentStringArray = Array(arrayLiteral: currentString)
