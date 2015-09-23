@@ -497,6 +497,7 @@
                                 <connections>
                                     <outlet property="goalImageView" destination="Q0V-r2-oV2" id="hGa-HP-jB8"/>
                                     <outlet property="goalNameLabel" destination="KqW-HB-18E" id="sum-ew-Y8f"/>
+                                    <outlet property="goalTimeLabel" destination="Zf2-rR-X9r" id="xfN-4k-T48"/>
                                     <outlet property="progressLabel" destination="Jn0-Kz-Pab" id="zWn-zd-7wn"/>
                                     <outlet property="progressView" destination="8B3-3z-N3l" id="EXt-Dk-P0F"/>
                                     <outlet property="timeLabel" destination="Zf2-rR-X9r" id="w1G-dJ-6hJ"/>

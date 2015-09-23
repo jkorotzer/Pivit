@@ -104,6 +104,7 @@ class GoalsTableViewController: UITableViewController {
             //cell.delegate = self
             cell.goal = goals[indexPath.row]
             cell.goalImageView.image = goalImages[indexPath.row]
+            
             return cell
         }
         return UITableViewCell()

@@ -11,7 +11,8 @@ import CoreData
 
 class FrontPageViewController: UIViewController, UITextFieldDelegate {
     
-    var currentString = ""
+    private var currentString = ""
+    private var KeyBoard = false
    
     
     //MARK: - Lifecycle
@@ -23,6 +24,10 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
         let tapped = UITapGestureRecognizer(target: self, action: "closeKeyboard")
         tapped.numberOfTapsRequired = 1
         self.view.addGestureRecognizer(tapped)
+    }
+    
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -91,11 +96,11 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
     }
     
     func keyboardWillShow(sender: NSNotification) {
-        
+        KeyBoard = true
     }
     
     func keyboardWillHide(sender: NSNotification) {
-        
+        KeyBoard = false
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -149,6 +154,7 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
 
         }
     }
+    
     
     
     func formatCurrency(string string: String) {

@@ -44,6 +44,8 @@ class GoalTableViewCell: UITableViewCell {
         
     }
     
+    @IBOutlet weak var goalTimeLabel: UILabel!
+    
     @IBOutlet weak var goalNameLabel: UILabel!
     
     @IBOutlet weak var timeLabel: UILabel!
@@ -61,8 +63,12 @@ class GoalTableViewCell: UITableViewCell {
         numberFormatter.numberStyle = .CurrencyStyle
         
         goalNameLabel.text = goal!.title
+        goalTimeLabel.text = date.description
+        
         progressLabel.text = "\(numberFormatter.stringFromNumber(goal!.progress)!)"
         progressView.progress = Float(goal!.progress)
+        
+        
     }
     
 }
