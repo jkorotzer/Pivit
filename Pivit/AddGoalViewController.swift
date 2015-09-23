@@ -20,8 +20,6 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         let tapped = UITapGestureRecognizer(target: self, action: "closeKeyboard")
         tapped.numberOfTapsRequired = 1
         self.view.addGestureRecognizer(tapped)
-
-        
     }
 
     override func didReceiveMemoryWarning() {

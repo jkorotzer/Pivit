@@ -11,6 +11,9 @@ import CoreData
 
 class FrontPageViewController: UIViewController, UITextFieldDelegate {
     
+    var currentString = ""
+   
+    
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -50,7 +53,7 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var whatsItForAmountTextField: UITextField! {
         didSet {
-            whatsItForAmountTextField.tag = 100
+            whatsItForAmountTextField.tag=100
             whatsItForAmountTextField.delegate = self
             whatsItForAmountTextField.keyboardType=UIKeyboardType.NumberPad
         }
@@ -72,8 +75,6 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
     
     private var imageHandler = ImageHandler()
     
-    private var currentString = ""
-    
     //MARK: - Outlet Funcs
     
     
@@ -93,13 +94,14 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
     }
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         if textField.tag == 100 {
-        switch string {
-        case "0","1","2","3","4","5","6","7","8","9":
-            if textField.text?.characters.count > 7 {
-                return false
-            }
-            currentString += string
-            formatCurrency(string: currentString)
+            switch string {
+            case "0","1","2","3","4","5","6","7","8","9":
+                if textField.text?.characters.count > 7 {
+                    return false
+                }
+                currentString += string
+                print(currentString)
+                formatCurrency(string: currentString)
             default:
                 let array = Array(arrayLiteral: string)
                 var currentStringArray = Array(arrayLiteral: currentString)
@@ -125,13 +127,13 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
             }
             return false
         }
-        else {
+        else{
             let  char = string.cStringUsingEncoding(NSUTF8StringEncoding)!
             let isBackSpace = strcmp(char, "\\b")
             if !(isBackSpace == -92) &&  textField.text?.characters.count > 25{
                 return false
             }
-            else {
+            else{
                 return true
             }
 
