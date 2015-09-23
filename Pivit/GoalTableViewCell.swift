@@ -59,16 +59,49 @@ class GoalTableViewCell: UITableViewCell {
     private func updateUI() {
         
         let numberFormatter = NSNumberFormatter()
-        let date = NSDate()
         numberFormatter.numberStyle = .CurrencyStyle
         
         goalNameLabel.text = goal!.title
-        //print(date.description)
-        //goalTimeLabel.text = date.description
+        goalTimeLabel.text = getDate(time: goal!.dateStarted)
         
         progressLabel.text = "\(numberFormatter.stringFromNumber(goal!.progress)!)"
         progressView.progress = Float(goal!.progress)
         
+        
+    }
+    
+    private func getDate(time time: NSDate) -> String
+    {
+        let timeAfterStart = Int(NSDate().timeIntervalSinceDate(time))
+        if(timeAfterStart < 60){
+            if(timeAfterStart==1){
+                return "" +  String(timeAfterStart) + " second"
+            }
+            return "" +  String(timeAfterStart) + " seconds"
+        }
+        else if(timeAfterStart < 3600){
+            let minutes = timeAfterStart/60
+            if(minutes==1){
+                return "" +  String(minutes) + " minute"
+            }
+            return "" + String(minutes) + " minutes"
+        }
+        else if(timeAfterStart < 86400)
+        {
+            let hours = timeAfterStart/3600
+            if(hours==1){
+                return "" +  String(hours) + " hour"
+            }
+            return "" + String(hours) + " hours"
+        }
+        else
+        {
+            let days = timeAfterStart/86400
+            if(days==1){
+                return "" + String(days) + " day"
+            }
+            return "" + String(days) + " days"
+        }
         
     }
     

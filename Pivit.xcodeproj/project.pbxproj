@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B3F5B5E1BB32C89006FB75F /* HabitHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3F5B5D1BB32C89006FB75F /* HabitHandler.swift */; settings = {ASSET_TAGS = (); }; };
 		7F69831E1BAA6F0B006DFB81 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F69831D1BAA6F0B006DFB81 /* Habit.swift */; settings = {ASSET_TAGS = (); }; };
 		7F6983201BAB0FB1006DFB81 /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F69831F1BAB0FB1006DFB81 /* CoreDataHandler.swift */; settings = {ASSET_TAGS = (); }; };
 		7F6983221BAB184B006DFB81 /* GoalHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6983211BAB184B006DFB81 /* GoalHandler.swift */; settings = {ASSET_TAGS = (); }; };
@@ -56,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B3F5B5D1BB32C89006FB75F /* HabitHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitHandler.swift; sourceTree = "<group>"; };
 		7F69831D1BAA6F0B006DFB81 /* Habit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 		7F69831F1BAB0FB1006DFB81 /* CoreDataHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
 		7F6983211BAB184B006DFB81 /* GoalHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalHandler.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			children = (
 				7F69831D1BAA6F0B006DFB81 /* Habit.swift */,
 				7FEE73A91BA382EB004FE494 /* Goal.swift */,
+				1B3F5B5D1BB32C89006FB75F /* HabitHandler.swift */,
 				7F69831F1BAB0FB1006DFB81 /* CoreDataHandler.swift */,
 				7F6983211BAB184B006DFB81 /* GoalHandler.swift */,
 				7F6983251BAB5257006DFB81 /* ImageHandler.swift */,
@@ -390,6 +393,7 @@
 				7F6983221BAB184B006DFB81 /* GoalHandler.swift in Sources */,
 				7FEE737E1BA381C4004FE494 /* Pivit.xcdatamodeld in Sources */,
 				7FEE73BF1BA52AF8004FE494 /* GoalTableViewCell.swift in Sources */,
+				1B3F5B5E1BB32C89006FB75F /* HabitHandler.swift in Sources */,
 				7FEE73CE1BAA27AF004FE494 /* AkiraTextField.swift in Sources */,
 				7FEE73D91BAA2DE7004FE494 /* AddGoalViewController.swift in Sources */,
 				7FEE73D61BAA27AF004FE494 /* TextFieldsEffects.swift in Sources */,

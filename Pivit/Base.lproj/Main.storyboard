@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QdY-QV-a89">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QdY-QV-a89">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -376,14 +376,14 @@
                                             </variation>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfC-s7-eSp">
-                                            <rect key="frame" x="8" y="355.5" width="30" height="30"/>
+                                            <rect key="frame" x="8" y="355" width="30" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="rfC-s7-eSp" secondAttribute="height" multiplier="1:1" id="nLu-Yw-OoH"/>
                                             </constraints>
                                             <state key="normal" title="icon"/>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="progress: 30$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jn0-Kz-Pab">
-                                            <rect key="frame" x="46" y="355.5" width="91" height="30"/>
+                                            <rect key="frame" x="46" y="355" width="91" height="30"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -395,13 +395,13 @@
                                             <rect key="frame" x="8" y="424" width="304" height="21.5"/>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HJf-QB-oTh">
-                                            <rect key="frame" x="8" y="385.5" width="304" height="38.5"/>
+                                            <rect key="frame" x="8" y="385" width="304" height="38.5"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="43m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zf2-rR-X9r">
-                                            <rect key="frame" x="277" y="8" width="35" height="35"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zf2-rR-X9r">
+                                            <rect key="frame" x="219" y="8" width="93" height="35"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" secondItem="Zf2-rR-X9r" secondAttribute="height" multiplier="1:1" id="fXJ-9Q-U8W"/>
+                                                <constraint firstAttribute="width" secondItem="Zf2-rR-X9r" secondAttribute="height" multiplier="1:1" constant="58" id="fXJ-9Q-U8W"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -453,7 +453,7 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="Q0V-r2-oV2" secondAttribute="trailing" id="iUb-f3-ze2"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="Q0V-r2-oV2" secondAttribute="leading" id="iuL-e9-seQ"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="HJf-QB-oTh" secondAttribute="leading" id="jGT-nn-C4m"/>
-                                        <constraint firstItem="Zf2-rR-X9r" firstAttribute="leading" secondItem="KqW-HB-18E" secondAttribute="trailing" constant="8" symbolic="YES" id="jgo-nB-uEq"/>
+                                        <constraint firstItem="Zf2-rR-X9r" firstAttribute="leading" secondItem="KqW-HB-18E" secondAttribute="trailing" constant="-50" id="jgo-nB-uEq"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="KqW-HB-18E" secondAttribute="leading" id="ky5-AL-lmx"/>
                                         <constraint firstItem="Zf2-rR-X9r" firstAttribute="trailing" secondItem="Q0V-r2-oV2" secondAttribute="trailing" id="nfB-Uh-3b6"/>
                                         <constraint firstItem="Jn0-Kz-Pab" firstAttribute="leading" secondItem="rfC-s7-eSp" secondAttribute="trailing" constant="8" symbolic="YES" id="oSE-u1-HZC"/>

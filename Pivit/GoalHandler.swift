@@ -137,7 +137,7 @@ class GoalHandler: CoreDataHandler {
         return nil
     }
     
-    private func fetchGoals() -> [Goal] {
+    func fetchGoals() -> [Goal] {
         var Goals = [Goal]()
         let appDel : AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let context : NSManagedObjectContext = appDel.managedObjectContext
