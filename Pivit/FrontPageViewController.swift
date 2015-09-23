@@ -18,6 +18,8 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
         let tapped = UITapGestureRecognizer(target: self, action: "closeKeyboard")
         tapped.numberOfTapsRequired = 1
         self.view.addGestureRecognizer(tapped)
@@ -86,6 +88,14 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
     //MARK : - UITextField Funcs
     func closeKeyboard(){
         self.view.endEditing(true)
+    }
+    
+    func keyboardWillShow(sender: NSNotification) {
+        
+    }
+    
+    func keyboardWillHide(sender: NSNotification) {
+        
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
