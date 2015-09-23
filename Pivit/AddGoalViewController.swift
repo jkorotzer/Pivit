@@ -11,7 +11,8 @@ import MobileCoreServices
 
 class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    var currentString = ""
+    private var currentString = ""
+    private var keyBoard = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,10 +83,12 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     }
     
     func keyboardWillShow(sender: NSNotification) {
+        keyBoard = true
         self.view.frame.origin.y -= 200
     }
     
     func keyboardWillHide(sender: NSNotification) {
+        keyBoard = false
         self.view.frame.origin.y += 200
     }
     
@@ -162,6 +165,7 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         let picture = goalImage.image
         
         if let currentString = goalAmountTextField.text {
+            print(currentString)
             let moneyString = currentString.stringByReplacingOccurrencesOfString("$", withString: "")
             if let money = Double(moneyString) {
                 goalMoneyNecessary = money
@@ -183,6 +187,10 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     //MARK: - UIPickerController Handling
     
     func imageTapped(img: AnyObject) {
+        if keyBoard{
+            closeKeyboard()
+        }
+        else{
         let photoActionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
         photoActionSheet.addAction(UIAlertAction(title: "Take Photo", style: .Default)
             {[unowned self] (action: UIAlertAction) -> Void in
@@ -198,6 +206,7 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
             })
         photoActionSheet.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
         presentViewController(photoActionSheet, animated: true, completion: nil)
+        }
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
