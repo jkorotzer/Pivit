@@ -39,11 +39,6 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
         updateUI()
     }
     
-    /*override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        
-        print("HI")
-        super.touchesBegan(touches, withEvent: event)
-    }*/
     //MARK: - Outlet Properties
     
     @IBOutlet weak var currentGoalLabel: UILabel!
