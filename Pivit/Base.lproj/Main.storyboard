@@ -173,6 +173,17 @@
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xST-p8-VPw">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="92.5"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="25k-WV-gVj">
+                                                <rect key="frame" x="20" y="20" width="335" height="52.5"/>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="25k-WV-gVj" firstAttribute="leading" secondItem="xST-p8-VPw" secondAttribute="leading" constant="20" symbolic="YES" id="2Fu-PK-9WJ"/>
+                                            <constraint firstItem="25k-WV-gVj" firstAttribute="top" secondItem="xST-p8-VPw" secondAttribute="top" constant="20" symbolic="YES" id="E59-5v-MVu"/>
+                                            <constraint firstAttribute="bottom" secondItem="25k-WV-gVj" secondAttribute="bottom" constant="20" symbolic="YES" id="lhS-KT-TRA"/>
+                                            <constraint firstAttribute="trailing" secondItem="25k-WV-gVj" secondAttribute="trailing" constant="20" symbolic="YES" id="to1-M0-a64"/>
+                                        </constraints>
                                     </view>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="100" verticalHuggingPriority="100" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6C1-E3-AFW">
                                         <rect key="frame" x="20" y="378" width="106" height="106"/>
