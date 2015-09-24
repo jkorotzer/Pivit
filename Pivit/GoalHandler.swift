@@ -111,8 +111,13 @@ class GoalHandler: CoreDataHandler {
         
     }
     
+    //Use to push money to current goal
+    func pushMoneyToCurrentGoal(moneyToPush moneyToPush: Double) {
+        pushMoneyToGoal(goal: currentGoal!, moneyToPush: moneyToPush)
+    }
+    
     //Use to push money to a specific goal.
-    func pushMoneyToGoal(goal goal: Goal, moneyToPush: Double) {
+    private func pushMoneyToGoal(goal goal: Goal, moneyToPush: Double) {
         
         var progress = goal.progress
         progress += moneyToPush
