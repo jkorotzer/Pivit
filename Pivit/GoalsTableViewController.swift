@@ -12,6 +12,7 @@ class GoalsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.allowsSelection = false
         self.tableView.rowHeight = self.tableView.frame.size.height - self.navigationController!.navigationBar.frame.size.height - tabBar.tabBar.frame.size.height - CGFloat(30.0)
     }
 

@@ -54,7 +54,7 @@ class HabitHandler: CoreDataHandler {
         return Habits
     }
     
-    //Edit an existing habit
+    //Edit an existing habit. Pass anything not changed as nil.
     
     func editExistingHabit(habitToEdit habitToEdit: Habit, newValue: Double?, newTitle: String?, newIcon: UIImage?) {
         
