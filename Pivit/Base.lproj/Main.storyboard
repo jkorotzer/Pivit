@@ -55,19 +55,12 @@
                                             </mask>
                                         </variation>
                                     </textField>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="100" verticalHuggingPriority="100" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6C1-E3-AFW">
-                                        <rect key="frame" x="20" y="378" width="106" height="106"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="6C1-E3-AFW" secondAttribute="height" multiplier="1:1" id="XHv-w0-HfH"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                    </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BHv-2Z-DGa">
                                         <rect key="frame" x="134" y="378" width="106" height="106"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="BHv-2Z-DGa" secondAttribute="height" multiplier="1:1" id="mjI-Qy-eE3"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="Button 2"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="mjI-Qy-eE3"/>
@@ -79,7 +72,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="5Xu-3r-DWh" secondAttribute="height" multiplier="1:1" id="fwQ-W2-Htt"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="Button 3"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="fwQ-W2-Htt"/>
@@ -91,7 +84,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="vJw-1x-U7a" secondAttribute="height" multiplier="1:1" id="nB7-Xs-9EE"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="Button 4"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="nB7-Xs-9EE"/>
@@ -103,7 +96,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="pCW-IP-byg" secondAttribute="height" multiplier="1:1" id="ePE-5k-epf"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="Button 5"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="ePE-5k-epf"/>
@@ -115,7 +108,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="8zd-01-lCD" secondAttribute="height" multiplier="1:1" id="s0E-3C-xbb"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="Button 6"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="s0E-3C-xbb"/>
@@ -190,6 +183,13 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xST-p8-VPw">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="92.5"/>
                                     </view>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="100" verticalHuggingPriority="100" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6C1-E3-AFW">
+                                        <rect key="frame" x="20" y="378" width="106" height="106"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="6C1-E3-AFW" secondAttribute="height" multiplier="1:1" id="XHv-w0-HfH"/>
+                                        </constraints>
+                                        <state key="normal" title="Button 1"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
@@ -361,7 +361,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skydiving: $550" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KqW-HB-18E">
-                                            <rect key="frame" x="8" y="8" width="261" height="35"/>
+                                            <rect key="frame" x="8" y="8" width="246" height="35"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="35" id="3G7-b6-wB7"/>
                                                 <constraint firstAttribute="height" constant="28.5" id="v9V-Px-GPd"/>
@@ -399,13 +399,19 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zf2-rR-X9r">
-                                            <rect key="frame" x="219" y="8" width="93" height="35"/>
+                                            <rect key="frame" x="262" y="8" width="50" height="35"/>
                                             <constraints>
+                                                <constraint firstAttribute="width" constant="50" id="VLz-bn-Xa4"/>
                                                 <constraint firstAttribute="width" secondItem="Zf2-rR-X9r" secondAttribute="height" multiplier="1:1" constant="58" id="fXJ-9Q-U8W"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.50905539772727271" green="0.50905539772727271" blue="0.50905539772727271" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="fXJ-9Q-U8W"/>
+                                                </mask>
+                                            </variation>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q0V-r2-oV2">
                                             <rect key="frame" x="8" y="51" width="304" height="304.5"/>
@@ -453,7 +459,7 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="Q0V-r2-oV2" secondAttribute="trailing" id="iUb-f3-ze2"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="Q0V-r2-oV2" secondAttribute="leading" id="iuL-e9-seQ"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="HJf-QB-oTh" secondAttribute="leading" id="jGT-nn-C4m"/>
-                                        <constraint firstItem="Zf2-rR-X9r" firstAttribute="leading" secondItem="KqW-HB-18E" secondAttribute="trailing" constant="-50" id="jgo-nB-uEq"/>
+                                        <constraint firstItem="Zf2-rR-X9r" firstAttribute="leading" secondItem="KqW-HB-18E" secondAttribute="trailing" constant="8" symbolic="YES" id="jgo-nB-uEq"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="KqW-HB-18E" secondAttribute="leading" id="ky5-AL-lmx"/>
                                         <constraint firstItem="Zf2-rR-X9r" firstAttribute="trailing" secondItem="Q0V-r2-oV2" secondAttribute="trailing" id="nfB-Uh-3b6"/>
                                         <constraint firstItem="Jn0-Kz-Pab" firstAttribute="leading" secondItem="rfC-s7-eSp" secondAttribute="trailing" constant="8" symbolic="YES" id="oSE-u1-HZC"/>

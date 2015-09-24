@@ -60,7 +60,7 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
             whatsItForAmountTextField.keyboardType=UIKeyboardType.NumberPad
         }
     }
-    
+        
     @IBOutlet weak var progressLabel: UILabel!
     
     @IBOutlet weak var totalAmountNeededLabel: UILabel!
@@ -191,7 +191,7 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
         if let text = currentGoal?.title {
             currentGoalLabel.text = text
         } else {
-            currentGoalLabel.text = "please set your goal!"
+            currentGoalLabel.text = "please set your goal"
         }
         
         if let progress = currentGoal?.progress {
