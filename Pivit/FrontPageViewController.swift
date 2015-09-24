@@ -93,6 +93,7 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
         currentString = ""
         formatCurrency(string: currentString)
         whatsItForTextField.text = ""
+        closeKeyboard()
         updateUI()
     }
     
