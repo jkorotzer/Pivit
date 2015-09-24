@@ -68,6 +68,9 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var logoView: UIView! {
         didSet {
             logoView.backgroundColor = PivitColor()
+            //logoView.backgroundColor = UIColor(patternImage: UIImage(named: "whitePivit")!)
+            
+            
         }
     }
     
@@ -90,6 +93,7 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
         currentString = ""
         formatCurrency(string: currentString)
         whatsItForTextField.text = ""
+        closeKeyboard()
         updateUI()
     }
     
