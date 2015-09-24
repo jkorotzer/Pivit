@@ -170,6 +170,14 @@
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xST-p8-VPw">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="92.5"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pivitWhite" translatesAutoresizingMaskIntoConstraints="NO" id="uwk-9i-LxH">
+                                                <rect key="frame" x="0.0" y="8" width="375" height="84.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="uwk-9i-LxH" secondAttribute="height" multiplier="125:34" constant="64.33823529411768" id="mLw-PT-WHL"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
                                     </view>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="100" verticalHuggingPriority="100" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6C1-E3-AFW">
                                         <rect key="frame" x="20" y="378" width="106" height="106"/>
@@ -194,9 +202,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <constraints>
+                                    <constraint firstItem="uwk-9i-LxH" firstAttribute="centerX" secondItem="kus-rN-8Be" secondAttribute="centerX" id="0fL-L3-Mki"/>
                                     <constraint firstItem="8zd-01-lCD" firstAttribute="height" secondItem="6C1-E3-AFW" secondAttribute="height" id="0xz-9T-p8d"/>
                                     <constraint firstItem="MoV-MX-Dsu" firstAttribute="bottom" secondItem="tih-JA-0fg" secondAttribute="bottom" id="0y0-2z-PuJ"/>
                                     <constraint firstItem="vJw-1x-U7a" firstAttribute="height" secondItem="6C1-E3-AFW" secondAttribute="height" id="2LS-Ej-OmO"/>
+                                    <constraint firstAttribute="bottom" secondItem="uwk-9i-LxH" secondAttribute="bottom" constant="525.5" id="2mZ-zh-Gks"/>
                                     <constraint firstItem="xST-p8-VPw" firstAttribute="height" secondItem="kus-rN-8Be" secondAttribute="height" multiplier="0.25" id="3BO-6y-BPP"/>
                                     <constraint firstItem="tih-JA-0fg" firstAttribute="top" secondItem="IPP-EW-Vmi" secondAttribute="bottom" constant="8" symbolic="YES" id="3wY-dv-HaF"/>
                                     <constraint firstItem="tih-JA-0fg" firstAttribute="top" secondItem="xST-p8-VPw" secondAttribute="bottom" constant="8" symbolic="YES" id="40G-fZ-jE9"/>
@@ -233,6 +243,7 @@
                                     <constraint firstItem="tZo-bn-rL4" firstAttribute="top" secondItem="MoV-MX-Dsu" secondAttribute="top" id="NZG-Bi-ZTW"/>
                                     <constraint firstItem="CCX-WZ-zBO" firstAttribute="centerY" secondItem="at6-3d-92a" secondAttribute="centerY" id="P8H-fR-eaP"/>
                                     <constraint firstItem="MoV-MX-Dsu" firstAttribute="baseline" secondItem="tih-JA-0fg" secondAttribute="baseline" id="PIT-hl-7Dr"/>
+                                    <constraint firstItem="uwk-9i-LxH" firstAttribute="leading" secondItem="kus-rN-8Be" secondAttribute="leading" id="QUf-Ys-sgH"/>
                                     <constraint firstItem="Iaj-r2-m77" firstAttribute="top" secondItem="at6-3d-92a" secondAttribute="bottom" id="QUk-EU-23C"/>
                                     <constraint firstItem="pCW-IP-byg" firstAttribute="width" secondItem="pCW-IP-byg" secondAttribute="height" multiplier="1:1" id="Qw4-yG-2Rl"/>
                                     <constraint firstItem="vJw-1x-U7a" firstAttribute="width" secondItem="vJw-1x-U7a" secondAttribute="height" multiplier="1:1" id="SOr-uh-Dqf"/>
@@ -728,4 +739,7 @@
             <point key="canvasLocation" x="2093" y="629"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pivitWhite" width="864" height="216"/>
+    </resources>
 </document>
