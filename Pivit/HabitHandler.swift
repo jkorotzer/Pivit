@@ -21,22 +21,18 @@ class HabitHandler: CoreDataHandler {
     
     //Use to save a new Habit to Core Data
     
-    /*
-    Not sure that saveNewHabit is necessary since there are presets that are edited instead of users creating new ones.
-    */
-    
-    /*func saveNewHabit(habitName habitname: String, averageCost: Double, picture: UIImage){
+    func saveNewHabit(habitName habitname: String, averageCost: Double, picture: UIImage){
         let image = UIImagePNGRepresentation(picture)!
         let id = NSUUID().UUIDString
         
-        let keys = ["id", "count", "name", "icon", "averageCost"] as [NSCopying]
+        let keys = ["id", "count", "name", "icon", "averageCost", "isDefaultHabit"] as [NSCopying]
         let values = [id, 0, habitname, image, averageCost] as [AnyObject]
         
         let attributesDictionary = NSDictionary(objects: values, forKeys: keys)
         
         saveNewObjectForEntity(entity: .Habit, attributesDictionary: attributesDictionary)
         
-    }*/
+    }
     
     //Returns array of Habits from CoreData
     
@@ -90,7 +86,21 @@ class HabitHandler: CoreDataHandler {
         let attributesDictionary = NSDictionary(objects: values, forKeys: keys)
         
         editExistingObjectForEntity(entity: .Habit, id: habitToEdit.id, attributesDictionary: attributesDictionary)
+    }
+    
+    //Call whenever a habit is used to increment the count
+    func habitIsUsed(habitUsed habitUsed: Habit) {
+        let averageCost = habitUsed.averageCost
+        let icon = habitUsed.icon
+        let name = habitUsed.name
+        let count = habitUsed.count + 1
+        let id = habitUsed.id
         
+        let keys = ["averageCost", "icon", "name", "count", "id"] as [NSCopying]
+        let values = [averageCost, icon, name, count, id] as [AnyObject]
+        let attributesDictionary = NSDictionary(objects: values, forKeys: keys)
+        
+        editExistingObjectForEntity(entity: .Habit, id: id, attributesDictionary: attributesDictionary)
     }
     
 

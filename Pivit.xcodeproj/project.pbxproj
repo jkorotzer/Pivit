@@ -12,6 +12,7 @@
 		7F6983201BAB0FB1006DFB81 /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F69831F1BAB0FB1006DFB81 /* CoreDataHandler.swift */; settings = {ASSET_TAGS = (); }; };
 		7F6983221BAB184B006DFB81 /* GoalHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6983211BAB184B006DFB81 /* GoalHandler.swift */; settings = {ASSET_TAGS = (); }; };
 		7F6983261BAB5257006DFB81 /* ImageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6983251BAB5257006DFB81 /* ImageHandler.swift */; settings = {ASSET_TAGS = (); }; };
+		7F70D4BA1BB492C30074815F /* EditHabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F70D4B91BB492C30074815F /* EditHabitsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		7FEE73761BA381C4004FE494 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE73751BA381C4004FE494 /* AppDelegate.swift */; };
 		7FEE737B1BA381C4004FE494 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FEE73791BA381C4004FE494 /* Main.storyboard */; };
 		7FEE737E1BA381C4004FE494 /* Pivit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE737C1BA381C4004FE494 /* Pivit.xcdatamodeld */; };
@@ -62,6 +63,7 @@
 		7F69831F1BAB0FB1006DFB81 /* CoreDataHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
 		7F6983211BAB184B006DFB81 /* GoalHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalHandler.swift; sourceTree = "<group>"; };
 		7F6983251BAB5257006DFB81 /* ImageHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHandler.swift; sourceTree = "<group>"; };
+		7F70D4B91BB492C30074815F /* EditHabitsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditHabitsViewController.swift; sourceTree = "<group>"; };
 		7FEE73721BA381C4004FE494 /* Pivit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pivit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FEE73751BA381C4004FE494 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FEE737A1BA381C4004FE494 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				7FD793CD1BB1D38100F808C6 /* Handlers */,
 				7FEE73A71BA38239004FE494 /* FrontPageViewController.swift */,
 				7FEE73791BA381C4004FE494 /* Main.storyboard */,
+				7F70D4B91BB492C30074815F /* EditHabitsViewController.swift */,
 				7FEE73C01BA737A9004FE494 /* globalFuncs.swift */,
 				7FEE73DA1BAA2DEE004FE494 /* Goals Tab */,
 				7FEE73C21BAA27AF004FE494 /* TextFieldEffects */,
@@ -388,6 +391,7 @@
 				7FEE73761BA381C4004FE494 /* AppDelegate.swift in Sources */,
 				7F69831E1BAA6F0B006DFB81 /* Habit.swift in Sources */,
 				7F6983201BAB0FB1006DFB81 /* CoreDataHandler.swift in Sources */,
+				7F70D4BA1BB492C30074815F /* EditHabitsViewController.swift in Sources */,
 				7FEE73D11BAA27AF004FE494 /* IsaoTextField.swift in Sources */,
 				7FEE73BB1BA52A1A004FE494 /* GoalsTableViewController.swift in Sources */,
 				7F6983221BAB184B006DFB81 /* GoalHandler.swift in Sources */,
@@ -546,7 +550,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Pivit.Pivit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Mokacola/PIVIT/Pivit/Pivit/<#Pivit#>-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Jared/Developer/Pivit/Pivit/<#Pivit#>-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -563,7 +567,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Pivit.Pivit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Mokacola/PIVIT/Pivit/Pivit/<#Pivit#>-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Jared/Developer/Pivit/Pivit/<#Pivit#>-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

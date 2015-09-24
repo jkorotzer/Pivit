@@ -111,9 +111,20 @@ class GoalHandler: CoreDataHandler {
         
     }
     
-    //Use to push money to current goal
+    //Use to push money to current goal for the custom amount
     func pushMoneyToCurrentGoal(moneyToPush moneyToPush: Double) {
-        pushMoneyToGoal(goal: currentGoal!, moneyToPush: moneyToPush)
+        if let goal = currentGoal {
+        pushMoneyToGoal(goal: goal, moneyToPush: moneyToPush)
+        }
+    }
+    
+    //Use to push money from a shortcut
+    func pushMoneyToCurrentGoalFromHabit(habit habit: Habit) {
+        if let goal = currentGoal {
+            let habitHandler = HabitHandler()
+            habitHandler.habitIsUsed(habitUsed: habit)
+            pushMoneyToGoal(goal: goal, moneyToPush: habit.averageCost)
+        }
     }
     
     //Use to push money to a specific goal.

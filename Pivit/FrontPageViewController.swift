@@ -149,13 +149,13 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
             }
             return false
         }
-        else{
+        else {
             let  char = string.cStringUsingEncoding(NSUTF8StringEncoding)!
             let isBackSpace = strcmp(char, "\\b")
             if !(isBackSpace == -92) &&  textField.text?.characters.count > 25{
                 return false
             }
-            else{
+            else {
                 return true
             }
 
@@ -206,7 +206,7 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
         progressBar.showPopUpViewAnimated(true)
         progressBar.popUpView.cornerRadius = CGFloat(16.0)
         progressBar.popUpViewColor = PivitColor()
-        progressBar.tintColor = PivitColor()
+        progressBar.progressTintColor = PivitColor()
         
         let money = currentGoal.totalMoneyNeeded
         let moneyNum = numberFormatter.stringFromNumber(money)!
