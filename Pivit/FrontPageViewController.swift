@@ -68,6 +68,9 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var logoView: UIView! {
         didSet {
             logoView.backgroundColor = PivitColor()
+            //logoView.backgroundColor = UIColor(patternImage: UIImage(named: "whitePivit")!)
+            
+            
         }
     }
     
