@@ -55,18 +55,6 @@
                                             </mask>
                                         </variation>
                                     </textField>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BHv-2Z-DGa">
-                                        <rect key="frame" x="134" y="378" width="106" height="106"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="BHv-2Z-DGa" secondAttribute="height" multiplier="1:1" id="mjI-Qy-eE3"/>
-                                        </constraints>
-                                        <state key="normal" title="Button 2"/>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="mjI-Qy-eE3"/>
-                                            </mask>
-                                        </variation>
-                                    </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Xu-3r-DWh">
                                         <rect key="frame" x="248" y="378" width="106" height="106"/>
                                         <constraints>
@@ -102,6 +90,21 @@
                                                 <exclude reference="ePE-5k-epf"/>
                                             </mask>
                                         </variation>
+                                    </button>
+                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8zd-01-lCD">
+                                        <rect key="frame" x="248" y="492" width="106" height="106"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="8zd-01-lCD" secondAttribute="height" multiplier="1:1" id="s0E-3C-xbb"/>
+                                        </constraints>
+                                        <state key="normal" title="Button 6"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="s0E-3C-xbb"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <segue destination="G4w-8m-fvu" kind="presentation" identifier="editHabitsClicked" id="ixe-84-nYK"/>
+                                        </connections>
                                     </button>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="IPP-EW-Vmi" customClass="ASProgressPopUpView">
                                         <rect key="frame" x="20" y="301.5" width="335" height="2"/>
@@ -178,15 +181,15 @@
                                         </constraints>
                                         <state key="normal" title="Button 1"/>
                                     </button>
-                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8zd-01-lCD">
-                                        <rect key="frame" x="248" y="492" width="106" height="106"/>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BHv-2Z-DGa">
+                                        <rect key="frame" x="134" y="378" width="106" height="106"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="8zd-01-lCD" secondAttribute="height" multiplier="1:1" id="s0E-3C-xbb"/>
+                                            <constraint firstAttribute="width" secondItem="BHv-2Z-DGa" secondAttribute="height" multiplier="1:1" id="mjI-Qy-eE3"/>
                                         </constraints>
-                                        <state key="normal" title="Button 6"/>
+                                        <state key="normal" title="Button 2"/>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="s0E-3C-xbb"/>
+                                                <exclude reference="mjI-Qy-eE3"/>
                                             </mask>
                                         </variation>
                                     </button>
@@ -325,6 +328,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cq2-qN-ORk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="956.5" y="-89.5"/>
+        </scene>
+        <!--Edit Habits View Controller-->
+        <scene sceneID="L7j-KQ-zgo">
+            <objects>
+                <viewController id="tQw-Er-No4" customClass="EditHabitsViewController" customModule="Pivit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DfE-rt-G80"/>
+                        <viewControllerLayoutGuide type="bottom" id="YvM-Rc-40c"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ida-KN-6o2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CDR-ud-lvF">
+                                <rect key="frame" x="16" y="281.5" width="105" height="105"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="CDR-ud-lvF" secondAttribute="height" multiplier="1:1" id="WPi-uR-15M"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1K0-rr-a35">
+                                <rect key="frame" x="129" y="281.5" width="105" height="105"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSq-g1-LlW">
+                                <rect key="frame" x="242" y="281.5" width="105" height="105"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vSq-g1-LlW" firstAttribute="width" secondItem="CDR-ud-lvF" secondAttribute="width" id="2pb-GY-W9z"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="CDR-ud-lvF" secondAttribute="leading" id="8LK-kk-tdF"/>
+                            <constraint firstItem="1K0-rr-a35" firstAttribute="height" secondItem="CDR-ud-lvF" secondAttribute="height" id="FNc-bQ-fTd"/>
+                            <constraint firstItem="1K0-rr-a35" firstAttribute="width" secondItem="CDR-ud-lvF" secondAttribute="width" id="JpW-ag-dSa"/>
+                            <constraint firstItem="CDR-ud-lvF" firstAttribute="width" secondItem="Ida-KN-6o2" secondAttribute="width" multiplier="0.28" id="X0I-uJ-rQ4"/>
+                            <constraint firstItem="vSq-g1-LlW" firstAttribute="height" secondItem="CDR-ud-lvF" secondAttribute="height" id="Ylk-um-Utg"/>
+                            <constraint firstItem="vSq-g1-LlW" firstAttribute="centerY" secondItem="1K0-rr-a35" secondAttribute="centerY" id="cLb-ZT-xfE"/>
+                            <constraint firstItem="1K0-rr-a35" firstAttribute="centerY" secondItem="Ida-KN-6o2" secondAttribute="centerY" id="eaj-8f-fV0"/>
+                            <constraint firstItem="CDR-ud-lvF" firstAttribute="centerY" secondItem="Ida-KN-6o2" secondAttribute="centerY" id="frc-gU-KZ6"/>
+                            <constraint firstItem="vSq-g1-LlW" firstAttribute="leading" secondItem="1K0-rr-a35" secondAttribute="trailing" constant="8" symbolic="YES" id="swh-kM-HwH"/>
+                            <constraint firstItem="1K0-rr-a35" firstAttribute="leading" secondItem="CDR-ud-lvF" secondAttribute="trailing" constant="8" symbolic="YES" id="yVn-v2-p9Z"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="pZe-g4-4MF">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" title="back" id="UZ0-MZ-ai7"/>
+                        <view key="titleView" contentMode="scaleToFill" id="f7g-gv-5or">
+                            <rect key="frame" x="112.5" y="5.5" width="150" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BN2-nI-6U6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2132.5" y="-89.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="YKj-i3-Jv0">
@@ -726,6 +787,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mNv-XU-vap" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2093" y="629"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="s1R-dX-bhm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="G4w-8m-fvu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Kkq-xg-bGf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tQw-Er-No4" kind="relationship" relationship="rootViewController" id="lvH-2u-QTk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rcD-31-Emi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1545.5" y="-89.5"/>
         </scene>
     </scenes>
 </document>
