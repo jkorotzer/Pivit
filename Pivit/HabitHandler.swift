@@ -11,8 +11,8 @@ import CoreData
 
 class HabitHandler: CoreDataHandler {
     
-    var Habits: [Habit]{
-        get{
+    var Habits: [Habit] {
+        get {
             return fetchHabits()
         }
     }
@@ -21,7 +21,11 @@ class HabitHandler: CoreDataHandler {
     
     //Use to save a new Habit to Core Data
     
-    func saveNewHabit(habitName habitname: String, averageCost: Double, picture: UIImage){
+    /*
+    Not sure that saveNewHabit is necessary since there are presets that are edited instead of users creating new ones.
+    */
+    
+    /*func saveNewHabit(habitName habitname: String, averageCost: Double, picture: UIImage){
         let image = UIImagePNGRepresentation(picture)!
         let id = NSUUID().UUIDString
         
@@ -32,10 +36,11 @@ class HabitHandler: CoreDataHandler {
         
         saveNewObjectForEntity(entity: .Habit, attributesDictionary: attributesDictionary)
         
-    }
+    }*/
     
     //Returns array of Habits from CoreData
-    func fetchHabits() -> [Habit] {
+    
+    private func fetchHabits() -> [Habit] {
         var Habits = [Habit]()
         let appDel : AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let context : NSManagedObjectContext = appDel.managedObjectContext
@@ -49,6 +54,44 @@ class HabitHandler: CoreDataHandler {
         return Habits
     }
     
+    //Edit an existing habit
+    
+    func editExistingHabit(habitToEdit habitToEdit: Habit, newValue: Double?, newTitle: String?, newIcon: UIImage?) {
+        
+        let id = habitToEdit.id
+        let count = habitToEdit.count
+        
+        var newName : String?
+        var newCost : Double?
+        var newPic : NSData?
+        
+        if let _ = newTitle {
+            newName = newTitle
+        } else {
+            newName = habitToEdit.name
+        }
+        
+        if let _ = newValue {
+            newCost = newValue
+        } else {
+            newCost = habitToEdit.averageCost
+        }
+        
+        if let tempIcon = newIcon {
+            if let newIconData = UIImagePNGRepresentation(tempIcon) {
+                newPic = newIconData
+            }
+        } else {
+            newPic = habitToEdit.icon
+        }
+        
+        let keys = ["averageCost", "icon", "name", "count", "id"] as [NSCopying]
+        let values = [newCost!, newPic!, newName!, count, id] as [AnyObject]
+        let attributesDictionary = NSDictionary(objects: values, forKeys: keys)
+        
+        editExistingObjectForEntity(entity: .Habit, id: habitToEdit.id, attributesDictionary: attributesDictionary)
+        
+    }
     
 
 }
