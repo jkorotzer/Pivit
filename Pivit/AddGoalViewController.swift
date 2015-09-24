@@ -167,9 +167,7 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         let picture = goalImage.image
         
         if let currentString = goalAmountTextField.text {
-            let moneyString = currentString.stringByReplacingOccurrencesOfString("$", withString: "")
-            let moneyWithoutComma = moneyString.stringByReplacingOccurrencesOfString(",", withString: "")
-            if let money = Double(moneyWithoutComma) {
+            if let money = sanitizeMoney(string: currentString) {
                 goalMoneyNecessary = money
             }
         }

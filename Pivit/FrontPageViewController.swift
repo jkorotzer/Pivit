@@ -85,7 +85,15 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func submitCustomAmount(sender: UIButton) {
-
+        if let text = whatsItForAmountTextField.text {
+            if let moneyToPush = sanitizeMoney(string: text) {
+                goalHandler.pushMoneyToCurrentGoal(moneyToPush: moneyToPush)
+            }
+        }
+        currentString = ""
+        formatCurrency(string: currentString)
+        whatsItForTextField.text = ""
+        updateUI()
     }
     
     //MARK : - UITextField Funcs
@@ -178,45 +186,39 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
     
     private func updateUI() {
         
-        let currentGoal : Goal? = goalHandler.currentGoal
+        if let currentGoal = goalHandler.currentGoal {
         
         let numberFormatter = NSNumberFormatter()
         numberFormatter.numberStyle = .CurrencyStyle
         
-        if let data = currentGoal?.picture {
-            if let image = UIImage(data: data) {
-                goalImage.image = image
-            }
-        } else {
-            goalImage.image = imageHandler.generateClickToAddPhoto()
-        }
-        
-        if let text = currentGoal?.title {
-            currentGoalLabel.text = text
-        } else {
-            currentGoalLabel.text = "please set your goal"
-        }
-        
-        if let progress = currentGoal?.progress {
-            progressBar.progress = Float(progress)
-            let progressNum = numberFormatter.stringFromNumber(progress)!
-            progressLabel.text = "progress: \(progressNum)"
-        } else {
-            progressBar.progress = Float(0)
-            progressLabel.text = "progress: $0.00"
-        }
+        let data = currentGoal.picture
+        let image = UIImage(data: data)
+        goalImage.image = image
+            
+        currentGoalLabel.text = currentGoal.title
+            
+        let progress = currentGoal.progress
+        let progressPercentage = (progress / currentGoal.totalMoneyNeeded)
+        progressBar.setProgress(Float(progressPercentage), animated: true)
+        let progressNum = numberFormatter.stringFromNumber(progress)!
+        progressLabel.text = "progress: \(progressNum)"
         progressBar.showPopUpViewAnimated(true)
         progressBar.popUpView.cornerRadius = CGFloat(16.0)
         progressBar.popUpViewColor = PivitColor()
+        progressBar.tintColor = PivitColor()
         
-        if let money = currentGoal?.totalMoneyNeeded {
-            let moneyNum = numberFormatter.stringFromNumber(money)!
-            totalAmountNeededLabel.text = "price: \(moneyNum)"
+        let money = currentGoal.totalMoneyNeeded
+        let moneyNum = numberFormatter.stringFromNumber(money)!
+        totalAmountNeededLabel.text = "price: \(moneyNum)"
+    
         } else {
+            goalImage.image = imageHandler.generateClickToAddPhoto()
+            currentGoalLabel.text = "please set your goal"
+            progressBar.progress = Float(0)
+            progressLabel.text = "progress: $0.00"
             totalAmountNeededLabel.text = "$0.00"
         }
         
     }
-
 }
 
