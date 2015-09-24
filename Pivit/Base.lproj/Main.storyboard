@@ -30,7 +30,7 @@
                                             <constraint firstAttribute="width" constant="50" id="Syp-lf-CUp"/>
                                             <constraint firstAttribute="width" constant="66" id="g40-kW-6of"/>
                                         </constraints>
-                                        <state key="normal" title="Submit"/>
+                                        <state key="normal" title="submit"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="Syp-lf-CUp"/>
@@ -100,18 +100,6 @@
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="ePE-5k-epf"/>
-                                            </mask>
-                                        </variation>
-                                    </button>
-                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8zd-01-lCD">
-                                        <rect key="frame" x="248" y="492" width="106" height="106"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="8zd-01-lCD" secondAttribute="height" multiplier="1:1" id="s0E-3C-xbb"/>
-                                        </constraints>
-                                        <state key="normal" title="Button 6"/>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="s0E-3C-xbb"/>
                                             </mask>
                                         </variation>
                                     </button>
@@ -189,6 +177,18 @@
                                             <constraint firstAttribute="width" secondItem="6C1-E3-AFW" secondAttribute="height" multiplier="1:1" id="XHv-w0-HfH"/>
                                         </constraints>
                                         <state key="normal" title="Button 1"/>
+                                    </button>
+                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8zd-01-lCD">
+                                        <rect key="frame" x="248" y="492" width="106" height="106"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="8zd-01-lCD" secondAttribute="height" multiplier="1:1" id="s0E-3C-xbb"/>
+                                        </constraints>
+                                        <state key="normal" title="Button 6"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="s0E-3C-xbb"/>
+                                            </mask>
+                                        </variation>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -529,14 +529,14 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Imq-J9-pZ2">
                                     <rect key="frame" x="0.0" y="0.0" width="60" height="32"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <state key="normal" title="Me"/>
+                                    <state key="normal" title="me"/>
                                     <connections>
                                         <action selector="myGoalsSelected:" destination="Zo7-41-yTx" eventType="touchUpInside" id="6hy-07-VhL"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NaI-di-45I">
                                     <rect key="frame" x="68" y="0.0" width="60" height="32"/>
-                                    <state key="normal" title="Friends"/>
+                                    <state key="normal" title="friends"/>
                                     <connections>
                                         <action selector="friendsGoalsSelected:" destination="Zo7-41-yTx" eventType="touchUpInside" id="phg-Q2-1fB"/>
                                     </connections>
