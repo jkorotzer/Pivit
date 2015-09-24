@@ -581,11 +581,11 @@
                         <viewControllerLayoutGuide type="bottom" id="2IN-eX-YHC"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eUC-TO-a8x">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jaw-TZ-v9m" customClass="HoshiTextField" customModule="Pivit" customModuleProvider="target">
-                                <rect key="frame" x="9" y="529" width="356.5" height="50"/>
+                                <rect key="frame" x="8" y="454" width="304.5" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="eZq-5W-6VA"/>
                                 </constraints>
@@ -593,15 +593,15 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rlc-U8-y1P">
-                                <rect key="frame" x="9" y="587" width="356.5" height="27.5"/>
+                                <rect key="frame" x="8" y="512" width="304.5" height="4"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lyM-Q4-Tpa">
-                                <rect key="frame" x="9" y="436" width="356.5" height="27.5"/>
+                                <rect key="frame" x="8" y="384" width="304.5" height="4"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kKo-nb-h64" customClass="HoshiTextField" customModule="Pivit" customModuleProvider="target">
-                                <rect key="frame" x="9" y="471" width="356.5" height="50"/>
+                                <rect key="frame" x="8" y="396" width="304.5" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="EIu-D1-LeC"/>
                                 </constraints>
@@ -609,7 +609,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="787-8F-M03">
-                                <rect key="frame" x="9" y="72" width="356" height="356.5"/>
+                                <rect key="frame" x="8" y="72" width="304" height="304.5"/>
                                 <color key="backgroundColor" red="1" green="0.46646868699999999" blue="0.82238801890000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="787-8F-M03" secondAttribute="height" multiplier="1:1" id="wCj-13-Pv4"/>
@@ -624,7 +624,6 @@
                             <constraint firstItem="kKo-nb-h64" firstAttribute="leading" secondItem="787-8F-M03" secondAttribute="leading" id="5CZ-95-BIk"/>
                             <constraint firstItem="Rlc-U8-y1P" firstAttribute="leading" secondItem="787-8F-M03" secondAttribute="leading" id="686-x8-o7l"/>
                             <constraint firstItem="jaw-TZ-v9m" firstAttribute="centerX" secondItem="eUC-TO-a8x" secondAttribute="centerX" id="6tA-lh-nTA"/>
-                            <constraint firstItem="kKo-nb-h64" firstAttribute="centerX" secondItem="eUC-TO-a8x" secondAttribute="centerX" id="98C-NL-2rN"/>
                             <constraint firstItem="Rlc-U8-y1P" firstAttribute="trailing" secondItem="787-8F-M03" secondAttribute="trailing" id="9XJ-La-bfj"/>
                             <constraint firstItem="kKo-nb-h64" firstAttribute="trailing" secondItem="787-8F-M03" secondAttribute="trailing" id="Cf5-cM-H7V"/>
                             <constraint firstItem="787-8F-M03" firstAttribute="width" secondItem="eUC-TO-a8x" secondAttribute="width" multiplier="0.95" id="DDr-jA-Tu2"/>
@@ -649,6 +648,7 @@
                                 <exclude reference="LwX-Q3-VKi"/>
                                 <exclude reference="rlg-QQ-Rkf"/>
                                 <exclude reference="yoU-B8-xDf"/>
+                                <exclude reference="6tA-lh-nTA"/>
                             </mask>
                         </variation>
                     </view>
@@ -661,7 +661,7 @@
                             </connections>
                         </barButtonItem>
                         <view key="titleView" contentMode="scaleToFill" id="wD2-lL-tme">
-                            <rect key="frame" x="112.5" y="5.5" width="150" height="33"/>
+                            <rect key="frame" x="85" y="5.5" width="150" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <gestureRecognizers/>
@@ -673,7 +673,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="goalAmountTextField" destination="jaw-TZ-v9m" id="LKD-Ij-4Qu"/>
                         <outlet property="goalImage" destination="787-8F-M03" id="e9p-wO-SL4"/>
