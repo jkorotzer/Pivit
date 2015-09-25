@@ -490,10 +490,10 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8B3-3z-N3l" customClass="ASProgressPopUpView">
-                                            <rect key="frame" x="8" y="424" width="304" height="2"/>
+                                            <rect key="frame" x="8" y="423.5" width="304" height="2"/>
                                         </progressView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dNY-eE-dQg">
-                                            <rect key="frame" x="8" y="424" width="304" height="21.5"/>
+                                            <rect key="frame" x="8" y="423.5" width="304" height="21.5"/>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HJf-QB-oTh">
                                             <rect key="frame" x="8" y="385" width="304" height="39"/>
@@ -523,6 +523,8 @@
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lnp-BM-ZLi">
                                             <rect key="frame" x="282" y="355" width="30" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <state key="normal" title="title"/>
                                             <connections>
                                                 <action selector="makeCurrentGoal:" destination="uLf-cB-ddm" eventType="touchUpInside" id="7qn-BS-oag"/>
                                             </connections>
@@ -555,6 +557,7 @@
                                         <constraint firstAttribute="topMargin" secondItem="KqW-HB-18E" secondAttribute="top" id="Lc1-3c-8A9"/>
                                         <constraint firstItem="Q0V-r2-oV2" firstAttribute="trailing" secondItem="KqW-HB-18E" secondAttribute="trailing" id="Opt-bJ-Hpx"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="8B3-3z-N3l" secondAttribute="bottom" id="PVq-sM-XFe"/>
+                                        <constraint firstItem="Jn0-Kz-Pab" firstAttribute="centerY" secondItem="lnp-BM-ZLi" secondAttribute="centerY" id="T5k-QU-guA"/>
                                         <constraint firstItem="Zf2-rR-X9r" firstAttribute="centerY" secondItem="KqW-HB-18E" secondAttribute="centerY" id="TFq-tY-cZl"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Q0V-r2-oV2" secondAttribute="trailing" id="VTz-Hr-g7P"/>
                                         <constraint firstItem="lnp-BM-ZLi" firstAttribute="top" secondItem="Q0V-r2-oV2" secondAttribute="bottom" id="Zfu-Tm-kcX"/>
@@ -603,6 +606,7 @@
                                             <exclude reference="KMC-7n-WzY"/>
                                             <exclude reference="PVq-sM-XFe"/>
                                             <exclude reference="tVy-3s-HgZ"/>
+                                            <exclude reference="11X-Ci-u7p"/>
                                             <exclude reference="Zfu-Tm-kcX"/>
                                             <exclude reference="bhS-Xj-WSi"/>
                                         </mask>

@@ -37,6 +37,8 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     
     private var imageHandler = ImageHandler()
     
+    private var userIsEditing: Bool = false
+    
     //MARK : - Outlet Properties
     
     @IBOutlet weak var goalImage: UIImageView! {

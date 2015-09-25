@@ -84,14 +84,17 @@ class GoalTableViewCell: UITableViewCell {
             if cellGoal.isFinished {
                 goalStatusButton.setTitleColor(PivitColor(), forState: .Normal)
                 goalStatusButton.setTitle("finished", forState: .Normal)
+                goalStatusButton.titleLabel!.font = goalStatusButton.titleLabel!.font.fontWithSize(CGFloat(20.0))
             }
             
             if cellGoal.isCurrentGoal {
                 goalStatusButton.setTitleColor(PivitColor(), forState: .Normal)
                 goalStatusButton.setTitle("current goal", forState: .Normal)
+                goalStatusButton.titleLabel!.font = goalStatusButton.titleLabel!.font.fontWithSize(CGFloat(20.0))
             } else {
                 goalStatusButton.setTitle("make current goal", forState: .Normal)
                 goalStatusButton.setTitleColor(UIColor.blueColor(), forState: .Normal)
+                goalStatusButton.titleLabel!.font = goalStatusButton.titleLabel!.font.fontWithSize(CGFloat(15.0))
             }
         }
         
@@ -100,24 +103,21 @@ class GoalTableViewCell: UITableViewCell {
     private func getDate(time time: NSDate) -> String
     {
         let timeAfterStart = Int(NSDate().timeIntervalSinceDate(time))
-        if(timeAfterStart < 60){
+        if(timeAfterStart < 60) {
             return "" +  String(timeAfterStart) + "s"
         }
-        else if(timeAfterStart < 3600){
-            let minutes = timeAfterStart/60
+        else if(timeAfterStart < 3600) {
+            let minutes = timeAfterStart / 60
             return "" + String(minutes) + "m"
         }
-        else if(timeAfterStart < 86400)
-        {
+        else if(timeAfterStart < 86400) {
             let hours = timeAfterStart/3600
             return "" + String(hours) + "h"
         }
-        else
-        {
+        else {
             let days = timeAfterStart/86400
             return "" + String(days) + "d"
         }
-        
     }
     
 }
