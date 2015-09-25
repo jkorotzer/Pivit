@@ -59,9 +59,10 @@ class GoalTableViewCell: UITableViewCell {
     //MARK: - Outlet funcs
     
     @IBAction func makeCurrentGoal(sender: UIButton) {
-        if sender.titleColorForState(.Normal) != PivitColor() {
-            print("HERE")
-            delegate?.saveNewCurrentGoal(self)
+        if let cellGoal = goal  {
+            if !cellGoal.isCurrentGoal && !cellGoal.isFinished {
+                delegate?.saveNewCurrentGoal(self)
+            }
         }
     }
     
