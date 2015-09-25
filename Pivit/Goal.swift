@@ -17,6 +17,7 @@ class Goal: NSManagedObject {
     @NSManaged var progress: Double
     @NSManaged var id: String
     @NSManaged var currentGoal: NSNumber
+    @NSManaged var isFinished: Bool
     var isCurrentGoal: Bool {
         get {
             return Bool(currentGoal)

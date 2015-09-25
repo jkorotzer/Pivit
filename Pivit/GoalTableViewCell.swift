@@ -54,19 +54,45 @@ class GoalTableViewCell: UITableViewCell {
     
     @IBOutlet weak var progressLabel: UILabel!
     
+    @IBOutlet weak var goalStatusButton: UIButton!
+    
+    //MARK: - Outlet funcs
+    
+    @IBAction func makeCurrentGoal(sender: UIButton) {
+        if sender.titleColorForState(.Normal) != PivitColor() {
+            print("HERE")
+            delegate?.saveNewCurrentGoal(self)
+        }
+    }
+    
     //MARK: - Private funcs
     
     private func updateUI() {
         
-        let numberFormatter = NSNumberFormatter()
-        numberFormatter.numberStyle = .CurrencyStyle
+        if let cellGoal = goal {
+            
+            let numberFormatter = NSNumberFormatter()
+            numberFormatter.numberStyle = .CurrencyStyle
         
-        goalNameLabel.text = goal!.title
-        goalTimeLabel.text = getDate(time: goal!.dateStarted)
+            goalNameLabel.text = cellGoal.title
+            goalTimeLabel.text = getDate(time: cellGoal.dateStarted)
         
-        progressLabel.text = "\(numberFormatter.stringFromNumber(goal!.progress)!)"
-        progressView.progress = Float(goal!.progress)
-        
+            progressLabel.text = "progress: \(numberFormatter.stringFromNumber(goal!.progress)!)"
+            progressView.progress = Float(cellGoal.progress / cellGoal.totalMoneyNeeded)
+            
+            if cellGoal.isFinished {
+                goalStatusButton.setTitleColor(PivitColor(), forState: .Normal)
+                goalStatusButton.setTitle("finished", forState: .Normal)
+            }
+            
+            if cellGoal.isCurrentGoal {
+                goalStatusButton.setTitleColor(PivitColor(), forState: .Normal)
+                goalStatusButton.setTitle("current goal", forState: .Normal)
+            } else {
+                goalStatusButton.setTitle("make current goal", forState: .Normal)
+                goalStatusButton.setTitleColor(UIColor.blueColor(), forState: .Normal)
+            }
+        }
         
     }
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GoalsTableViewController: UITableViewController {
+class GoalsTableViewController: UITableViewController, GoalTableViewCellTableView {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,10 +99,9 @@ class GoalsTableViewController: UITableViewController {
         }
     }
 
-    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCellWithIdentifier(StoryboardKeys.GoalCell, forIndexPath: indexPath) as? GoalTableViewCell {
-            //cell.delegate = self
+            cell.delegate = self
             cell.goal = goals[indexPath.row]
             cell.goalImageView.image = goalImages[indexPath.row]
             
@@ -147,4 +146,15 @@ class GoalsTableViewController: UITableViewController {
         static let GoalCell = "GoalCell"
     }
 
+    //MARK: - TableViewCell delegate
+    
+    func saveNewCurrentGoal(sender: UITableViewCell) {
+        if let cell = sender as? GoalTableViewCell {
+            let indexPath = self.tableView.indexPathForCell(cell)!
+            let goal = goals[indexPath.row]
+            goalHandler.setNewCurrentGoal(newCurrentGoal: goal)
+            reloadTableView()
+        }
+    }
+    
 }
