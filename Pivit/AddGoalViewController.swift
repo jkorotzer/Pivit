@@ -99,7 +99,7 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     
     //MARK : - TextField Funcs
     
-    func closeKeyboard(){
+    func closeKeyboard() {
             self.view.endEditing(true)
     }
     
@@ -220,25 +220,24 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     //MARK: - UIPickerController Handling
     
     func imageTapped(img: AnyObject) {
-        if keyBoard{
+        if keyBoard {
             closeKeyboard()
-        }
-        else{
-        let photoActionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
-        photoActionSheet.addAction(UIAlertAction(title: "Take Photo", style: .Default)
-            {[unowned self] (action: UIAlertAction) -> Void in
+        } else {
+            let photoActionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+            photoActionSheet.addAction(UIAlertAction(title: "Take Photo", style: .Default)
+                {[unowned self] (action: UIAlertAction) -> Void in
                 if UIImagePickerController.isSourceTypeAvailable(.Camera) {
                     self.presentPickerController(.Camera)
-                }
-            })
-        photoActionSheet.addAction(UIAlertAction(title: "Choose Photo", style: .Default)
-            {[unowned self](action: UIAlertAction) -> Void in
+                    }
+                })
+            photoActionSheet.addAction(UIAlertAction(title: "Choose Photo", style: .Default)
+                {[unowned self](action: UIAlertAction) -> Void in
                 if UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary) {
                     self.presentPickerController(.PhotoLibrary)
-                }
-            })
-        photoActionSheet.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
-        presentViewController(photoActionSheet, animated: true, completion: nil)
+                    }
+                })
+            photoActionSheet.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+            presentViewController(photoActionSheet, animated: true, completion: nil)
         }
     }
     
