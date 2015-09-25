@@ -80,5 +80,16 @@ class CoreDataHandler {
         }
     }
     
+    func deleteObject(object object: NSManagedObject) {
+        let appDel : AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let context : NSManagedObjectContext = appDel.managedObjectContext
+        context.deleteObject(object)
+        do {
+            try context.save()
+            print("saved")
+        } catch {
+            print("error")
+        }
+    }
     
 }

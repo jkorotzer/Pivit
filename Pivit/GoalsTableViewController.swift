@@ -69,6 +69,8 @@ class GoalsTableViewController: UITableViewController, GoalTableViewCellTableVie
     
     private var goalImages = [UIImage]()
     
+    private var goalToBeEdited: Goal?
+    
     private var localGoalsIsSelected = true {
         didSet {
             if localGoalsIsSelected {
@@ -110,16 +112,32 @@ class GoalsTableViewController: UITableViewController, GoalTableViewCellTableVie
         return UITableViewCell()
     }
 
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        goalToBeEdited = goals[indexPath.row]
+        performSegueWithIdentifier("editExistingGoal", sender: self)
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        switch editingStyle {
+        case .Delete:
+            let goalToDelete = goals[indexPath.row]
+            goalHandler.deleteObject(object: goalToDelete)
+            reloadTableView()
+        default: break
+        }
+    }
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let navCon = segue.destinationViewController as? UINavigationController {
+            if let destination = navCon.topViewController as? AddGoalViewController {
+                if segue.identifier == "editExistingGoal" {
+                    destination.goalBeingEdited = goalToBeEdited
+                }
+            }
+        }
     }
-    */
     
     //MARK: - Private Funcs
     
@@ -145,7 +163,7 @@ class GoalsTableViewController: UITableViewController, GoalTableViewCellTableVie
     private struct StoryboardKeys {
         static let GoalCell = "GoalCell"
     }
-
+    
     //MARK: - TableViewCell delegate
     
     func saveNewCurrentGoal(sender: UITableViewCell) {

@@ -388,19 +388,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CDR-ud-lvF">
-                                <rect key="frame" x="16" y="281.5" width="105" height="105"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="CDR-ud-lvF" secondAttribute="height" multiplier="1:1" id="WPi-uR-15M"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1K0-rr-a35">
                                 <rect key="frame" x="129" y="281.5" width="105" height="105"/>
                                 <state key="normal" title="Button"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSq-g1-LlW">
                                 <rect key="frame" x="242" y="281.5" width="105" height="105"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CDR-ud-lvF">
+                                <rect key="frame" x="16" y="281" width="105" height="105"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="CDR-ud-lvF" secondAttribute="height" multiplier="1:1" id="WPi-uR-15M"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                             </button>
                         </subviews>
@@ -685,6 +685,7 @@
                         <outlet property="friendsButton" destination="NaI-di-45I" id="LqU-PK-25A"/>
                         <outlet property="meButton" destination="Imq-J9-pZ2" id="CXw-5p-xUQ"/>
                         <outlet property="navigationView" destination="fAW-VN-UUx" id="0pf-5q-hfd"/>
+                        <segue destination="EQz-re-7gw" kind="presentation" identifier="editExistingGoal" id="34h-yj-GcH"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fsG-Z2-gVE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -903,4 +904,7 @@
     <resources>
         <image name="pivitWhite" width="864" height="216"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="34h-yj-GcH"/>
+    </inferredMetricsTieBreakers>
 </document>

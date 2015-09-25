@@ -11,9 +11,6 @@ import MobileCoreServices
 
 class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    private var currentString = ""
-    private var keyBoard = false
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
@@ -39,11 +36,27 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     
     private var userIsEditing: Bool = false
     
+    private var currentString = ""
+    
+    private var keyBoard = false
+    
+    var goalBeingEdited: Goal? {
+        didSet {
+            userIsEditing = true
+        }
+    }
+    
     //MARK : - Outlet Properties
     
     @IBOutlet weak var goalImage: UIImageView! {
         didSet {
-            goalImage.image = imageHandler.generateClickToAddPhoto()
+            if !userIsEditing {
+                goalImage.image = imageHandler.generateClickToAddPhoto()
+            } else {
+                if let goal = goalBeingEdited {
+                    goalImage.image = UIImage(data: goal.picture)
+                }
+            }
             let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("imageTapped:"))
             goalImage.addGestureRecognizer(tapGestureRecognizer)
         }
@@ -57,6 +70,11 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
             goalNameTextField.placeholderColor = UIColor.lightGrayColor()
             goalNameTextField.borderInactiveColor = UIColor.darkGrayColor()
             goalNameTextField.borderActiveColor = PivitColor()
+            if userIsEditing {
+                if let goal = goalBeingEdited {
+                    goalNameTextField.text = goal.title
+                }
+            }
         }
     }
     
@@ -70,6 +88,12 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
             goalAmountTextField.borderInactiveColor = UIColor.darkGrayColor()
             goalAmountTextField.borderActiveColor = PivitColor()
             goalAmountTextField.keyboardType = UIKeyboardType.NumberPad
+            if userIsEditing {
+                if let goal = goalBeingEdited {
+                    currentString = "\(goal.totalMoneyNeeded)".stringByReplacingOccurrencesOfString(".", withString: "").stringByReplacingOccurrencesOfString(",", withString: "")
+                    formatCurrency(string: currentString)
+                }
+            }
         }
     }
     
@@ -144,6 +168,7 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         }
     }
     
+    //Sets the text of goalamounttextfield in the method!!
     func formatCurrency(string string: String) {
         let formatter = NSNumberFormatter()
         formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
@@ -178,7 +203,13 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
             goalName = name
         }
         
-        handler.saveNewGoal(goalName: goalName!, totalMoneyNeeded: goalMoneyNecessary!, picture: picture!)
+        if userIsEditing {
+            if let goal = goalBeingEdited {
+                handler.editExistingGoal(goalToEdit: goal, newTitle: goalName!, newPicture: picture!, newTotalMoneyNeeded: goalMoneyNecessary!)
+            }
+        } else {
+            handler.saveNewGoal(goalName: goalName!, totalMoneyNeeded: goalMoneyNecessary!, picture: picture!)
+        }
         
         goalNameTextField.resignFirstResponder()
         goalAmountTextField.resignFirstResponder()
