@@ -18,6 +18,7 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         let tapped = UITapGestureRecognizer(target: self, action: "closeKeyboard")
         tapped.numberOfTapsRequired = 1
         self.view.addGestureRecognizer(tapped)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,10 +44,17 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     var goalBeingEdited: Goal? {
         didSet {
             userIsEditing = true
+            titleLabel.text = "edit a goal"
         }
     }
     
-    //MARK : - Outlet Properties
+    //MARK: - Outlet Properties
+    
+    @IBOutlet weak var titleLabel: UILabel! {
+        didSet {
+            titleLabel.text = "add a goal"
+        }
+    }
     
     @IBOutlet weak var goalImage: UIImageView! {
         didSet {
@@ -97,7 +105,7 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         }
     }
     
-    //MARK : - TextField Funcs
+    //MARK: - TextField Funcs
     
     func closeKeyboard() {
             self.view.endEditing(true)
@@ -168,7 +176,6 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         }
     }
     
-    //Sets the text of goalamounttextfield in the method!!
     func formatCurrency(string string: String) {
         let formatter = NSNumberFormatter()
         formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle

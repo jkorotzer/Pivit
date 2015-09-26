@@ -122,7 +122,8 @@ class GoalsTableViewController: UITableViewController, GoalTableViewCellTableVie
         case .Delete:
             let goalToDelete = goals[indexPath.row]
             goalHandler.deleteObject(object: goalToDelete)
-            reloadTableView()
+            setModel()
+            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         default: break
         }
     }
@@ -150,6 +151,8 @@ class GoalsTableViewController: UITableViewController, GoalTableViewCellTableVie
     
     private func setModel() {
         goals = goalHandler.Goals
+        goals.sortInPlace{$0.isCurrentGoal && !$1.isCurrentGoal}
+        goals.sortInPlace{!$0.isFinished && $1.isFinished}
         goalImages = [UIImage]()
         for goal in goals {
             goalImages.append(UIImage(data: goal.picture)!)

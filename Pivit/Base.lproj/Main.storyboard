@@ -780,33 +780,24 @@
                                 <action selector="goBack:" destination="3x3-8D-1tL" id="8ar-Rd-yAc"/>
                             </connections>
                         </barButtonItem>
-                        <view key="titleView" contentMode="scaleToFill" id="wD2-lL-tme">
-                            <rect key="frame" x="85" y="5.5" width="150" height="33"/>
+                        <view key="titleView" contentMode="scaleToFill" id="VDF-Hp-OaW">
+                            <rect key="frame" x="96" y="5.5" width="128" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pivitWhite" translatesAutoresizingMaskIntoConstraints="NO" id="Lsf-KZ-crl">
-                                    <rect key="frame" x="0.0" y="-2.5" width="150" height="38"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" secondItem="Lsf-KZ-crl" secondAttribute="height" multiplier="4:1" id="2gI-GB-D4r"/>
-                                    </constraints>
-                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="add goal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HHO-p8-wmr">
+                                    <rect key="frame" x="0.0" y="0.0" width="128" height="33"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <gestureRecognizers/>
                             <constraints>
-                                <constraint firstItem="Lsf-KZ-crl" firstAttribute="top" secondItem="wD2-lL-tme" secondAttribute="top" id="09E-RO-YYL"/>
-                                <constraint firstAttribute="trailing" secondItem="Lsf-KZ-crl" secondAttribute="trailing" id="G67-Ku-4zq"/>
-                                <constraint firstAttribute="bottom" secondItem="Lsf-KZ-crl" secondAttribute="bottom" id="UOM-uI-JfY"/>
-                                <constraint firstItem="Lsf-KZ-crl" firstAttribute="leading" secondItem="wD2-lL-tme" secondAttribute="leading" id="Wzw-zI-7Yq"/>
-                                <constraint firstItem="Lsf-KZ-crl" firstAttribute="centerY" secondItem="wD2-lL-tme" secondAttribute="centerY" id="c8z-9M-vwC"/>
-                                <constraint firstItem="Lsf-KZ-crl" firstAttribute="centerX" secondItem="wD2-lL-tme" secondAttribute="centerX" id="dab-om-3AD"/>
+                                <constraint firstAttribute="bottom" secondItem="HHO-p8-wmr" secondAttribute="bottom" id="Hzp-sp-WSc"/>
+                                <constraint firstItem="HHO-p8-wmr" firstAttribute="top" secondItem="VDF-Hp-OaW" secondAttribute="top" id="cgo-B7-734"/>
+                                <constraint firstAttribute="trailing" secondItem="HHO-p8-wmr" secondAttribute="trailing" id="xIQ-4A-tEa"/>
+                                <constraint firstItem="HHO-p8-wmr" firstAttribute="leading" secondItem="VDF-Hp-OaW" secondAttribute="leading" id="y6V-Zw-YVH"/>
                             </constraints>
-                            <variation key="default">
-                                <mask key="constraints">
-                                    <exclude reference="09E-RO-YYL"/>
-                                    <exclude reference="UOM-uI-JfY"/>
-                                </mask>
-                            </variation>
                         </view>
                         <barButtonItem key="rightBarButtonItem" title="done" id="iA4-kp-vrr">
                             <connections>
@@ -820,6 +811,7 @@
                         <outlet property="goalAmountTextField" destination="jaw-TZ-v9m" id="LKD-Ij-4Qu"/>
                         <outlet property="goalImage" destination="787-8F-M03" id="e9p-wO-SL4"/>
                         <outlet property="goalNameTextField" destination="kKo-nb-h64" id="hcu-NQ-wVi"/>
+                        <outlet property="titleLabel" destination="HHO-p8-wmr" id="Fkp-gr-Nkl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4xw-xL-y1b" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -905,6 +897,6 @@
         <image name="pivitWhite" width="864" height="216"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="34h-yj-GcH"/>
+        <segue reference="XwB-qi-35s"/>
     </inferredMetricsTieBreakers>
 </document>
