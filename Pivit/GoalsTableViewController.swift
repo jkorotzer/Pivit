@@ -23,7 +23,7 @@ class GoalsTableViewController: UITableViewController, GoalTableViewCellTableVie
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         localGoalsIsSelected = true
-        reloadTableView()
+        reloadTableView(sort: true)
     }
 
     //MARK: - Outlet Properties
@@ -52,12 +52,12 @@ class GoalsTableViewController: UITableViewController, GoalTableViewCellTableVie
     
     @IBAction func myGoalsSelected(sender: UIButton) {
         localGoalsIsSelected = true
-        reloadTableView()
+        reloadTableView(sort: true)
     }
     
     @IBAction func friendsGoalsSelected(sender: AnyObject) {
         localGoalsIsSelected = false
-        reloadTableView()
+        reloadTableView(sort: true)
     }
     
     
@@ -142,14 +142,26 @@ class GoalsTableViewController: UITableViewController, GoalTableViewCellTableVie
     
     //MARK: - Private Funcs
     
-    private func reloadTableView() {
-        setModel()
+    private func reloadTableView(sort sort: Bool) {
+        if sort {
+            setModelWithSorting()
+        } else {
+            setModel()
+        }
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
             self.tableView.reloadData()
         })
     }
     
     private func setModel() {
+        goals = goalHandler.Goals
+        goalImages = [UIImage]()
+        for goal in goals {
+            goalImages.append(UIImage(data: goal.picture)!)
+        }
+    }
+    
+    private func setModelWithSorting() {
         goals = goalHandler.Goals
         goals.sortInPlace{$0.isCurrentGoal && !$1.isCurrentGoal}
         goals.sortInPlace{!$0.isFinished && $1.isFinished}
@@ -174,7 +186,7 @@ class GoalsTableViewController: UITableViewController, GoalTableViewCellTableVie
             let indexPath = self.tableView.indexPathForCell(cell)!
             let goal = goals[indexPath.row]
             goalHandler.setNewCurrentGoal(newCurrentGoal: goal)
-            reloadTableView()
+            reloadTableView(sort: false)
         }
     }
     

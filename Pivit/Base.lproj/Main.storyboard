@@ -421,7 +421,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="pZe-g4-4MF">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" title="back" id="UZ0-MZ-ai7"/>
+                        <barButtonItem key="leftBarButtonItem" title="back" id="UZ0-MZ-ai7">
+                            <connections>
+                                <action selector="goBack:" destination="tQw-Er-No4" id="8pP-Ly-Afn"/>
+                            </connections>
+                        </barButtonItem>
                         <view key="titleView" contentMode="scaleToFill" id="f7g-gv-5or">
                             <rect key="frame" x="112.5" y="5.5" width="150" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

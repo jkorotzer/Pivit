@@ -10,11 +10,7 @@ import UIKit
 import CoreData
 
 class FrontPageViewController: UIViewController, UITextFieldDelegate {
-    
-    private var currentString = ""
-    private var KeyBoard = false
    
-    
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -78,6 +74,10 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
     
     private var imageHandler = ImageHandler()
     
+    private var currentString = ""
+    
+    private var KeyBoard = false
+    
     //MARK: - Outlet Funcs
     
     
@@ -89,7 +89,7 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
             }
         }
         currentString = ""
-        formatCurrency(string: currentString)
+        whatsItForAmountTextField.text = ""
         whatsItForTextField.text = ""
         closeKeyboard()
         updateUI()

@@ -142,6 +142,15 @@ class GoalHandler: CoreDataHandler {
         editExistingObjectForEntity(entity: .Goal, id: finishedGoal.id, attributesDictionary: attributesDictionary)
     }
     
+    func checkGoalIsFinished(goalToCheck goalToCheck: Goal) -> Bool {
+        if goalToCheck.progress >= goalToCheck.totalMoneyNeeded {
+            return true
+        }
+        return false
+    }
+    
+    //MARK: - Private funcs
+    
     //Use to push money to a specific goal.
     private func pushMoneyToGoal(goal goal: Goal, moneyToPush: Double) {
         
@@ -154,8 +163,6 @@ class GoalHandler: CoreDataHandler {
         
         editExistingObjectForEntity(entity: .Goal, id: goal.id, attributesDictionary: attributesDictionary)
     }
-    
-    //MARK: - Private funcs
     
     private func getSpecificGoalbyId(id id: String) -> Goal? {
         if Goals.count > 0 {
