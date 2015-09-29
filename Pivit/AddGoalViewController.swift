@@ -98,7 +98,7 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
             goalAmountTextField.keyboardType = UIKeyboardType.NumberPad
             if userIsEditing {
                 if let goal = goalBeingEdited {
-                    currentString = "\(goal.totalMoneyNeeded)".stringByReplacingOccurrencesOfString(".", withString: "").stringByReplacingOccurrencesOfString(",", withString: "")
+                    currentString = "\(goal.totalMoneyNeeded)".stringByReplacingOccurrencesOfString(",", withString: "").stringByReplacingOccurrencesOfString(".", withString: "") + "0"
                     formatCurrency(string: currentString)
                 }
             }
@@ -195,32 +195,27 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     
 
     @IBAction func done(sender: UIBarButtonItem) {
-        var goalName: String?
-        var goalMoneyNecessary: Double?
         
-        let picture = goalImage.image
-        
-        if let currentString = goalAmountTextField.text {
-            if let money = sanitizeMoney(string: currentString) {
-                goalMoneyNecessary = money
+        if let picture = goalImage.image {
+            if let currentString = goalAmountTextField.text {
+                if let money = sanitizeMoney(string: currentString) {
+                    if let name = goalNameTextField.text {
+                        if userIsEditing {
+                            if let goal = goalBeingEdited {
+                                if !goal.isFinished {
+                                    handler.editExistingGoal(goalToEdit: goal, newTitle: name, newPicture: picture, newTotalMoneyNeeded: money)
+                                }
+                            }
+                        } else {
+                            handler.saveNewGoal(goalName: name, totalMoneyNeeded: money, picture: picture)
+                        }
+                        goalNameTextField.resignFirstResponder()
+                        goalAmountTextField.resignFirstResponder()
+                        self.dismissViewControllerAnimated(true, completion: nil)
+                    }
+                }
             }
         }
-        
-        if let name = goalNameTextField.text {
-            goalName = name
-        }
-        
-        if userIsEditing {
-            if let goal = goalBeingEdited {
-                handler.editExistingGoal(goalToEdit: goal, newTitle: goalName!, newPicture: picture!, newTotalMoneyNeeded: goalMoneyNecessary!)
-            }
-        } else {
-            handler.saveNewGoal(goalName: goalName!, totalMoneyNeeded: goalMoneyNecessary!, picture: picture!)
-        }
-        
-        goalNameTextField.resignFirstResponder()
-        goalAmountTextField.resignFirstResponder()
-        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     

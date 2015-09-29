@@ -24,7 +24,6 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
         }
         
         print(habitHandler.habits)
-        
     }
     
     deinit {
@@ -34,10 +33,9 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func viewWillAppear(animated: Bool) {
-        
         super.viewWillAppear(animated)
         updateUI()
-        
+        setButtonIcons()
     }
     
     //MARK: - Outlet Properties
@@ -56,7 +54,7 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var whatsItForAmountTextField: UITextField! {
         didSet {
-            whatsItForAmountTextField.tag=100
+            whatsItForAmountTextField.tag = 100
             whatsItForAmountTextField.delegate = self
             whatsItForAmountTextField.keyboardType=UIKeyboardType.NumberPad
         }
@@ -66,12 +64,19 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var totalAmountNeededLabel: UILabel!
     
-    @IBOutlet weak var logoView: UIView! {
-        didSet {
-            logoView.backgroundColor = PivitColor()
-        }
-    }
+    //MARK: - Habit Buttons
     
+    @IBOutlet weak var firstHabitButton: UIButton!
+    
+    @IBOutlet weak var secondHabitButton: UIButton!
+    
+    @IBOutlet weak var thirdHabitButton: UIButton!
+    
+    @IBOutlet weak var fourthHabitButton: UIButton!
+    
+    @IBOutlet weak var fifthHabitButton: UIButton!
+    
+    @IBOutlet weak var editHabitsButton: UIButton!
     
     //MARK: - Model
     
@@ -91,6 +96,11 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
         if let text = whatsItForAmountTextField.text {
             if let moneyToPush = sanitizeMoney(string: text) {
                 goalHandler.pushMoneyToCurrentGoal(moneyToPush: moneyToPush)
+                if goalHandler.goalIsFinished(goalToCheck: goalHandler.currentGoal!) {
+                    progressBar.setProgress(1.0, animated: true)
+                    pushCongratulationsAlert(nameOfGoalCompleted: goalHandler.currentGoal!.title)
+                    goalHandler.setGoalIsFinished(finishedGoal: goalHandler.currentGoal!)
+                }
             }
         }
         currentString = ""
@@ -100,7 +110,7 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
         updateUI()
     }
     
-    //MARK : - UITextField Funcs
+    //MARK: - UITextField Funcs
     
     func closeKeyboard() {
         self.view.endEditing(true)
@@ -234,11 +244,29 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func saveDefaultHabitsToCoreData() {
-        habitHandler.saveNewHabit(habitName: "Beer", averageCost: 3.0, picture: UIImage(named: "beerIcon")!, isDefault: true)
-        habitHandler.saveNewHabit(habitName: "Cigarettes", averageCost: 5.5, picture: UIImage(named: "cigaretteIcon")!, isDefault: true)
-        habitHandler.saveNewHabit(habitName: "Junk Food", averageCost: 5.0, picture: UIImage(named: "junkFoodIcon")!, isDefault: true)
-        habitHandler.saveNewHabit(habitName: "Candy", averageCost: 2.5, picture: UIImage(named: "candyIcon")!, isDefault: true)
-        habitHandler.saveNewHabit(habitName: "Coffee", averageCost: 3.5, picture: UIImage(named: "coffeeIcon")!, isDefault: true)
+        habitHandler.saveNewHabit(habitName: "Beer", averageCost: 3.0, picture: UIImage(named: "beerIcon.png")!, isDefault: true)
+        habitHandler.saveNewHabit(habitName: "Cigarettes", averageCost: 5.5, picture: UIImage(named: "cigaretteIcon.png")!, isDefault: true)
+        habitHandler.saveNewHabit(habitName: "Junk Food", averageCost: 5.0, picture: UIImage(named: "junkFoodIcon.png")!, isDefault: true)
+        habitHandler.saveNewHabit(habitName: "Candy", averageCost: 2.5, picture: UIImage(named: "candyIcon.png")!, isDefault: true)
+        habitHandler.saveNewHabit(habitName: "Coffee", averageCost: 3.5, picture: UIImage(named: "coffeeIcon.png")!, isDefault: true)
+    }
+    
+    private func setButtonIcons() {
+        var images = [UIImage]()
+        images = habitHandler.habits.map(){UIImage(data: $0.icon)!}
+        firstHabitButton.setImage(images[0], forState: .Normal)
+        secondHabitButton.setImage(images[1], forState: .Normal)
+        thirdHabitButton.setImage(images[2], forState: .Normal)
+        fourthHabitButton.setImage(images[3], forState: .Normal)
+        fifthHabitButton.setImage(images[4], forState: .Normal)
+        let editImage = UIImage(named: "editHabitsIcon.png")
+        editHabitsButton.setImage(editImage, forState: .Normal)
+    }
+    
+    private func pushCongratulationsAlert(nameOfGoalCompleted nameOfGoalCompleted: String) {
+        let congrats = UIAlertController(title: "Congratulations!", message: "You have completed your goal: \(nameOfGoalCompleted)! Please go to your goal feed and set a new current goal.", preferredStyle: .Alert)
+        congrats.addAction(UIAlertAction(title: "Okay", style: .Default, handler: nil))
+        self.presentViewController(congrats, animated: true, completion: nil)
     }
 }
 

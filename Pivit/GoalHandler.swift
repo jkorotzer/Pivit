@@ -142,12 +142,12 @@ class GoalHandler: CoreDataHandler {
     
     func setGoalIsFinished(finishedGoal finishedGoal: Goal) {
         let keys = ["id", "dateStarted", "currentGoal", "progress", "title", "picture", "totalMoneyNeeded", "isFinished"] as [NSCopying]
-        let values = [finishedGoal.id, finishedGoal.dateStarted, false, finishedGoal.progress, finishedGoal.title, finishedGoal.picture, finishedGoal.totalMoneyNeeded]
+        let values = [finishedGoal.id, finishedGoal.dateStarted, false, finishedGoal.progress, finishedGoal.title, finishedGoal.picture, finishedGoal.totalMoneyNeeded, true]
         let attributesDictionary = NSDictionary(objects: values, forKeys: keys)
         editExistingObjectForEntity(entity: .Goal, id: finishedGoal.id, attributesDictionary: attributesDictionary)
     }
     
-    func checkGoalIsFinished(goalToCheck goalToCheck: Goal) -> Bool {
+    func goalIsFinished(goalToCheck goalToCheck: Goal) -> Bool {
         if goalToCheck.progress >= goalToCheck.totalMoneyNeeded {
             return true
         }

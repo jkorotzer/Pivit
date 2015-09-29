@@ -186,7 +186,7 @@ class GoalsTableViewController: UITableViewController, GoalTableViewCellTableVie
             let indexPath = self.tableView.indexPathForCell(cell)!
             let goal = goals[indexPath.row]
             goalHandler.setNewCurrentGoal(newCurrentGoal: goal)
-            reloadTableView(sort: false)
+            reloadTableView(sort: true)
         }
     }
     

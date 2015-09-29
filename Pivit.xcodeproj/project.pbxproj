@@ -13,6 +13,7 @@
 		7F6983221BAB184B006DFB81 /* GoalHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6983211BAB184B006DFB81 /* GoalHandler.swift */; settings = {ASSET_TAGS = (); }; };
 		7F6983261BAB5257006DFB81 /* ImageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6983251BAB5257006DFB81 /* ImageHandler.swift */; settings = {ASSET_TAGS = (); }; };
 		7F70D4BA1BB492C30074815F /* EditHabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F70D4B91BB492C30074815F /* EditHabitsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		7F9712E11BBB1340007E65A5 /* GlobalFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9712E01BBB1340007E65A5 /* GlobalFuncs.swift */; settings = {ASSET_TAGS = (); }; };
 		7FEE73761BA381C4004FE494 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE73751BA381C4004FE494 /* AppDelegate.swift */; };
 		7FEE737B1BA381C4004FE494 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FEE73791BA381C4004FE494 /* Main.storyboard */; };
 		7FEE737E1BA381C4004FE494 /* Pivit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE737C1BA381C4004FE494 /* Pivit.xcdatamodeld */; };
@@ -26,7 +27,6 @@
 		7FEE73B31BA3E33E004FE494 /* ASProgressPopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE73B11BA3E33E004FE494 /* ASProgressPopUpView.m */; settings = {ASSET_TAGS = (); }; };
 		7FEE73BB1BA52A1A004FE494 /* GoalsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE73BA1BA52A1A004FE494 /* GoalsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		7FEE73BF1BA52AF8004FE494 /* GoalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE73BE1BA52AF8004FE494 /* GoalTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		7FEE73C11BA737A9004FE494 /* globalFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE73C01BA737A9004FE494 /* globalFuncs.swift */; settings = {ASSET_TAGS = (); }; };
 		7FEE73CE1BAA27AF004FE494 /* AkiraTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE73C31BAA27AF004FE494 /* AkiraTextField.swift */; settings = {ASSET_TAGS = (); }; };
 		7FEE73CF1BAA27AF004FE494 /* HoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE73C41BAA27AF004FE494 /* HoshiTextField.swift */; settings = {ASSET_TAGS = (); }; };
 		7FEE73D01BAA27AF004FE494 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7FEE73C51BAA27AF004FE494 /* Info.plist */; settings = {ASSET_TAGS = (); }; };
@@ -64,6 +64,7 @@
 		7F6983211BAB184B006DFB81 /* GoalHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalHandler.swift; sourceTree = "<group>"; };
 		7F6983251BAB5257006DFB81 /* ImageHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHandler.swift; sourceTree = "<group>"; };
 		7F70D4B91BB492C30074815F /* EditHabitsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditHabitsViewController.swift; sourceTree = "<group>"; };
+		7F9712E01BBB1340007E65A5 /* GlobalFuncs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalFuncs.swift; sourceTree = "<group>"; };
 		7FEE73721BA381C4004FE494 /* Pivit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pivit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FEE73751BA381C4004FE494 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FEE737A1BA381C4004FE494 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -86,7 +87,6 @@
 		7FEE73B51BA3EB89004FE494 /* <#Pivit#>-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "<#Pivit#>-Bridging-Header.h"; sourceTree = "<group>"; };
 		7FEE73BA1BA52A1A004FE494 /* GoalsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalsTableViewController.swift; sourceTree = "<group>"; };
 		7FEE73BE1BA52AF8004FE494 /* GoalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalTableViewCell.swift; sourceTree = "<group>"; };
-		7FEE73C01BA737A9004FE494 /* globalFuncs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = globalFuncs.swift; sourceTree = "<group>"; };
 		7FEE73C31BAA27AF004FE494 /* AkiraTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AkiraTextField.swift; sourceTree = "<group>"; };
 		7FEE73C41BAA27AF004FE494 /* HoshiTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoshiTextField.swift; sourceTree = "<group>"; };
 		7FEE73C51BAA27AF004FE494 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -162,11 +162,11 @@
 		7FEE73741BA381C4004FE494 /* Pivit */ = {
 			isa = PBXGroup;
 			children = (
+				7F9712E01BBB1340007E65A5 /* GlobalFuncs.swift */,
 				7FD793CD1BB1D38100F808C6 /* Handlers */,
 				7FEE73A71BA38239004FE494 /* FrontPageViewController.swift */,
 				7FEE73791BA381C4004FE494 /* Main.storyboard */,
 				7F70D4B91BB492C30074815F /* EditHabitsViewController.swift */,
-				7FEE73C01BA737A9004FE494 /* globalFuncs.swift */,
 				7FEE73BA1BA52A1A004FE494 /* GoalsTableViewController.swift */,
 				7FEE73BE1BA52AF8004FE494 /* GoalTableViewCell.swift */,
 				7FEE73D81BAA2DE7004FE494 /* AddGoalViewController.swift */,
@@ -373,12 +373,12 @@
 				7FEE73D51BAA27AF004FE494 /* MinoruTextField.swift in Sources */,
 				7FEE73AA1BA382EB004FE494 /* Goal.swift in Sources */,
 				7FEE73CF1BAA27AF004FE494 /* HoshiTextField.swift in Sources */,
-				7FEE73C11BA737A9004FE494 /* globalFuncs.swift in Sources */,
 				7FEE73A81BA38239004FE494 /* FrontPageViewController.swift in Sources */,
 				7FEE73D41BAA27AF004FE494 /* MadokaTextField.swift in Sources */,
 				7F6983261BAB5257006DFB81 /* ImageHandler.swift in Sources */,
 				7FEE73D71BAA27AF004FE494 /* YokoTextField.swift in Sources */,
 				7FEE73D31BAA27AF004FE494 /* KaedeTextField.swift in Sources */,
+				7F9712E11BBB1340007E65A5 /* GlobalFuncs.swift in Sources */,
 				7FEE73B31BA3E33E004FE494 /* ASProgressPopUpView.m in Sources */,
 				7FEE73761BA381C4004FE494 /* AppDelegate.swift in Sources */,
 				7F69831E1BAA6F0B006DFB81 /* Habit.swift in Sources */,
@@ -537,7 +537,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Pivit/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Pivit.Pivit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -554,7 +554,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Pivit/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Pivit.Pivit;
 				PRODUCT_NAME = "$(TARGET_NAME)";

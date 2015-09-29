@@ -55,7 +55,7 @@
                                             </mask>
                                         </variation>
                                     </textField>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Xu-3r-DWh">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Xu-3r-DWh">
                                         <rect key="frame" x="248" y="330" width="106" height="106"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="5Xu-3r-DWh" secondAttribute="height" multiplier="1:1" id="fwQ-W2-Htt"/>
@@ -67,7 +67,7 @@
                                             </mask>
                                         </variation>
                                     </button>
-                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJw-1x-U7a">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJw-1x-U7a">
                                         <rect key="frame" x="20" y="444.5" width="105.5" height="105.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="vJw-1x-U7a" secondAttribute="height" multiplier="1:1" id="nB7-Xs-9EE"/>
@@ -79,7 +79,19 @@
                                             </mask>
                                         </variation>
                                     </button>
-                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8zd-01-lCD">
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCW-IP-byg">
+                                        <rect key="frame" x="134" y="444" width="106" height="106"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="pCW-IP-byg" secondAttribute="height" multiplier="1:1" id="ePE-5k-epf"/>
+                                        </constraints>
+                                        <state key="normal" title="Button 5"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="ePE-5k-epf"/>
+                                            </mask>
+                                        </variation>
+                                    </button>
+                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8zd-01-lCD">
                                         <rect key="frame" x="248" y="444" width="106" height="106"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="8zd-01-lCD" secondAttribute="height" multiplier="1:1" id="s0E-3C-xbb"/>
@@ -150,7 +162,7 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BHv-2Z-DGa">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BHv-2Z-DGa">
                                         <rect key="frame" x="134" y="330" width="106" height="106"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="BHv-2Z-DGa" secondAttribute="height" multiplier="1:1" id="mjI-Qy-eE3"/>
@@ -162,24 +174,12 @@
                                             </mask>
                                         </variation>
                                     </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="100" verticalHuggingPriority="100" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6C1-E3-AFW">
-                                        <rect key="frame" x="20" y="330.5" width="106" height="106"/>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="100" verticalHuggingPriority="100" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6C1-E3-AFW">
+                                        <rect key="frame" x="20" y="330" width="106" height="106"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="6C1-E3-AFW" secondAttribute="height" multiplier="1:1" id="XHv-w0-HfH"/>
                                         </constraints>
                                         <state key="normal" title="Button 1"/>
-                                    </button>
-                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCW-IP-byg">
-                                        <rect key="frame" x="134" y="444" width="106" height="106"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="pCW-IP-byg" secondAttribute="height" multiplier="1:1" id="ePE-5k-epf"/>
-                                        </constraints>
-                                        <state key="normal" title="Button 5"/>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="ePE-5k-epf"/>
-                                            </mask>
-                                        </variation>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -364,9 +364,15 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="currentGoalLabel" destination="CCX-WZ-zBO" id="Srl-XE-ZOm"/>
+                        <outlet property="editHabitsButton" destination="8zd-01-lCD" id="uPe-RZ-nqU"/>
+                        <outlet property="fifthHabitButton" destination="pCW-IP-byg" id="U7W-LP-bL8"/>
+                        <outlet property="firstHabitButton" destination="6C1-E3-AFW" id="Xta-d5-xLU"/>
+                        <outlet property="fourthHabitButton" destination="vJw-1x-U7a" id="guO-Fc-kOC"/>
                         <outlet property="goalImage" destination="at6-3d-92a" id="lNw-8X-Wym"/>
                         <outlet property="progressBar" destination="IPP-EW-Vmi" id="Jvi-Cg-rIx"/>
                         <outlet property="progressLabel" destination="aWd-nP-jhR" id="ozm-6j-5Wx"/>
+                        <outlet property="secondHabitButton" destination="BHv-2Z-DGa" id="yKC-ej-9A1"/>
+                        <outlet property="thirdHabitButton" destination="5Xu-3r-DWh" id="dQz-Rz-ZrE"/>
                         <outlet property="totalAmountNeededLabel" destination="S1O-mj-581" id="PAx-qK-mao"/>
                         <outlet property="whatsItForAmountTextField" destination="MoV-MX-Dsu" id="Vm6-WM-Bku"/>
                         <outlet property="whatsItForTextField" destination="tih-JA-0fg" id="fvL-6p-y3X"/>

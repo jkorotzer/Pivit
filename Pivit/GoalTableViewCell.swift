@@ -85,16 +85,16 @@ class GoalTableViewCell: UITableViewCell {
                 goalStatusButton.setTitleColor(PivitColor(), forState: .Normal)
                 goalStatusButton.setTitle("finished", forState: .Normal)
                 goalStatusButton.titleLabel!.font = goalStatusButton.titleLabel!.font.fontWithSize(CGFloat(20.0))
-            }
-            
-            if cellGoal.isCurrentGoal {
-                goalStatusButton.setTitleColor(PivitColor(), forState: .Normal)
-                goalStatusButton.setTitle("current goal", forState: .Normal)
-                goalStatusButton.titleLabel!.font = goalStatusButton.titleLabel!.font.fontWithSize(CGFloat(20.0))
             } else {
-                goalStatusButton.setTitle("make current goal", forState: .Normal)
-                goalStatusButton.setTitleColor(UIColor.blueColor(), forState: .Normal)
-                goalStatusButton.titleLabel!.font = goalStatusButton.titleLabel!.font.fontWithSize(CGFloat(15.0))
+                if cellGoal.isCurrentGoal {
+                    goalStatusButton.setTitleColor(PivitColor(), forState: .Normal)
+                    goalStatusButton.setTitle("current goal", forState: .Normal)
+                    goalStatusButton.titleLabel!.font = goalStatusButton.titleLabel!.font.fontWithSize(CGFloat(20.0))
+                } else {
+                    goalStatusButton.setTitle("make current goal", forState: .Normal)
+                    goalStatusButton.setTitleColor(UIColor.blueColor(), forState: .Normal)
+                    goalStatusButton.titleLabel!.font = goalStatusButton.titleLabel!.font.fontWithSize(CGFloat(15.0))
+                }
             }
         }
         
