@@ -1,5 +1,5 @@
 //
-//  globalFuncs.swift
+//  Global.swift
 //  Pivit
 //
 //  Created by Jared on 9/14/15.
@@ -10,10 +10,6 @@ import Foundation
 
 func PivitColor() -> UIColor {
     return UIColor(red: 23.0 / 255.0, green: 243.0 / 255.0, blue: 147.0 / 255.0, alpha: 1.0)
-}
-
-func darkGreenColor() -> UIColor {
-    return UIColor(red: 51.0 / 255.0, green: 204.0 / 255.0, blue: 56.0 / 255.0, alpha: 1.0)
 }
 
 func sanitizeMoney(string string: String) -> Double? {
@@ -29,11 +25,11 @@ func hasAppAlreadyLaunchedOnce() -> Bool {
     let defaults = NSUserDefaults.standardUserDefaults()
     
     if let _ = defaults.stringForKey("isAppAlreadyLaunchedOnce") {
-        print("App already launched")
+        print("app has launched")
         return true
     } else {
         defaults.setBool(true, forKey: "isAppAlreadyLaunchedOnce")
-        print("App launched first time")
+        print("app has not launched")
         return false
     }
 }
