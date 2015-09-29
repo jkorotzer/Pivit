@@ -24,3 +24,16 @@ func sanitizeMoney(string string: String) -> Double? {
         return nil
     }
 }
+
+func hasAppAlreadyLaunchedOnce() -> Bool {
+    let defaults = NSUserDefaults.standardUserDefaults()
+    
+    if let _ = defaults.stringForKey("isAppAlreadyLaunchedOnce") {
+        print("App already launched")
+        return true
+    } else {
+        defaults.setBool(true, forKey: "isAppAlreadyLaunchedOnce")
+        print("App launched first time")
+        return false
+    }
+}

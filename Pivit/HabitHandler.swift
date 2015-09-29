@@ -11,43 +11,29 @@ import CoreData
 
 class HabitHandler: CoreDataHandler {
     
-    var Habits: [Habit] {
+    //MARK: - Properties
+    
+    var habits: [Habit] {
         get {
             return fetchHabits()
         }
     }
     
-    //MARK: -Public Functions
+    //MARK: - Public Functions
     
     //Use to save a new Habit to Core Data
     
-    func saveNewHabit(habitName habitname: String, averageCost: Double, picture: UIImage){
+    func saveNewHabit(habitName habitname: String, averageCost: Double, picture: UIImage, isDefault: Bool){
         let image = UIImagePNGRepresentation(picture)!
         let id = NSUUID().UUIDString
-        
-        let keys = ["id", "count", "name", "icon", "averageCost", "isDefaultHabit"] as [NSCopying]
-        let values = [id, 0, habitname, image, averageCost] as [AnyObject]
+
+        let keys = ["id", "count", "name", "icon", "averageCost", "isDefault"] as [NSCopying]
+        let values = [id, 0, habitname, image, averageCost, isDefault] as [AnyObject]
         
         let attributesDictionary = NSDictionary(objects: values, forKeys: keys)
         
         saveNewObjectForEntity(entity: .Habit, attributesDictionary: attributesDictionary)
         
-    }
-    
-    //Returns array of Habits from CoreData
-    
-    private func fetchHabits() -> [Habit] {
-        var Habits = [Habit]()
-        let appDel : AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        let context : NSManagedObjectContext = appDel.managedObjectContext
-        let request = NSFetchRequest(entityName: "Habit")
-        request.returnsObjectsAsFaults = false
-        do {
-            Habits = try context.executeFetchRequest(request) as! [Habit]
-        } catch {
-            print ("error")
-        }
-        return Habits
     }
     
     //Edit an existing habit. Pass anything not changed as nil.
@@ -81,28 +67,42 @@ class HabitHandler: CoreDataHandler {
             newPic = habitToEdit.icon
         }
         
-        let keys = ["averageCost", "icon", "name", "count", "id"] as [NSCopying]
-        let values = [newCost!, newPic!, newName!, count, id] as [AnyObject]
+        let keys = ["averageCost", "icon", "name", "count", "id", "isDefault"] as [NSCopying]
+        let values = [newCost!, newPic!, newName!, count, id, habitToEdit.isDefault] as [AnyObject]
         let attributesDictionary = NSDictionary(objects: values, forKeys: keys)
         
         editExistingObjectForEntity(entity: .Habit, id: habitToEdit.id, attributesDictionary: attributesDictionary)
     }
     
     //Call whenever a habit is used to increment the count
+    
     func habitIsUsed(habitUsed habitUsed: Habit) {
-        let averageCost = habitUsed.averageCost
-        let icon = habitUsed.icon
-        let name = habitUsed.name
         let count = habitUsed.count + 1
-        let id = habitUsed.id
         
-        let keys = ["averageCost", "icon", "name", "count", "id"] as [NSCopying]
-        let values = [averageCost, icon, name, count, id] as [AnyObject]
+        let keys = ["averageCost", "icon", "name", "count", "id", "isDefault"] as [NSCopying]
+        let values = [habitUsed.averageCost, habitUsed.icon, habitUsed.name, count, habitUsed.id, habitUsed.isDefault] as [AnyObject]
         let attributesDictionary = NSDictionary(objects: values, forKeys: keys)
         
-        editExistingObjectForEntity(entity: .Habit, id: id, attributesDictionary: attributesDictionary)
+        editExistingObjectForEntity(entity: .Habit, id: habitUsed.id, attributesDictionary: attributesDictionary)
     }
     
+    //MARK: - Private Funcs
+    
+    //Returns array of Habits from CoreData
+    
+    private func fetchHabits() -> [Habit] {
+        var Habits = [Habit]()
+        let appDel : AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let context : NSManagedObjectContext = appDel.managedObjectContext
+        let request = NSFetchRequest(entityName: "Habit")
+        request.returnsObjectsAsFaults = false
+        do {
+            Habits = try context.executeFetchRequest(request) as! [Habit]
+        } catch {
+            print ("error")
+        }
+        return Habits
+    }
 
 }
 

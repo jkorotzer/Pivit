@@ -16,4 +16,5 @@ class Habit: NSManagedObject {
     @NSManaged var name: String
     @NSManaged var count: Int
     @NSManaged var id: String
+    @NSManaged var isDefault: Bool
 }

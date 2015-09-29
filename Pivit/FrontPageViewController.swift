@@ -15,24 +15,29 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
-        let tapped = UITapGestureRecognizer(target: self, action: "closeKeyboard")
-        tapped.numberOfTapsRequired = 1
-        self.view.addGestureRecognizer(tapped)
+        
+        setNotificationListeners()
+        setTapGestureRecognizer()
+        
+        if !hasAppAlreadyLaunchedOnce() {
+            saveDefaultHabitsToCoreData()
+        }
+        
+        print(habitHandler.habits)
+        
     }
     
-    deinit{
+    deinit {
+        
         NSNotificationCenter.defaultCenter().removeObserver(self)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+        
     }
     
     override func viewWillAppear(animated: Bool) {
+        
         super.viewWillAppear(animated)
         updateUI()
+        
     }
     
     //MARK: - Outlet Properties
@@ -72,15 +77,15 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
     
     private var goalHandler = GoalHandler()
     
+    private var habitHandler = HabitHandler()
+    
     private var imageHandler = ImageHandler()
     
     private var currentString = ""
     
-    private var KeyBoard = false
+    private var keyBoard = false
     
     //MARK: - Outlet Funcs
-    
-    
     
     @IBAction func submitCustomAmount(sender: UIButton) {
         if let text = whatsItForAmountTextField.text {
@@ -96,16 +101,17 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
     }
     
     //MARK : - UITextField Funcs
-    func closeKeyboard(){
+    
+    func closeKeyboard() {
         self.view.endEditing(true)
     }
     
     func keyboardWillShow(sender: NSNotification) {
-        KeyBoard = true
+        keyBoard = true
     }
     
     func keyboardWillHide(sender: NSNotification) {
-        KeyBoard = false
+        keyBoard = false
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -120,7 +126,6 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
                     return false
                 }
                 currentString += string
-                print(currentString)
                 formatCurrency(string: currentString)
             default:
                 let array = Array(arrayLiteral: string)
@@ -134,7 +139,7 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
                     formatCurrency(string: currentString)
                 } else {
                     if currentString.characters.count<=1 {
-                        currentString=""
+                        currentString = ""
                         formatCurrency(string: currentString)
                     } else {
                         let endIndex = currentString.endIndex
@@ -159,8 +164,6 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
 
         }
     }
-    
-    
     
     func formatCurrency(string string: String) {
         print("format \(string)")
@@ -217,7 +220,25 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
             progressLabel.text = "progress: $0.00"
             totalAmountNeededLabel.text = "$0.00"
         }
-        
+    }
+    
+    private func setNotificationListeners() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    private func setTapGestureRecognizer() {
+        let tapped = UITapGestureRecognizer(target: self, action: "closeKeyboard")
+        tapped.numberOfTapsRequired = 1
+        self.view.addGestureRecognizer(tapped)
+    }
+    
+    private func saveDefaultHabitsToCoreData() {
+        habitHandler.saveNewHabit(habitName: "Beer", averageCost: 3.0, picture: UIImage(named: "beerIcon")!, isDefault: true)
+        habitHandler.saveNewHabit(habitName: "Cigarettes", averageCost: 5.5, picture: UIImage(named: "cigaretteIcon")!, isDefault: true)
+        habitHandler.saveNewHabit(habitName: "Junk Food", averageCost: 5.0, picture: UIImage(named: "junkFoodIcon")!, isDefault: true)
+        habitHandler.saveNewHabit(habitName: "Candy", averageCost: 2.5, picture: UIImage(named: "candyIcon")!, isDefault: true)
+        habitHandler.saveNewHabit(habitName: "Coffee", averageCost: 3.5, picture: UIImage(named: "coffeeIcon")!, isDefault: true)
     }
 }
 

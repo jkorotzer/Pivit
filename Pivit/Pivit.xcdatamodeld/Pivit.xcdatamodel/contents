@@ -10,15 +10,16 @@
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="totalMoneyNeeded" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
     </entity>
-    <entity name="Habit" representedClassName="habit" syncable="YES">
+    <entity name="Habit" representedClassName="Habit" syncable="YES">
         <attribute name="averageCost" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="count" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="icon" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isDefault" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="Goal" positionX="-63" positionY="-18" width="128" height="165"/>
-        <element name="Habit" positionX="-54" positionY="18" width="128" height="120"/>
+        <element name="Habit" positionX="-54" positionY="18" width="128" height="135"/>
     </elements>
 </model>

@@ -56,6 +56,7 @@ class GoalHandler: CoreDataHandler {
     }
     
     //Use to set a different goal as the user's current goal. Do not use on a finished goal!
+    
     func setNewCurrentGoal(newCurrentGoal newCurrentGoal: Goal) {
         
         if newCurrentGoal.isFinished {
@@ -80,6 +81,7 @@ class GoalHandler: CoreDataHandler {
     }
     
     //Use to edit an existing goal in core data. Pass any arguments that are not to be changed as nil. You cannot use it to reset current goal, or to push money to a goal.
+    
     func editExistingGoal(goalToEdit goalToEdit: Goal, newTitle: String?, newPicture: UIImage?, newTotalMoneyNeeded: Double?) {
         
         let id = goalToEdit.id
@@ -119,6 +121,7 @@ class GoalHandler: CoreDataHandler {
     }
     
     //Use to push money to current goal for the custom amount
+    
     func pushMoneyToCurrentGoal(moneyToPush moneyToPush: Double) {
         if let goal = currentGoal {
         pushMoneyToGoal(goal: goal, moneyToPush: moneyToPush)
@@ -126,6 +129,7 @@ class GoalHandler: CoreDataHandler {
     }
     
     //Use to push money from a shortcut
+    
     func pushMoneyToCurrentGoalFromHabit(habit habit: Habit) {
         if let goal = currentGoal {
             let habitHandler = HabitHandler()
@@ -135,6 +139,7 @@ class GoalHandler: CoreDataHandler {
     }
     
     //Use to set a finished goal to finished. Also sets the goal as NOT the current goal!
+    
     func setGoalIsFinished(finishedGoal finishedGoal: Goal) {
         let keys = ["id", "dateStarted", "currentGoal", "progress", "title", "picture", "totalMoneyNeeded", "isFinished"] as [NSCopying]
         let values = [finishedGoal.id, finishedGoal.dateStarted, false, finishedGoal.progress, finishedGoal.title, finishedGoal.picture, finishedGoal.totalMoneyNeeded]
@@ -152,6 +157,7 @@ class GoalHandler: CoreDataHandler {
     //MARK: - Private funcs
     
     //Use to push money to a specific goal.
+    
     private func pushMoneyToGoal(goal goal: Goal, moneyToPush: Double) {
         
         var progress = goal.progress
