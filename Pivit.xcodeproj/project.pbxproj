@@ -162,9 +162,9 @@
 		7FEE73741BA381C4004FE494 /* Pivit */ = {
 			isa = PBXGroup;
 			children = (
-				7F9712E21BBB5BF0007E65A5 /* Global.swift */,
 				7FD793CD1BB1D38100F808C6 /* Handlers */,
 				7FEE73A71BA38239004FE494 /* FrontPageViewController.swift */,
+				7F9712E21BBB5BF0007E65A5 /* Global.swift */,
 				7FEE73791BA381C4004FE494 /* Main.storyboard */,
 				7F70D4B91BB492C30074815F /* EditHabitsViewController.swift */,
 				7FEE73BA1BA52A1A004FE494 /* GoalsTableViewController.swift */,

@@ -66,15 +66,40 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: - Habit Buttons
     
-    @IBOutlet weak var firstHabitButton: UIButton!
+    @IBOutlet weak var firstHabitButton: UIButton! {
+        didSet {
+            firstHabitButton.tag = StoryboardKeys.firstButtonTag
+            firstHabitButton.addTarget(self, action: "habitSelected:", forControlEvents: .TouchUpInside)
+        }
+    }
     
-    @IBOutlet weak var secondHabitButton: UIButton!
+    @IBOutlet weak var secondHabitButton: UIButton! {
+        didSet {
+            secondHabitButton.tag = StoryboardKeys.secondButtonTag
+            secondHabitButton.addTarget(self, action: "habitSelected:", forControlEvents: .TouchUpInside)
+        }
+    }
     
-    @IBOutlet weak var thirdHabitButton: UIButton!
+    @IBOutlet weak var thirdHabitButton: UIButton! {
+        didSet {
+            thirdHabitButton.tag = StoryboardKeys.thirdButtonTag
+            thirdHabitButton.addTarget(self, action: "habitSelected:", forControlEvents: .TouchUpInside)
+        }
+    }
     
-    @IBOutlet weak var fourthHabitButton: UIButton!
+    @IBOutlet weak var fourthHabitButton: UIButton! {
+        didSet {
+            fourthHabitButton.tag = StoryboardKeys.fourthButtonTag
+            fourthHabitButton.addTarget(self, action: "habitSelected:", forControlEvents: .TouchUpInside)
+        }
+    }
     
-    @IBOutlet weak var fifthHabitButton: UIButton!
+    @IBOutlet weak var fifthHabitButton: UIButton! {
+        didSet {
+            fifthHabitButton.tag = StoryboardKeys.fifthButtonTag
+            fifthHabitButton.addTarget(self, action: "habitSelected:", forControlEvents: .TouchUpInside)
+        }
+    }
     
     @IBOutlet weak var editHabitsButton: UIButton!
     
@@ -90,7 +115,7 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
     
     private var keyBoard = false
     
-    //MARK: - Outlet Funcs
+    //MARK: - Pushing Money Funcs
     
     @IBAction func submitCustomAmount(sender: UIButton) {
         if let text = whatsItForAmountTextField.text {
@@ -107,6 +132,19 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
         whatsItForAmountTextField.text = ""
         whatsItForTextField.text = ""
         closeKeyboard()
+        updateUI()
+    }
+    
+    func habitSelected(sender: UIButton) {
+        let habits = habitHandler.habits
+        switch sender.tag {
+        case StoryboardKeys.firstButtonTag: goalHandler.pushMoneyToCurrentGoalFromHabit(habit: habits[0])
+        case StoryboardKeys.secondButtonTag: goalHandler.pushMoneyToCurrentGoalFromHabit(habit: habits[1])
+        case StoryboardKeys.thirdButtonTag: goalHandler.pushMoneyToCurrentGoalFromHabit(habit: habits[2])
+        case StoryboardKeys.fourthButtonTag: goalHandler.pushMoneyToCurrentGoalFromHabit(habit: habits[3])
+        case StoryboardKeys.fifthButtonTag: goalHandler.pushMoneyToCurrentGoalFromHabit(habit: habits[4])
+        default: break
+        }
         updateUI()
     }
     
@@ -267,6 +305,16 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
         let congrats = UIAlertController(title: "Congratulations!", message: "You have completed your goal: \(nameOfGoalCompleted)! Please go to your goal feed and set a new current goal.", preferredStyle: .Alert)
         congrats.addAction(UIAlertAction(title: "Okay", style: .Default, handler: nil))
         self.presentViewController(congrats, animated: true, completion: nil)
+    }
+    
+    //MARK: - Storyboard Keys
+    
+    private struct StoryboardKeys {
+        static let firstButtonTag = 101
+        static let secondButtonTag = 102
+        static let thirdButtonTag = 103
+        static let fourthButtonTag = 104
+        static let fifthButtonTag = 105
     }
 }
 
