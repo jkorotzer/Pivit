@@ -528,21 +528,77 @@
             </objects>
             <point key="canvasLocation" x="2932.5" y="-89.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Change Habit View Controller-->
         <scene sceneID="4YX-do-5Mp">
             <objects>
-                <viewController id="hf0-Ub-NZZ" sceneMemberID="viewController">
+                <viewController id="hf0-Ub-NZZ" customClass="ChangeHabitViewController" customModule="Pivit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tD4-ND-Sg9"/>
                         <viewControllerLayoutGuide type="bottom" id="AJ0-Kf-yZS"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ir2-XP-sJc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1RG-LK-Ouk">
+                                <rect key="frame" x="74" y="25" width="226.5" height="226.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="1RG-LK-Ouk" secondAttribute="height" multiplier="1:1" id="6Hs-f4-OrM"/>
+                                    <constraint firstAttribute="width" constant="240" id="suK-u5-QUc"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="suK-u5-QUc"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gjc-cw-xaO" customClass="HoshiTextField" customModule="Pivit" customModuleProvider="target">
+                                <rect key="frame" x="16" y="276.5" width="343" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="POo-be-Ph5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pLN-p2-Js4" customClass="HoshiTextField" customModule="Pivit" customModuleProvider="target">
+                                <rect key="frame" x="16" y="334" width="343" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Gjc-cw-xaO" secondAttribute="trailing" id="8OI-Ld-GbX"/>
+                            <constraint firstItem="pLN-p2-Js4" firstAttribute="trailing" secondItem="Gjc-cw-xaO" secondAttribute="trailing" id="GDK-tC-4Pv"/>
+                            <constraint firstItem="1RG-LK-Ouk" firstAttribute="top" secondItem="tD4-ND-Sg9" secondAttribute="bottom" constant="25" id="J0P-Bl-hoT"/>
+                            <constraint firstItem="pLN-p2-Js4" firstAttribute="top" secondItem="Gjc-cw-xaO" secondAttribute="bottom" constant="8" symbolic="YES" id="SrS-hz-wiB"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Gjc-cw-xaO" secondAttribute="leading" id="Uaj-f6-14L"/>
+                            <constraint firstItem="1RG-LK-Ouk" firstAttribute="centerX" secondItem="Ir2-XP-sJc" secondAttribute="centerX" id="adB-1d-kv2"/>
+                            <constraint firstItem="pLN-p2-Js4" firstAttribute="leading" secondItem="Gjc-cw-xaO" secondAttribute="leading" id="gUI-uH-eIw"/>
+                            <constraint firstItem="pLN-p2-Js4" firstAttribute="height" secondItem="Gjc-cw-xaO" secondAttribute="height" id="svj-3o-YQa"/>
+                            <constraint firstItem="Gjc-cw-xaO" firstAttribute="centerY" secondItem="Ir2-XP-sJc" secondAttribute="centerY" id="uhT-0f-7sG"/>
+                            <constraint firstItem="Gjc-cw-xaO" firstAttribute="top" secondItem="1RG-LK-Ouk" secondAttribute="bottom" constant="25" id="xnC-bX-bbY"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="7FI-67-d4Z"/>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" id="7FI-67-d4Z">
+                        <barButtonItem key="leftBarButtonItem" title="back" id="oJ8-5O-REP">
+                            <connections>
+                                <action selector="back:" destination="hf0-Ub-NZZ" id="vXu-9D-pa2"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="done" id="hJ2-qk-34J">
+                            <connections>
+                                <action selector="done:" destination="hf0-Ub-NZZ" id="HTH-fQ-rU8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="habitCostTextField" destination="pLN-p2-Js4" id="RS2-Hd-VhF"/>
+                        <outlet property="habitImageView" destination="1RG-LK-Ouk" id="DMl-AH-YXe"/>
+                        <outlet property="habitNameTextField" destination="Gjc-cw-xaO" id="tgA-mh-4mN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qxu-17-p3i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -13,6 +13,8 @@
 		7F6983221BAB184B006DFB81 /* GoalHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6983211BAB184B006DFB81 /* GoalHandler.swift */; settings = {ASSET_TAGS = (); }; };
 		7F6983261BAB5257006DFB81 /* ImageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6983251BAB5257006DFB81 /* ImageHandler.swift */; settings = {ASSET_TAGS = (); }; };
 		7F70D4BA1BB492C30074815F /* EditHabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F70D4B91BB492C30074815F /* EditHabitsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		7F7B83911BCD86FE000BEBF1 /* ChangeHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7B83901BCD86FE000BEBF1 /* ChangeHabitViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		7F7B83931BCDA578000BEBF1 /* Toucan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7B83921BCDA578000BEBF1 /* Toucan.swift */; settings = {ASSET_TAGS = (); }; };
 		7F9712E31BBB5BF0007E65A5 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9712E21BBB5BF0007E65A5 /* Global.swift */; settings = {ASSET_TAGS = (); }; };
 		7FEE73761BA381C4004FE494 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE73751BA381C4004FE494 /* AppDelegate.swift */; };
 		7FEE737B1BA381C4004FE494 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FEE73791BA381C4004FE494 /* Main.storyboard */; };
@@ -64,6 +66,8 @@
 		7F6983211BAB184B006DFB81 /* GoalHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalHandler.swift; sourceTree = "<group>"; };
 		7F6983251BAB5257006DFB81 /* ImageHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHandler.swift; sourceTree = "<group>"; };
 		7F70D4B91BB492C30074815F /* EditHabitsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditHabitsViewController.swift; sourceTree = "<group>"; };
+		7F7B83901BCD86FE000BEBF1 /* ChangeHabitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeHabitViewController.swift; sourceTree = "<group>"; };
+		7F7B83921BCDA578000BEBF1 /* Toucan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toucan.swift; sourceTree = "<group>"; };
 		7F9712E21BBB5BF0007E65A5 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		7FEE73721BA381C4004FE494 /* Pivit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pivit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FEE73751BA381C4004FE494 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +130,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F7B83941BCDA581000BEBF1 /* Toucan Image Handling */ = {
+			isa = PBXGroup;
+			children = (
+				7F7B83921BCDA578000BEBF1 /* Toucan.swift */,
+			);
+			name = "Toucan Image Handling";
+			sourceTree = "<group>";
+		};
 		7FD793CD1BB1D38100F808C6 /* Handlers */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,9 +179,11 @@
 				7F9712E21BBB5BF0007E65A5 /* Global.swift */,
 				7FEE73791BA381C4004FE494 /* Main.storyboard */,
 				7F70D4B91BB492C30074815F /* EditHabitsViewController.swift */,
+				7F7B83901BCD86FE000BEBF1 /* ChangeHabitViewController.swift */,
 				7FEE73BA1BA52A1A004FE494 /* GoalsTableViewController.swift */,
 				7FEE73BE1BA52AF8004FE494 /* GoalTableViewCell.swift */,
 				7FEE73D81BAA2DE7004FE494 /* AddGoalViewController.swift */,
+				7F7B83941BCDA581000BEBF1 /* Toucan Image Handling */,
 				7FEE73C21BAA27AF004FE494 /* TextFieldEffects */,
 				7FEE73B41BA3E435004FE494 /* Progress View Files */,
 				7FEE73A61BA381E9004FE494 /* Supporting Files */,
@@ -388,9 +402,11 @@
 				7F6983221BAB184B006DFB81 /* GoalHandler.swift in Sources */,
 				7FEE737E1BA381C4004FE494 /* Pivit.xcdatamodeld in Sources */,
 				7F9712E31BBB5BF0007E65A5 /* Global.swift in Sources */,
+				7F7B83911BCD86FE000BEBF1 /* ChangeHabitViewController.swift in Sources */,
 				7FEE73BF1BA52AF8004FE494 /* GoalTableViewCell.swift in Sources */,
 				1B3F5B5E1BB32C89006FB75F /* HabitHandler.swift in Sources */,
 				7FEE73CE1BAA27AF004FE494 /* AkiraTextField.swift in Sources */,
+				7F7B83931BCDA578000BEBF1 /* Toucan.swift in Sources */,
 				7FEE73D91BAA2DE7004FE494 /* AddGoalViewController.swift in Sources */,
 				7FEE73D61BAA27AF004FE494 /* TextFieldsEffects.swift in Sources */,
 				7FEE73D21BAA27AF004FE494 /* JiroTextField.swift in Sources */,

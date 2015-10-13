@@ -235,38 +235,49 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
     //MARK: - Private Functions
     
     private func updateUI() {
-        
         if let currentGoal = goalHandler.currentGoal {
-        
-        let numberFormatter = NSNumberFormatter()
-        numberFormatter.numberStyle = .CurrencyStyle
-        
-        let data = currentGoal.picture
-        let image = UIImage(data: data)
-        goalImage.image = image
             
-        currentGoalLabel.text = currentGoal.title
+            if goalHandler.goalIsFinished(goalToCheck: currentGoal) {
             
-        let progress = currentGoal.progress
-        let progressPercentage = (progress / currentGoal.totalMoneyNeeded)
-        progressBar.setProgress(Float(progressPercentage), animated: true)
-        let progressNum = numberFormatter.stringFromNumber(progress)!
-        progressLabel.text = "progress: \(progressNum)"
-        progressBar.showPopUpViewAnimated(true)
-        progressBar.popUpView.cornerRadius = CGFloat(16.0)
-        progressBar.popUpViewColor = PivitColor()
-        progressBar.progressTintColor = PivitColor()
+                progressBar.setProgress(1.0, animated: true)
+                pushCongratulationsAlert(nameOfGoalCompleted: goalHandler.currentGoal!.title)
+                goalHandler.setGoalIsFinished(finishedGoal: goalHandler.currentGoal!)
+            
+            } else {
         
-        let money = currentGoal.totalMoneyNeeded
-        let moneyNum = numberFormatter.stringFromNumber(money)!
-        totalAmountNeededLabel.text = "price: \(moneyNum)"
+                let numberFormatter = NSNumberFormatter()
+                numberFormatter.numberStyle = .CurrencyStyle
     
+                let data = currentGoal.picture
+                let image = UIImage(data: data)
+                goalImage.image = image
+        
+                currentGoalLabel.text = currentGoal.title
+        
+                let progress = currentGoal.progress
+                let progressPercentage = (progress / currentGoal.totalMoneyNeeded)
+                progressBar.setProgress(Float(progressPercentage), animated: true)
+                let progressNum = numberFormatter.stringFromNumber(progress)!
+                progressLabel.text = "progress: \(progressNum)"
+                progressBar.showPopUpViewAnimated(true)
+                progressBar.popUpView.cornerRadius = CGFloat(16.0)
+                progressBar.popUpViewColor = PivitColor()
+                progressBar.progressTintColor = PivitColor()
+                    
+                let money = currentGoal.totalMoneyNeeded
+                let moneyNum = numberFormatter.stringFromNumber(money)!
+                totalAmountNeededLabel.text = "price: \(moneyNum)"
+                
+            }
+            
         } else {
+            
             goalImage.image = imageHandler.generateClickToAddPhoto()
             currentGoalLabel.text = "please set your goal"
             progressBar.progress = Float(0)
             progressLabel.text = "progress: $0.00"
             totalAmountNeededLabel.text = "$0.00"
+            
         }
     }
     

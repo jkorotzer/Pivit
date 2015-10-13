@@ -23,7 +23,7 @@ class EditHabitsViewController: UIViewController {
     
     private let habits = HabitHandler().habits
     
-    private var habitToEdit = Habit()
+    private var habitToEdit : Habit?
     
     //MARK: - Outlet Funcs
     
@@ -78,6 +78,18 @@ class EditHabitsViewController: UIViewController {
         default: break
         }
         performSegueWithIdentifier("editHabit", sender: self)
+    }
+    
+    //MARK: - Navigation
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let navCon = segue.destinationViewController as? UINavigationController {
+            if let destination = navCon.topViewController as? ChangeHabitViewController {
+                if let habit = habitToEdit {
+                    destination.habitToBeEdited = habit
+                }
+            }
+        }
     }
     
     //MARK: - Tags
