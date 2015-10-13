@@ -21,7 +21,9 @@ class EditHabitsViewController: UIViewController {
     
     //MARK: - Model
     
-    private var habits = HabitHandler().habits
+    private let habits = HabitHandler().habits
+    
+    private var habitToEdit = Habit()
     
     //MARK: - Outlet Funcs
     
@@ -34,31 +36,48 @@ class EditHabitsViewController: UIViewController {
     @IBOutlet weak var firstHabitButton: UIButton! {
         didSet {
             firstHabitButton.tag = Tags.firstButtonTag
+            firstHabitButton.addTarget(self, action: "habitSelected:", forControlEvents: .TouchUpInside)
         }
     }
 
     @IBOutlet weak var secondHabitButton: UIButton! {
         didSet {
             secondHabitButton.tag = Tags.secondButtonTag
+            secondHabitButton.addTarget(self, action: "habitSelected:", forControlEvents: .TouchUpInside)
         }
     }
     
     @IBOutlet weak var thirdHabitButton: UIButton! {
         didSet {
             thirdHabitButton.tag = Tags.thirdButtonTag
+            thirdHabitButton.addTarget(self, action: "habitSelected:", forControlEvents: .TouchUpInside)
         }
     }
     
     @IBOutlet weak var fourthHabitButton: UIButton! {
         didSet {
             fourthHabitButton.tag = Tags.fourthButtonTag
+            fourthHabitButton.addTarget(self, action: "habitSelected:", forControlEvents: .TouchUpInside)
         }
     }
     
     @IBOutlet weak var fifthHabitButton: UIButton! {
         didSet {
             fifthHabitButton.tag = Tags.fifthButtonTag
+            fifthHabitButton.addTarget(self, action: "habitSelected:", forControlEvents: .TouchUpInside)
         }
+    }
+    
+    func habitSelected(sender: UIButton) {
+        switch sender.tag {
+        case Tags.firstButtonTag: habitToEdit = habits[0]
+        case Tags.secondButtonTag: habitToEdit = habits[1]
+        case Tags.thirdButtonTag: habitToEdit = habits[2]
+        case Tags.fourthButtonTag: habitToEdit = habits[3]
+        case Tags.fifthButtonTag: habitToEdit = habits[4]
+        default: break
+        }
+        performSegueWithIdentifier("editHabit", sender: self)
     }
     
     //MARK: - Tags
