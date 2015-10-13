@@ -23,7 +23,8 @@ class HabitHandler: CoreDataHandler {
     
     //Use to save a new Habit to Core Data
     
-    func saveNewHabit(habitName habitname: String, averageCost: Double, picture: UIImage, isDefault: Bool){
+    func saveNewHabit(habitName habitname: String, averageCost: Double, picture: UIImage, isDefault: Bool) {
+        
         let image = UIImagePNGRepresentation(picture)!
         let id = NSUUID().UUIDString
 
