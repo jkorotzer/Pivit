@@ -10,6 +10,7 @@ import Foundation
 import CoreData
 
 //Handles everything to do with goals and acts as model for view controllers. Variables Goals and currentGoal are read only, do not mutate them unless by a public function.
+
 class GoalHandler: CoreDataHandler {
     
     //MARK: - Properties

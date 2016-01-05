@@ -131,7 +131,6 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate, UIImagePicke
                     return false
                 }
                 currentString += string
-                print(currentString)
                 formatCurrency(string: currentString)
             default:
                 let array = Array(arrayLiteral: string)

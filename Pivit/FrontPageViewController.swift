@@ -23,13 +23,10 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
             saveDefaultHabitsToCoreData()
         }
         
-        print(habitHandler.habits)
     }
     
     deinit {
-        
         NSNotificationCenter.defaultCenter().removeObserver(self)
-        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -56,7 +53,7 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
         didSet {
             whatsItForAmountTextField.tag = 100
             whatsItForAmountTextField.delegate = self
-            whatsItForAmountTextField.keyboardType=UIKeyboardType.NumberPad
+            whatsItForAmountTextField.keyboardType = UIKeyboardType.NumberPad
         }
     }
         
@@ -214,23 +211,12 @@ class FrontPageViewController: UIViewController, UITextFieldDelegate {
     }
     
     func formatCurrency(string string: String) {
-        print("format \(string)")
         let formatter = NSNumberFormatter()
         formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
         formatter.locale = NSLocale(localeIdentifier: "en_US")
         let numberFromField = (NSString(string: currentString).doubleValue)/100
         whatsItForAmountTextField.text = formatter.stringFromNumber(numberFromField)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     //MARK: - Private Functions
     

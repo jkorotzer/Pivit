@@ -50,7 +50,6 @@ class CoreDataHandler {
         
         do {
             try context.save()
-            print("saved")
         } catch {
             print("error")
         }
@@ -74,7 +73,6 @@ class CoreDataHandler {
         
         do {
             try context.save()
-            print("saved")
         } catch {
             print("error")
         }
@@ -86,7 +84,6 @@ class CoreDataHandler {
         context.deleteObject(object)
         do {
             try context.save()
-            print("saved")
         } catch {
             print("error")
         }

@@ -20,6 +20,10 @@ class ChangeHabitViewController: UIViewController, UITextFieldDelegate, UIImageP
         self.view.addGestureRecognizer(tapped)
     }
     
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
     //MARK: - Model
     
     var habitToBeEdited: Habit?
@@ -137,7 +141,7 @@ class ChangeHabitViewController: UIViewController, UITextFieldDelegate, UIImageP
                     formatCurrency(string: currentString)
                 } else {
                     if currentString.characters.count<=1 {
-                        currentString=""
+                        currentString = ""
                         formatCurrency(string: currentString)
                     } else {
                         let endIndex = currentString.endIndex

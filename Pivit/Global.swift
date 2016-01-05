@@ -25,11 +25,9 @@ func hasAppAlreadyLaunchedOnce() -> Bool {
     let defaults = NSUserDefaults.standardUserDefaults()
     
     if let _ = defaults.stringForKey("isAppAlreadyLaunchedOnce") {
-        print("app has launched")
         return true
     } else {
         defaults.setBool(true, forKey: "isAppAlreadyLaunchedOnce")
-        print("app has not launched")
         return false
     }
 }
